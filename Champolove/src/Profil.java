@@ -10,7 +10,7 @@ public class Profil {
 	String lien_photoProfil;
 	String description;
 	
-	ArrayList<String> Gouts; // question sur la musique, 
+	ArrayList<String> Gouts; // question sur la musique, question sur la nourriture
 	ArrayList<String> Hobbies;
 	ArrayList<String> aEviter;
 	
