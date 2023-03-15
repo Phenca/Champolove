@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Profil {
 	
@@ -9,7 +10,7 @@ public class Profil {
 	String lien_photoProfil;
 	String description;
 	
-	ArrayList<String> Gouts;
+	ArrayList<String> Gouts; // question sur la musique, 
 	ArrayList<String> Hobbies;
 	ArrayList<String> aEviter;
 	
