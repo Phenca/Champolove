@@ -12,10 +12,11 @@ public class Profil {
 	String orientation_sexuelle;
 	String lien_photoProfil;
 	String description;
-	
+
 	ArrayList<String> Gouts; // question sur la musique, question sur la nourriture, choix âge, choix taille, choix sexe
 	ArrayList<String> Hobbies; // Sport ? Jeux ? Autre Activité ?
 	ArrayList<String> aEviter; // Allergie ?
+
 	
 	public Profil(String id, String nom, String prenom, int age, String adresse_mail, String sexe, String orienta_sex, String lien_photoP, String descri) {
 		this.identifiant= id;
