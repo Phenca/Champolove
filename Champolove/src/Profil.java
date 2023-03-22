@@ -23,9 +23,9 @@ public class Profil {
 		this.lien_photoProfil=lien_photoP;
 		this.description=descri;
 		
-		ArrayList<String> Gouts=ArrayList<>();
-		ArrayList<String> Hobbies=ArrayList<>();
-		ArrayList<String> aEviter=ArrayList<>();
+		ArrayList<String> Gouts= new ArrayList<>();
+		ArrayList<String> Hobbies= new ArrayList<>();
+		ArrayList<String> aEviter= new ArrayList<>();
 	}
 	
 }
