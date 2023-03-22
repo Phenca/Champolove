@@ -2,9 +2,11 @@ import java.util.ArrayList;
 
 public class Profil {
 	
+	String identifiant;
 	String nom;
 	String prenom;
 	int age;
+	String adresse_mail;
 	String sexe;
 	String orientation_sexuelle;
 	String lien_photoProfil;
@@ -14,7 +16,7 @@ public class Profil {
 	ArrayList<String> Hobbies;
 	ArrayList<String> aEviter;
 	
-	public Profil(String nom, String prenom, int age, String sexe, String orienta_sex, String lien_photoP, String descri) {
+	public Profil(String identifiant, String nom, String prenom, int age, String adresse_mail, String sexe, String orienta_sex, String lien_photoP, String descri) {
 		this.nom=nom;
 		this.prenom=prenom;
 		this.age=age;
@@ -23,9 +25,9 @@ public class Profil {
 		this.lien_photoProfil=lien_photoP;
 		this.description=descri;
 		
-		ArrayList<String> Gouts=ArrayList<>();
-		ArrayList<String> Hobbies=ArrayList<>();
-		ArrayList<String> aEviter=ArrayList<>();
+		ArrayList<String> Gouts= new ArrayList<>();
+		ArrayList<String> Hobbies= new ArrayList<>();
+		ArrayList<String> aEviter= new ArrayList<>();
 	}
 	
 }
