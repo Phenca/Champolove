@@ -36,8 +36,7 @@ public class Profil {
 	}
 	
 	
-	@Override
-	public compareTo(Object o) {
-		
+	public Object compareTo(Object o) {
+		return null;
 	}
 }
