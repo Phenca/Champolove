@@ -1,3 +1,5 @@
+import java.util.Observer;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -6,7 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 
-public class Vue extends Application {
+public class Vue extends Application implements Observer{
 	@Override
 	public void start(Stage Stage) throws Exception {
 		Label title = new Label("Champolove");
@@ -37,4 +39,10 @@ public class Vue extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
+	@Override
+	public void update(java.util.Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
