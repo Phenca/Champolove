@@ -5,11 +5,24 @@ import javafx.beans.Observable;
 
 public class Modele implements Observable{
 	
+	Profil PersonnePrincipal;
 	
 	public Modele() {
 		
 		
 		ArrayList<String> memoireP = new ArrayList<>();
+	}
+	
+	public void ajouterGoutAuProfilPrincipal(String unGout) {
+		PersonnePrincipal.Gouts.add(unGout);
+	}
+	
+	public void ajouterHobbieAuProfilPrincipal(String unHobbie) {
+		PersonnePrincipal.Gouts.add(unHobbie);
+	}
+	
+	public void ajouterUnTrucAEviterAuProfilPrincipal(String unTrucAEVITER) {
+		PersonnePrincipal.Gouts.add(unTrucAEVITER);
 	}
 
 	@Override
