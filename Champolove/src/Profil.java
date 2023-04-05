@@ -6,7 +6,7 @@ public class Profil {
 	String nom;
 	String prenom;
 	int taille;
-	int age;
+	String date_naissance;
 	String adresse_mail;
 	String sexe;
 	String lien_photoProfil;
@@ -17,11 +17,11 @@ public class Profil {
 	ArrayList<String> aEviter; // Allergie ?
 
 
-	public Profil(String id, String nom, String prenom, int age,int taille, String adresse_mail, String sexe, String lien_photoP, String descri) {
+	public Profil(String id, String nom, String prenom, String date_naissance,int taille, String adresse_mail, String sexe, String lien_photoP, String descri) {
 		this.identifiant= id;
 		this.nom=nom;
 		this.prenom=prenom;
-		this.age=age;
+		this.date_naissance=date_naissance;
 		this.taille=taille;
 		this.adresse_mail = adresse_mail;
 		this.sexe=sexe;
