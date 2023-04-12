@@ -15,6 +15,35 @@ public class Modele implements Observable{
 		
 	}
 	
+	public static int calcul_age(ArrayList memoireP, int age) {
+		Calendar c = Calendar. getInstance();
+		for (int i=0; i<memoireP.size(); i++) {
+			Profil m =  (Profil) memoireP.get(i);
+			String[] l = m.date_naissance.split("/");
+			age =  c.get(Calendar.YEAR)- Integer.valueOf(l[2]);
+			int mois = (c.get(Calendar.MONTH)+1-Integer.valueOf(l[1]));
+			int jour = (c.get(Calendar.DAY_OF_MONTH)-Integer.valueOf(l[0]));
+			if (mois>0) {
+					//m.date_naissance = String.valueOf(age);
+			}
+			else if (mois==0){
+				if (jour<0) {
+					age = age-1;					
+					//m.date_naissance = String.valueOf(age);
+				}
+				else {
+					//m.date_naissance = String.valueOf(age);
+				}
+			}
+			else{
+				age = age -1;
+				//m.date_naissance = String.valueOf(age);				
+			}
+			//System.out.println("Age de profil " + i + " : " + age);
+		}
+		return age;
+	}
+	
 	public static void main(String[] args) {
 		ArrayList<Profil> memoirePuser = new ArrayList<>();
 		Profil pUser = new Profil(null, null, null, null, 0, null, null, null, null);
@@ -40,29 +69,9 @@ public class Modele implements Observable{
 		memoireP.add(p9);
 		Profil p10 = new Profil("zapaveg", "Pasquier", "Colette", "01/01/1978", 167, "Colette.Pasquier@yopmail.com", "féminin", "file:ressources/img_profil/Pasquier_Colette.png", "");
 		memoireP.add(p10);
-	}
-	
-	public void calcul_age(ArrayList memoireP, int age) {
-		Calendar c = Calendar. getInstance();
-		for (int i=0; i<memoireP.size(); i++) {
-			Profil m =  (Profil) memoireP.get(i);
-			String[] l = m.date_naissance.split("/");
-			System.out.println(l);
-			age =  c.get(Calendar.YEAR)- Integer.valueOf(l[2]);
-			if ((c.get(Calendar.MONTH)-Integer.valueOf(l[1]))>=0) {
-				if ((c.get(Calendar.DAY_OF_WEEK_IN_MONTH)-Integer.valueOf(l[0]))>=0) {
-					m.date_naissance = String.valueOf(age);
-				}
-				else {
-					age = age-1;
-					m.date_naissance = String.valueOf(age);
-				}
-			}
-			else{
-				age = age-1;
-				m.date_naissance = String.valueOf(age);
-			}
-		}
+		
+		int age=0;
+		calcul_age(memoireP, age);
 	}
 	
 	public void ajouterGoutAuProfilPrincipal(String unGout) {
