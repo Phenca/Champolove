@@ -8,6 +8,7 @@ public class Modele implements Observable{
 	
 	Profil ProfilPrincipal;
 	int age = 0;
+	ArrayList<Profil> historique_match;
 	
 	public Modele() {
 		
@@ -44,34 +45,40 @@ public class Modele implements Observable{
 		return age;
 	}
 	
+	
+	
 	public static void main(String[] args) {
 		ArrayList<Profil> memoirePuser = new ArrayList<>();
-		Profil pUser = new Profil(null, null, null, null, 0, null, null, null, null);
+		Profil pUser = new Profil(null, null, null, null, 0, null, null, null, null, 0);
 		memoirePuser.add(pUser);
 		ArrayList<Profil> memoireP = new ArrayList<>();
-		Profil p1 = new Profil("hawaj", "Levy", "Adolphe", "04/03/2002", 179, "Adolphe.Levy@yopmail.com", "masculin", "file:ressources/img_profil/Levy_Adolphe.png", "");
+		Profil p1 = new Profil("hawaj", "Levy", "Adolphe", "04/03/2002", 179, "Adolphe.Levy@yopmail.com", "masculin", "file:ressources/img_profil/Levy_Adolphe.png", "", 0);
 		memoireP.add(p1);
-		Profil p2 = new Profil("hajot", "Hamel", "Bertrand", "24/01/1983", 183, "Bertrand.Hamel@yopmail.com", "masculin", "file:ressources/img_profil/Hamel_Bertrand.png", "");
+		Profil p2 = new Profil("hajot", "Hamel", "Bertrand", "24/01/1983", 183, "Bertrand.Hamel@yopmail.com", "masculin", "file:ressources/img_profil/Hamel_Bertrand.png", "", 0);
 		memoireP.add(p2);
-		Profil p3 = new Profil("botub", "Hardy", "Rochelle", "03/11/1997", 165, "Rochelle.Hardy@yopmail.com", "féminin", "file:ressources/img_profil/Hardy_Rochelle.png", "");
+		Profil p3 = new Profil("botub", "Hardy", "Rochelle", "03/11/1997", 165, "Rochelle.Hardy@yopmail.com", "féminin", "file:ressources/img_profil/Hardy_Rochelle.png", "", 0);
 		memoireP.add(p3);
-		Profil p4 = new Profil("gubureg", "Thomas", "Antoine", "10/09/2004", 170, "Antoine.Thomas@yopmail.com", "masculin", "file:ressources/img_profil/Thomas_Antoine.png", "");
+		Profil p4 = new Profil("gubureg", "Thomas", "Antoine", "10/09/2004", 170, "Antoine.Thomas@yopmail.com", "masculin", "file:ressources/img_profil/Thomas_Antoine.png", "", 0);
 		memoireP.add(p4);
-		Profil p5 = new Profil("tuhen", "Fort", "Lucy", "13/02/1999", 175, "Lucy.Fort@yopmail.com", "féminin", "file:ressources/img_profil/Fort_Lucy.png", "");
+		Profil p5 = new Profil("tuhen", "Fort", "Lucy", "13/02/1999", 175, "Lucy.Fort@yopmail.com", "féminin", "file:ressources/img_profil/Fort_Lucy.png", "", 0);
 		memoireP.add(p5);
-		Profil p6 = new Profil("kugufid", "Andre", "Margot", "20/02/1992", 166, "Margot.Andre@yopmail", "féminin", "file:ressources/img_profil/Andre_Margot.png", "");
+		Profil p6 = new Profil("kugufid", "Andre", "Margot", "20/02/1992", 166, "Margot.Andre@yopmail", "féminin", "file:ressources/img_profil/Andre_Margot.png", "", 0);
 		memoireP.add(p6);
-		Profil p7 = new Profil("felix", "Drouet", "Charlie", "16/03/1965", 166, "Charlie.Drouet@yopmail", "masculin", "file:ressources/img_profil/Drouet_Charlie.png", "");
+		Profil p7 = new Profil("felix", "Drouet", "Charlie", "16/03/1965", 166, "Charlie.Drouet@yopmail", "masculin", "file:ressources/img_profil/Drouet_Charlie.png", "", 0);
 		memoireP.add(p7);
-		Profil p8 = new Profil("xevuju", "Grandjean", "Michelle", "29/12/1966", 157, "Michelle.Grandjean@yopmail.com", "féminin", "file:ressources/img_profil/Grandjean_Michelle.png", "");
+		Profil p8 = new Profil("xevuju", "Grandjean", "Michelle", "29/12/1966", 157, "Michelle.Grandjean@yopmail.com", "féminin", "file:ressources/img_profil/Grandjean_Michelle.png", "", 0);
 		memoireP.add(p8);
-		Profil p9 = new Profil("qaqaqu", "Dupuis", "Lambert", "06/04/1967", 174, "Lambert.Dupuis@yopmail.com", "masculin", "file:ressources/img_profil/Dupuis_Lambert.png", "");
+		Profil p9 = new Profil("qaqaqu", "Dupuis", "Lambert", "06/04/1967", 174, "Lambert.Dupuis@yopmail.com", "masculin", "file:ressources/img_profil/Dupuis_Lambert.png", "", 0);
 		memoireP.add(p9);
-		Profil p10 = new Profil("zapaveg", "Pasquier", "Colette", "01/01/1978", 167, "Colette.Pasquier@yopmail.com", "féminin", "file:ressources/img_profil/Pasquier_Colette.png", "");
+		Profil p10 = new Profil("zapaveg", "Pasquier", "Colette", "01/01/1978", 167, "Colette.Pasquier@yopmail.com", "féminin", "file:ressources/img_profil/Pasquier_Colette.png", "", 0);
 		memoireP.add(p10);
 		
 		int age=0;
 		calcul_age(memoireP, age);
+	}
+	
+	public void Historique(ArrayList<Profil> historique_match) {
+		
 	}
 	
 	public void ajouterGoutAuProfilPrincipal(String unGout) {

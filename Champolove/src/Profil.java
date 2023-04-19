@@ -11,13 +11,14 @@ public class Profil {
 	String sexe;
 	String lien_photoProfil;
 	String description;
+	int matcher = 0; 
 
 	ArrayList<String> Gouts; // question sur la musique, question sur la nourriture, choix âge, choix taille, choix sexe
 	ArrayList<String> Hobbies; // Sport ? Jeux ? Autre Activité ?
 	ArrayList<String> aEviter; // Allergie ?
 
 
-	public Profil(String id, String nom, String prenom, String date_naissance,int taille, String adresse_mail, String sexe, String lien_photoP, String descri) {
+	public Profil(String id, String nom, String prenom, String date_naissance,int taille, String adresse_mail, String sexe, String lien_photoP, String descri, int matcher) {
 		this.identifiant= id;
 		this.nom=nom;
 		this.prenom=prenom;
@@ -27,7 +28,8 @@ public class Profil {
 		this.sexe=sexe;
 		this.lien_photoProfil=lien_photoP;
 		this.description=descri;
-
+		this.matcher = 0;
+		
 		ArrayList<String> Gouts= new ArrayList<>();
 		ArrayList<String> Hobbies= new ArrayList<>();
 		ArrayList<String> aEviter= new ArrayList<>();
