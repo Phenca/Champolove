@@ -17,13 +17,13 @@ import javafx.stage.Stage;
 
 
 public class Controleur implements EventHandler<ActionEvent>, Initializable{
-	public Vue Vue;
+	private Vue Vue;
 	@FXML
-	public Stage Stage;
+	private Stage Stage;
 	@FXML
-	public Button inscription;
+	private Button inscription;
 	@FXML
-	public Button connection;
+	private Button connection;
 	
 
 	private Modele modl;
