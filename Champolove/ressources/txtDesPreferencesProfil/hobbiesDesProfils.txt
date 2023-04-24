@@ -1,0 +1,3 @@
+"Hobbies":
+"Jeux vidéo" "sport" "cuisiner" "sport à sensation forte" "soirée entre amis" "sortie au musée" "jouer d'un instrument"
+"peindre" "chanter" 

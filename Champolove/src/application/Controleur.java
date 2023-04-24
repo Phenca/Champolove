@@ -15,7 +15,6 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-import application.Vue;
 
 public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	private Vue Vue;

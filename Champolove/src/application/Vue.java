@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+import java.util.Observable;
 import java.util.Observer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,9 +11,9 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class Vue extends Application {
+public class Vue extends Application implements Observer {
 	private Stage Stage;
-	
+
 	@Override
 	public void start(Stage Stage) throws Exception {
 		this.Stage = Stage;
@@ -20,8 +21,9 @@ public class Vue extends Application {
 		fenetreLancement();
 		
 		Modele m=new Modele();
-		new Controleur(m);
 
+		Controleur c=new Controleur(m);
+		
 	}
 	
 	public void fenetreLancement() {
@@ -46,5 +48,11 @@ public class Vue extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
 	}
 }
