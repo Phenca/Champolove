@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Vue extends Application implements Observer{
+	
 
 	@Override
 	public void start(Stage Stage) throws Exception {
@@ -22,6 +23,8 @@ public class Vue extends Application implements Observer{
 		
 		Modele m=new Modele();
 		Controleur c=new Controleur(m);
+		
+		launchPage.loginBtn.setOnMouseClicked(c);
 
 	}
 	public static void main(String[] args) {
