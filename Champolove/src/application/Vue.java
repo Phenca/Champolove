@@ -5,7 +5,6 @@ import java.util.Observable;
 import java.util.Observer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
@@ -18,15 +17,6 @@ public class Vue extends Application implements Observer {
 	public void start(Stage Stage) throws Exception {
 		this.Stage = Stage;
 		
-		fenetreLancement();
-		
-		Modele m=new Modele();
-
-		Controleur c=new Controleur(m);
-		
-	}
-	
-	public void fenetreLancement() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(getClass().getResource("/FXML/View.fxml"));
@@ -40,6 +30,11 @@ public class Vue extends Application implements Observer {
 		} catch (IOException e){
 			e.printStackTrace();
 		}
+		
+		Modele m=new Modele();
+
+		Controleur c=new Controleur(m);
+		
 	}
 	
 	public Stage getStage() {

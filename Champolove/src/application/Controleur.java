@@ -17,16 +17,19 @@ import javafx.stage.Stage;
 
 
 public class Controleur implements EventHandler<ActionEvent>, Initializable{
-	private Vue Vue;
+	public Vue Vue;
 	@FXML
-	private Stage Stage;
+	public Stage Stage;
 	@FXML
-	private Button inscription;
+	public Button inscription;
 	@FXML
-	private Button connection;
+	public Button connection;
 	
 
 	private Modele modl;
+	public Controleur() {
+		// constructeur sans arguments
+	}
 	
 	public Controleur (Modele modl) {
 		this.modl=modl;
@@ -37,40 +40,37 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		System.out.println(event.getTarget());
 		
 	}
+	@FXML
+	private void sInscrire(ActionEvent event) {
+		Parent rootLayout;
+		try {
+			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/fenLogIn.fxml"));
+			Scene scene = new Scene(rootLayout);
+			Stage.setTitle("Champolove");
+			Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			Stage.setScene(scene);
+			Stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	@FXML
+	private void seConnecter(ActionEvent event) {
+		Parent rootLayout;
+		try {
+			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/fenLogIn.fxml"));
+			Scene scene = new Scene(rootLayout);
+			Stage.setTitle("Champolove");
+			Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			Stage.setScene(scene);
+			Stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		inscription.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				Parent rootLayout;
-				try {
-					rootLayout = FXMLLoader.load(getClass().getResource("/FXML/fenLogIn.fxml"));
-					Scene scene = new Scene(rootLayout);
-					Stage.setTitle("Champolove");
-					Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
-					Stage.setScene(scene);
-					Stage.show();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			};	
-		});
-		connection.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				Parent rootLayout;
-				try {
-					rootLayout = FXMLLoader.load(getClass().getResource("/FXML/fenLogIn.fxml"));
-					Scene scene = new Scene(rootLayout);
-					Stage.setTitle("Champolove");
-					Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
-					Stage.setScene(scene);
-					Stage.show();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			};	
-		});
+		
 	}
 	public void setVue(Vue Vue) {
 		this.Vue = Vue;
