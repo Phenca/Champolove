@@ -1,36 +1,50 @@
 package application;
 
+import java.io.IOException;
 import java.util.Observer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class Vue extends Application implements Observer{
-
+public class Vue extends Application {
+	private Stage Stage;
+	
 	@Override
 	public void start(Stage Stage) throws Exception {
+		this.Stage = Stage;
 		
-		Parent rootLayout = FXMLLoader.load(getClass().getResource("View.fxml"));
-		Scene scene = new Scene(rootLayout);
-		Stage.setTitle("Champolove");
-        Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));  
-        Stage.setScene(scene);
-        Stage.show(); 
+		fenetreLancement();
 		
 		Modele m=new Modele();
-		Controleur c=new Controleur(m);
+		new Controleur(m);
 
 	}
+	
+	public void fenetreLancement() {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("/FXML/View.fxml"));
+			AnchorPane rootLayout = (AnchorPane) loader.load();
+			
+			Scene scene = new Scene(rootLayout);
+			Stage.setTitle("Champolove");
+	        Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));  
+	        Stage.setScene(scene);
+	        Stage.show(); 
+		} catch (IOException e){
+			e.printStackTrace();
+		}
+	}
+	
+	public Stage getStage() {
+		return Stage;
+	}
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
-	@Override
-	public void update(java.util.Observable o, Object arg) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
