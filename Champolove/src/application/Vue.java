@@ -22,6 +22,9 @@ public class Vue extends Application implements Observer {
 		Modele m=new Modele();
 
 		Controleur c=new Controleur(m);
+
+		//launchPage.loginBtn.setOnMouseClicked(c);
+
 	}
 	
 	public void fenetreLancement() {
