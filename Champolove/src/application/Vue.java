@@ -24,6 +24,11 @@ public class Vue extends Application implements Observer {
 
 		Controleur c=new Controleur(m);
 		
+<<<<<<< HEAD
+=======
+		//launchPage.loginBtn.setOnMouseClicked(c);
+
+>>>>>>> f910c79 (creation du dictionnaire des gouts)
 	}
 	
 	public void fenetreLancement() {

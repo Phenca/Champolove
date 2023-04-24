@@ -1,6 +1,9 @@
 package application;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Map;
 
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
@@ -11,7 +14,27 @@ public class Modele implements Observable{
 	int age = 0;
 	ArrayList<Profil> historique_match;
 	
+	HashMap<String,String[]> dictionnaireDesGouts = new HashMap<>();
+	
+	
+	
 	public Modele() {
+		String[] tableauDesStylesDeMusiques= {"Rock","Rap","Pop","Hip-hop", "Jazz", "Blues", "Soul", "Gospel", "Country", "Disco", "Techno", "Reggae", "Salsa", "Flamenco", "Metal", "Funk",
+				"Lofi"};
+		
+		String[] tableauMonAnimalPref = {"Chien", "Chat", "Serpent", "Cheval", "Peroquet"};
+		
+		String[] tableauMonPlatPref = { "Pâtes à la bolognaise", "Pâtes à la carbonara", "Lasagnes", "Croque-monsieur", "Gratin dauphinois", "Burger-frites", "Magret de canard" 
+				,"Moules-frites", "Couscous", "Blanquette de veau" ,"Steak-frites", "Raclette" ,"Tomates farcies"};
+		
+		String[] tableauDesStylesFilmsEtSerie = {"Science-fiction", "Comédie", "Horreur", "Suspence", "Policier", "Aventure", "Romantique", "Guerre", "Histoire", "Action"
+				,"Drame", "Comédie dramatique", "Fantastique", "Western"};
+		
+		dictionnaireDesGouts.put("Tes styles de musiques ?", tableauDesStylesDeMusiques);
+		dictionnaireDesGouts.put("Ton animal favoris", tableauMonAnimalPref);
+		dictionnaireDesGouts.put("Mon plat préféré", tableauMonPlatPref);
+		dictionnaireDesGouts.put("Tes styles de films/séries ?", tableauDesStylesFilmsEtSerie);
+		
 		
 		
 		
