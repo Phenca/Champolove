@@ -16,7 +16,16 @@ public class Vue extends Application implements Observer {
 	@Override
 	public void start(Stage Stage) throws Exception {
 		this.Stage = Stage;
+
+		fenetreLancement();
 		
+		Modele m=new Modele();
+
+		Controleur c=new Controleur(m);
+	}
+	
+	public void fenetreLancement() {
+
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(getClass().getResource("/FXML/View.fxml"));
