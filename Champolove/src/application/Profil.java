@@ -14,7 +14,7 @@ public class Profil {
 	String description;
 	int matcher = 0; 
 
-	ArrayList<String> Gouts; // question sur la musique, question sur la nourriture, choix âge, choix taille, choix sexe
+	ArrayList<String> Gouts; // question sur la musique, question sur la nourriture, choix taille
 	ArrayList<String> Hobbies; // Sport ? Jeux ? Autre Activité ?
 	ArrayList<String> aEviter; // Allergie ?
 

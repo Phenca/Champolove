@@ -38,6 +38,7 @@ public class Controleur implements EventHandler<ActionEvent>{
 	    	
 	}
 
+
 	@FXML
 	void seConnecter(ActionEvent event) throws IOException {
 		Parent rootLayout = FXMLLoader.load(getClass().getResource("/FXML/fenLogIn.fxml"));
