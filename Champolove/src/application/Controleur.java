@@ -46,6 +46,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		try {
 			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/fenLogIn.fxml"));
 			Scene scene = new Scene(rootLayout);
+			this.Stage=new Stage();
 			Stage.setTitle("Champolove");
 			Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
 			Stage.setScene(scene);
@@ -60,6 +61,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		try {
 			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/fenLogIn.fxml"));
 			Scene scene = new Scene(rootLayout);
+			this.Stage=new Stage();
 			Stage.setTitle("Champolove");
 			Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
 			Stage.setScene(scene);
