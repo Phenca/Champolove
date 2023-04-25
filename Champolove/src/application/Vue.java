@@ -23,7 +23,6 @@ public class Vue extends Application implements Observer {
 
 		Controleur c=new Controleur(m);
 
-		//launchPage.loginBtn.setOnMouseClicked(c);
 
 	}
 	
