@@ -30,7 +30,7 @@ public class Vue extends Application implements Observer {
 	public void fenetreLancement() {
 		Parent rootLayout;
 		try {
-			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/fenLogIn.fxml"));
+			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/View.fxml"));
 			Scene scene = new Scene(rootLayout);
 			Stage.setTitle("Champolove");
 			Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
