@@ -45,7 +45,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	private void sInscrire(ActionEvent event) {
 		Parent rootLayout;
 		try {
-			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/fenLogIn.fxml"));
+			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/fenSignIn.fxml"));
 			Scene scene = new Scene(rootLayout);
 			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 			this.Stage.setTitle("Champolove");
