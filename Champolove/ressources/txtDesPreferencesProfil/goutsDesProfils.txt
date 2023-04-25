@@ -1,8 +1,8 @@
-"La musique que j'écoute" :
+"Tes styles de musiques ?" :
 "Rock" "Rap" "Pop" "Hip-hop" "Jazz" "Blues" "Soul" "Gospel" "Country" "Disco" "Techno" "Reggae" "Salsa" "Flamenco" "Metal" "Funk"
 "Lofi"
 
-"Mon animal favoris" :
+"Ton animal favoris" :
 "Chien" "Chat" "Serpent" "Cheval" "Peroquet"
 
 
@@ -10,6 +10,6 @@
 "Pâtes à la bolognaise" "Pâtes à la carbonara" "Lasagnes" "Croque-monsieur" "Gratin dauphinois" "Burger-frites" "Magret de canard" 
 "Moules-frites" "Couscous" "Blanquette de veau" "Steak-frites" "Raclette" "Tomates farcies"
 
-"Ces quoi tes styles de films/séries ?":
+"Tes styles de films/séries ?":
 "Science-fiction" "Comédie" "Horreur" "Suspence" "Policier" "Aventure" "Romantique" "Guerre" "Histoire" "Action"
 "Drame" "Comédie dramatique" "Fantastique" "Western"
