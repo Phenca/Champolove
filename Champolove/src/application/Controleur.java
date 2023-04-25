@@ -9,6 +9,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -46,11 +47,11 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		try {
 			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/fenLogIn.fxml"));
 			Scene scene = new Scene(rootLayout);
-			this.Stage=new Stage();
-			Stage.setTitle("Champolove");
-			Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
-			Stage.setScene(scene);
-			Stage.show();
+			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+			this.Stage.setTitle("Champolove");
+			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.setScene(scene);
+			this.Stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -61,11 +62,11 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		try {
 			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/fenLogIn.fxml"));
 			Scene scene = new Scene(rootLayout);
-			this.Stage=new Stage();
-			Stage.setTitle("Champolove");
-			Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
-			Stage.setScene(scene);
-			Stage.show();
+			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+			this.Stage.setTitle("Champolove");
+			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.setScene(scene);
+			this.Stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
