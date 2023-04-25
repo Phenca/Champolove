@@ -38,7 +38,7 @@ public class Vue extends Application implements Observer {
 		} catch (IOException e){
 			e.printStackTrace();
 		}
-		
+
 		Modele m=new Modele();
 
 		Controleur c=new Controleur(m);
