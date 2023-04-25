@@ -7,6 +7,8 @@ public class MemoireProfil {
 	
 	int age = 0;
 	ArrayList<Profil> memoirePuser;
+	ArrayList<Profil> memoirePuserHomme;
+	ArrayList<Profil> memoirePuserFemme;
 	Profil pUser;
 	ArrayList<Profil> memoireP;
 	Profil p1;
@@ -80,6 +82,20 @@ public class MemoireProfil {
 		memoireP.add(p10);
 		
 		calcul_age(memoireP, age);
+		
+		memoirePuserHomme = new ArrayList<>();
+		memoirePuserFemme = new ArrayList<>();
+		
+		for (int i=0; i<memoireP.size(); i++) {
+			Profil m =  (Profil) memoireP.get(i);
+			if (m.sexe == "masculin"){
+				memoirePuserHomme.add(m);
+			}
+			else{
+				memoirePuserFemme.add(m);
+			}
+		}
+
 	}
 	
 }
