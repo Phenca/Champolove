@@ -19,14 +19,21 @@ import javafx.stage.Stage;
 
 public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	private Vue Vue;
-	@FXML
-	private Stage Stage;
-	@FXML
-	private Button inscription;
-	@FXML
-	private Button connection;
-	
-
+	@FXML private Stage Stage;
+	/*
+	 * Instantiation contrôles fenêtre page d'acceuil
+	 */
+	@FXML private Button inscription;
+	@FXML private Button connection;
+	/*
+	 * Instantiation contrôles fenêtre page de connexion
+	 */
+	@FXML private Button RetourAcceuil;
+	@FXML private Button ValideConnexion;
+	/*
+	 * Instantiation contrôles fenêtre page d'inscription
+	 */
+	@FXML private Button ValideInscription;
 	private Modele modl;
 	public Controleur() {
 		// constructeur sans arguments
@@ -41,8 +48,24 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		System.out.println(event.getTarget());
 		
 	}
-	@FXML
-	private void sInscrire(ActionEvent event) {
+	/*
+	 * Création méthodes fenêtre page d'acceuil
+	 */
+	@FXML private void sInscrire(ActionEvent event) {
+		Parent rootLayout;
+		try {
+			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/fenSignIn.fxml"));
+			Scene scene = new Scene(rootLayout);
+			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+			this.Stage.setTitle("Champolove");
+			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.setScene(scene);
+			this.Stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	@FXML private void seConnecter(ActionEvent event) {
 		Parent rootLayout;
 		try {
 			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/fenLogIn.fxml"));
@@ -56,11 +79,13 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			e.printStackTrace();
 		}
 	}
-	@FXML
-	private void seConnecter(ActionEvent event) {
+	/*
+	 * Création méthodes fenêtre page de connexion
+	 */
+	@FXML private void RetourAcceuil(ActionEvent event) {
 		Parent rootLayout;
 		try {
-			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/fenLogIn.fxml"));
+			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/View.fxml"));
 			Scene scene = new Scene(rootLayout);
 			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 			this.Stage.setTitle("Champolove");
@@ -70,6 +95,15 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	@FXML private void ValideConnexion(ActionEvent event) {
+		//A définir
+	}
+	/*
+	 * Création méthodes fenêtre page d'inscription
+	 */
+	@FXML private void ValideInscription(ActionEvent event) {
+		//A définir
 	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

@@ -6,8 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
    <children>
       <VBox alignment="TOP_CENTER" layoutX="100.0" layoutY="50.0" prefHeight="300.0" prefWidth="400.0" spacing="30.0">
          <children>
@@ -39,13 +38,13 @@
             </GridPane>
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
                <children>
-                  <Button mnemonicParsing="false" prefWidth="73.0" text="Retour">
+                  <Button fx:id="RetourAcceuil" mnemonicParsing="false" onAction="#RetourAcceuil" prefHeight="25.0" prefWidth="73.0" text="Retour">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Je n'ai pas de compte" />
-                  <Button mnemonicParsing="false" prefWidth="73.0" text="Connexion">
+                  <Button fx:id="inscription" mnemonicParsing="false" onAction="#sInscrire" text="Je n'ai pas de compte" />
+                  <Button fx:id="ValideConnexion" mnemonicParsing="false" onAction="#ValideConnexion" prefWidth="73.0" text="Connexion">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
