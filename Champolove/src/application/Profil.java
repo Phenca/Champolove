@@ -8,22 +8,24 @@ public class Profil {
 	String prenom;
 	int taille;
 	String date_naissance;
+	int age = 0;
 	String adresse_mail;
 	String sexe;
 	String lien_photoProfil;
 	String description;
 	int matcher = 0; 
 
-	ArrayList<String> Gouts; // question sur la musique, question sur la nourriture, choix taille
+	public ArrayList<String> Gouts; // question sur la musique, question sur la nourriture, choix taille
 	ArrayList<String> Hobbies; // Sport ? Jeux ? Autre Activité ?
 	ArrayList<String> aEviter; // Allergie ?
 
 
-	public Profil(String id, String nom, String prenom, String date_naissance,int taille, String adresse_mail, String sexe, String lien_photoP, String descri, int matcher) {
+	public Profil(String id, String nom, String prenom, String date_naissance,int age,int taille, String adresse_mail, String sexe, String lien_photoP, String descri, int matcher) {
 		this.identifiant= id;
 		this.nom=nom;
 		this.prenom=prenom;
 		this.date_naissance=date_naissance;
+		this.age=0;
 		this.taille=taille;
 		this.adresse_mail = adresse_mail;
 		this.sexe=sexe;

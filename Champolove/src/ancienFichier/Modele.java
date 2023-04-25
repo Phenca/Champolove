@@ -1,5 +1,8 @@
+package ancienFichier;
+
 import java.util.ArrayList;
 
+import application.Profil;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 
