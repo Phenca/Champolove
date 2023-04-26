@@ -1,5 +1,6 @@
 package application;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,6 +15,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser.ExtensionFilter;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 
@@ -34,6 +38,8 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	 * Instantiation contrôles fenêtre page d'inscription
 	 */
 	@FXML private Button ValideInscription;
+	@FXML private ImageView imageView;
+	@FXML private Button choisirImage;
 	private Modele modl;
 	public Controleur() {
 		// constructeur sans arguments
@@ -105,9 +111,19 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML private void ValideInscription(ActionEvent event) {
 		//A définir
 	}
+	@FXML private void choisirImage(ActionEvent event) {
+		FileChooser fileChooser = new FileChooser();
+	    fileChooser.setTitle("Select an image");
+	    fileChooser.getExtensionFilters().addAll(
+	            new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg"));
+	    File selectedFile = fileChooser.showOpenDialog(Stage);
+	    if (selectedFile != null && selectedFile.exists()) {
+	        Image image = new Image(selectedFile.toURI().toString());
+	        imageView.setImage(image);
+	    }
+	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
 	}
 	public void setVue(Vue Vue) {
 		this.Vue = Vue;

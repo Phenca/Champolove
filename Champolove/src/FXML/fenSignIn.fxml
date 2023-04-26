@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -13,65 +14,71 @@
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
-   <children>
-      <VBox alignment="TOP_CENTER" layoutX="100.0" layoutY="100.0" prefHeight="600.0" prefWidth="400.0" spacing="30.0">
-         <children>
-            <Label text="Bienvenue sur Champolove" />
-            <GridPane>
-               <children>
-                  <Label text="Nom : " />
-                  <Label text="Prénom : " GridPane.rowIndex="1" />
-                  <Label text="Date de naissance (DD/MM/YYYY) :" GridPane.rowIndex="2" />
-                  <Label text="Taille (en cm) :" GridPane.rowIndex="3" />
-                  <Label text="Age :" GridPane.rowIndex="4" />
-                  <Label text="Adresse Email :" GridPane.rowIndex="5" />
-                  <Label text="Mot de Passe :" GridPane.rowIndex="6" />
-                  <Label text="Sexe :" GridPane.rowIndex="7" />
-                  <Label text="Lien photo de profil :" GridPane.rowIndex="8" />
-                  <Label text="Description : " GridPane.rowIndex="9" />
-                  <Label text="Goûts :" GridPane.rowIndex="10" />
-                  <Label text="Hoobies :" GridPane.rowIndex="11" />
-                  <Label text="A Eviter (pas pour le moment) :" GridPane.rowIndex="12" />
-                  <TextField GridPane.columnIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-               </children>
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-            </GridPane>
-            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
-               <children>
-                  <Button fx:id="RetourAcceuil" mnemonicParsing="false" onAction="#RetourAcceuil" prefHeight="25.0" prefWidth="73.0" text="Acceuil" />
-                  <Button fx:id="connection" mnemonicParsing="false" onAction="#seConnecter" prefHeight="25.0" prefWidth="119.0" text="J'ai déjà un compte" />
-                  <Button fx:id="ValideInscription" mnemonicParsing="false" onAction="#ValideInscription" prefHeight="25.0" prefWidth="73.0" text="S'inscrire" />
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-   </children>
+	<children>
+		<VBox alignment="TOP_CENTER" layoutX="100.0" layoutY="100.0" prefHeight="600.0" prefWidth="400.0" spacing="30.0">
+			<children>
+				<Label text="Bienvenue sur Champolove" />
+				<GridPane alignment="TOP_CENTER" gridLinesVisible="true">
+					<children>
+						<Label text="Nom : " />
+						<Label text="Prénom : " GridPane.rowIndex="1" />
+						<Label text="Date de naissance (DD/MM/YYYY) :" GridPane.rowIndex="2" />
+						<Label text="Taille (en cm) :" GridPane.rowIndex="3" />
+						<Label text="Age :" GridPane.rowIndex="4" />
+						<Label text="Adresse Email :" GridPane.rowIndex="5" />
+						<Label text="Mot de Passe :" GridPane.rowIndex="6" />
+						<Label text="Sexe :" GridPane.rowIndex="7" />
+						<Label text="Lien photo de profil :" GridPane.rowIndex="8" />
+						<Label text="Description : " GridPane.rowIndex="9" />
+						<Label text="Goûts :" GridPane.rowIndex="10" />
+						<Label text="Hoobies :" GridPane.rowIndex="11" />
+						<Label text="A Eviter (pas pour le moment) :" GridPane.rowIndex="12" />
+						<TextField GridPane.columnIndex="1" />
+						<TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+						<TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+						<TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+						<TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+						<DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
+						<PasswordField GridPane.columnIndex="1" GridPane.rowIndex="6" />
+						<ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+						<ImageView fx:id="imageView" fitHeight="200.0" fitWidth="150.0" nodeOrientation="INHERIT" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="8">
+							<GridPane.margin>
+								<Insets left="25.0" />
+							</GridPane.margin>
+						</ImageView>
+					</children>
+					<columnConstraints>
+						<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+						<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+					</columnConstraints>
+					<rowConstraints>
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="220.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					</rowConstraints>
+					<VBox.margin>
+						<Insets bottom="10.0" />
+					</VBox.margin>
+				</GridPane>
+				<HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+					<children>
+						<Button fx:id="RetourAcceuil" mnemonicParsing="false" onAction="#RetourAcceuil" prefHeight="25.0" prefWidth="73.0" text="Acceuil" />
+						<Button fx:id="connection" mnemonicParsing="false" onAction="#seConnecter" prefHeight="25.0" prefWidth="119.0" text="J'ai déjà un compte" />
+						<Button fx:id="ValideInscription" mnemonicParsing="false" onAction="#ValideInscription" prefHeight="25.0" prefWidth="73.0" text="S'inscrire" />
+					</children>
+				</HBox>
+			</children>
+		</VBox>
+		<Button fx:id="choisirImage" layoutX="508.0" layoutY="514.0" mnemonicParsing="false" onAction="#choisirImage" text="Button" />
+	</children>
 </AnchorPane>
