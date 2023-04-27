@@ -103,13 +103,35 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		}
 	}
 	@FXML private void ValideConnexion(ActionEvent event) {
-		//A définir
+		Parent rootLayout;
+		try {
+			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pagePrincipale.fxml"));
+			Scene scene = new Scene(rootLayout);
+			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+			this.Stage.setTitle("Champolove");
+			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.setScene(scene);
+			this.Stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	/*
 	 * Création méthodes fenêtre page d'inscription
 	 */
 	@FXML private void ValideInscription(ActionEvent event) {
-		//A définir
+		Parent rootLayout;
+		try {
+			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pagePrincipale.fxml"));
+			Scene scene = new Scene(rootLayout);
+			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+			this.Stage.setTitle("Champolove");
+			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.setScene(scene);
+			this.Stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	@FXML private void choisirImage(ActionEvent event) {
 		FileChooser fileChooser = new FileChooser();
