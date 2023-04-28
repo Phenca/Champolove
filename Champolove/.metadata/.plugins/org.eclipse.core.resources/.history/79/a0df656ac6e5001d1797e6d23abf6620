@@ -9,6 +9,7 @@ import javafx.beans.Observable;
 
 public class Modele implements Observable{
 	
+	Profil ProfilPrincipal;
 	ArrayList<Profil> historique_match;
 	MemoireProfil memoiremixte;
 	HashMap<String,String[]> dictionnaireDesGouts = new HashMap<>();
@@ -21,7 +22,7 @@ public class Modele implements Observable{
 		String[] tableauDesStylesDeMusiques= {"Rock","Rap","Pop","Hip-hop", "Jazz", "Blues", "Soul", "Gospel", "Country", "Disco", "Techno", "Reggae", "Salsa", "Flamenco", "Metal", "Funk",
 				"Lofi"};
 		
-		String[] tableauMonAnimalPref = {"Chien", "Chat", "Serpent", "Cheval", "Peroquet"};
+		String[] tableauMonAnimalCompagnie = {"Chien", "Chat", "Serpent", "Cheval", "Peroquet", "rat", "hamster", "lapin", ""};
 		
 		String[] tableauMonPlatPref = { "Pâtes à la bolognaise", "Pâtes à la carbonara", "Lasagnes", "Croque-monsieur", "Gratin dauphinois", "Burger-frites", "Magret de canard" 
 				,"Moules-frites", "Couscous", "Blanquette de veau" ,"Steak-frites", "Raclette" ,"Tomates farcies"};
@@ -30,7 +31,7 @@ public class Modele implements Observable{
 				,"Drame", "Comédie dramatique", "Fantastique", "Western"};
 		
 		dictionnaireDesGouts.put("Tes styles de musiques ?", tableauDesStylesDeMusiques);
-		dictionnaireDesGouts.put("Ton animal favoris", tableauMonAnimalPref);
+		dictionnaireDesGouts.put("Ton animal favoris", tableauMonAnimalCompagnie);
 		dictionnaireDesGouts.put("Mon plat préféré", tableauMonPlatPref);
 		dictionnaireDesGouts.put("Tes styles de films/séries ?", tableauDesStylesFilmsEtSerie);
 		
@@ -44,11 +45,38 @@ public class Modele implements Observable{
 		listeHobbies.add("peindre");
 		listeHobbies.add("chanter");
 		
-		
+		//pour p1
 		memoiremixte.p1.Gouts.add(tableauDesStylesDeMusiques[0]);
+		memoiremixte.p1.Gouts.add(tableauDesStylesDeMusiques[1]);
+		memoiremixte.p1.Gouts.add(tableauMonAnimalCompagnie[1]);
+		memoiremixte.p1.Gouts.add(tableauMonPlatPref[0]);
+		memoiremixte.p1.Gouts.add(tableauDesStylesFilmsEtSerie[0]);
+		memoiremixte.p1.Gouts.add(tableauDesStylesFilmsEtSerie[1]);
 		
+		//pour p2
+		memoiremixte.p1.Gouts.add(tableauDesStylesDeMusiques[4]);
+		memoiremixte.p1.Gouts.add(tableauDesStylesDeMusiques[5]);
+		memoiremixte.p1.Gouts.add(tableauDesStylesDeMusiques[6]);
+		memoiremixte.p1.Gouts.add(tableauDesStylesDeMusiques[8]);
+		memoiremixte.p1.Gouts.add(tableauMonAnimalCompagnie[0]);
+		memoiremixte.p1.Gouts.add(tableauMonPlatPref[12]);
+		memoiremixte.p1.Gouts.add(tableauDesStylesFilmsEtSerie[7]);
+		memoiremixte.p1.Gouts.add(tableauDesStylesFilmsEtSerie[13]);
 		
+		//pour p3
+		memoiremixte.p1.Gouts.add(tableauDesStylesDeMusiques[10]);
 		
+		//pour p4
+		memoiremixte.p1.Gouts.add(tableauMonAnimalCompagnie[0]);
+		memoiremixte.p1.Gouts.add(tableauMonAnimalCompagnie[1]);
+		memoiremixte.p1.Gouts.add(tableauMonAnimalCompagnie[6]);
+		memoiremixte.p1.Gouts.add(tableauMonPlatPref[5]);
+		memoiremixte.p1.Gouts.add(tableauMonPlatPref[6]);
+
+
+
+
+
 		
 	}
 	
@@ -60,7 +88,17 @@ public class Modele implements Observable{
 		
 	}
 	
+	public void ajouterGoutAuProfilPrincipal(String unGout) {
+		ProfilPrincipal.Gouts.add(unGout);
+	}
 	
+	public void ajouterHobbieAuProfilPrincipal(String unHobbie) {
+		ProfilPrincipal.Gouts.add(unHobbie);
+	}
+	
+	public void ajouterUnTrucAEviterAuProfilPrincipal(String unTrucAEVITER) {
+		ProfilPrincipal.Gouts.add(unTrucAEVITER);
+	}
 
 	@Override
 	public void addListener(InvalidationListener listener) {

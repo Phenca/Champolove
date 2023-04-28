@@ -9,6 +9,7 @@ import javafx.beans.Observable;
 
 public class Modele implements Observable{
 	
+	Profil ProfilPrincipal;
 	ArrayList<Profil> historique_match;
 	MemoireProfil memoiremixte;
 	HashMap<String,String[]> dictionnaireDesGouts = new HashMap<>();
@@ -44,11 +45,16 @@ public class Modele implements Observable{
 		listeHobbies.add("peindre");
 		listeHobbies.add("chanter");
 		
-		
 		memoiremixte.p1.Gouts.add(tableauDesStylesDeMusiques[0]);
-		
-		
-		
+		memoiremixte.p1.Gouts.add(tableauDesStylesDeMusiques[1]);
+		memoiremixte.p1.Gouts.add(tableauMonAnimalPref[1]);
+		memoiremixte.p1.Gouts.add(tableauMonPlatPref[0]);
+		memoiremixte.p1.Gouts.add(tableauDesStylesFilmsEtSerie[0]);
+		memoiremixte.p1.Gouts.add(tableauDesStylesFilmsEtSerie[1]);
+
+
+
+
 		
 	}
 	
@@ -60,7 +66,17 @@ public class Modele implements Observable{
 		
 	}
 	
+	public void ajouterGoutAuProfilPrincipal(String unGout) {
+		ProfilPrincipal.Gouts.add(unGout);
+	}
 	
+	public void ajouterHobbieAuProfilPrincipal(String unHobbie) {
+		ProfilPrincipal.Gouts.add(unHobbie);
+	}
+	
+	public void ajouterUnTrucAEviterAuProfilPrincipal(String unTrucAEVITER) {
+		ProfilPrincipal.Gouts.add(unTrucAEVITER);
+	}
 
 	@Override
 	public void addListener(InvalidationListener listener) {
