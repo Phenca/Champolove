@@ -34,14 +34,14 @@
                         <Label text="Goûts :" GridPane.rowIndex="10" />
                         <Label text="Hoobies :" GridPane.rowIndex="11" />
                         <Label text="A Eviter (pas pour le moment) :" GridPane.rowIndex="12" />
-                        <TextField GridPane.columnIndex="1" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="nomProfil" GridPane.columnIndex="1" />
+                        <TextField fx:id="prenomProfil" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="TailleProfil" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <TextField fx:id="adresseEmailProfil" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <DatePicker fx:id="DaTeNaissanceProfil" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <PasswordField fx:id="mdpProfil" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <ChoiceBox fx:id="SexeProfil" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                         <ImageView fx:id="imageView" fitHeight="200.0" fitWidth="150.0" nodeOrientation="INHERIT" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="8">
                            <GridPane.margin>
                               <Insets left="25.0" />

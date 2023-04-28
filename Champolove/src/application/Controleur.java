@@ -14,6 +14,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser.ExtensionFilter;
@@ -40,6 +44,24 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML private Button ValideInscription;
 	@FXML private ImageView imageView;
 	@FXML private Button choisirImage;
+	
+	/*
+	 * les variables des données du profilPrincipale
+	 */
+	@FXML private DatePicker DaTeNaissanceProfil;
+	 
+	@FXML private TextField adresseEmailProfil;
+
+	@FXML private PasswordField mdpProfil;
+
+	@FXML private TextField nomProfil;
+
+	@FXML private TextField TailleProfil;
+	
+	@FXML private ChoiceBox<?> SexeProfil;
+
+    @FXML private TextField prenomProfil;
+	
 	private Modele modl;
 	public Controleur() {
 		// constructeur sans arguments
