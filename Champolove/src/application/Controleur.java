@@ -191,6 +191,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	        loader.setLocation(getClass().getResource("/FXML/pagePrincipale.fxml"));
 	        rootLayout = loader.load();
 	        Controleur c=loader.getController();
+	        /*
 			System.out.println(this.modl);
 			if(this.modl.memoiremixte.pUser.VotrePreference=="mixte") {
 				c.actuelle=c.modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture);
@@ -218,6 +219,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 				imageView.setImage(imageProfilSelectionEnCours);
 				
 			}
+			*/
 			
 			Scene scene = new Scene(rootLayout);
 			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();

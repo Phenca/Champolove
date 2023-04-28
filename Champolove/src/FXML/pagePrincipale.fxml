@@ -7,43 +7,12 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<<<<<<< HEAD
+
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
    <children>
       <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
          <children>
             <ImageView fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
-=======
-<BorderPane cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
-   <bottom>
-      <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="30.0" prefWidth="200.0" spacing="5.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button mnemonicParsing="false" text="profil" />
-            <Button mnemonicParsing="false" text="Déco" />
-            <Button mnemonicParsing="false" text="chat" />
-         </children>
-      </HBox>
-   </bottom>
-   <center>
-      <HBox alignment="BOTTOM_CENTER" fillHeight="false" maxHeight="-Infinity" prefHeight="50.0" prefWidth="600.0" spacing="40.0" BorderPane.alignment="BOTTOM_CENTER">
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
-         <children>
-            <Button fx:id="CNON" mnemonicParsing="false" onAction="#profilSuivant" text="CNON" />
-            <Button mnemonicParsing="false" text="DESC" />
-            <Button fx:id="COUI" mnemonicParsing="false" onAction="#profilSuivant" text="COUI" />
-         </children>
-         <padding>
-            <Insets bottom="20.0" />
-         </padding>
-      </HBox>
-   </center>
-   <top>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <ImageView fx:id="imageDuProfilEnCoursDeLecture" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true">
->>>>>>> 06bbb10 (changement fait un peu partout par rapport au changement de profil)
                <image>
                   <Image url="@../../../../../../Downloads/carte-cadeau-google-play-50-euros.jpg" />
                </image>
