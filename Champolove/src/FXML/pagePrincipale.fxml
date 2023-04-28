@@ -6,41 +6,33 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<BorderPane cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <bottom>
-      <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="30.0" prefWidth="200.0" spacing="5.0" BorderPane.alignment="CENTER">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
+   <children>
+      <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
          <children>
-            <Button mnemonicParsing="false" text="profil" />
-            <Button mnemonicParsing="false" text="Déco" />
-            <Button mnemonicParsing="false" text="chat" />
-         </children>
-      </HBox>
-   </bottom>
-   <center>
-      <HBox alignment="BOTTOM_CENTER" fillHeight="false" maxHeight="-Infinity" prefHeight="50.0" prefWidth="600.0" spacing="40.0" BorderPane.alignment="BOTTOM_CENTER">
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
-         <children>
-            <Button mnemonicParsing="false" text="CNON" />
-            <Button mnemonicParsing="false" text="DESC" />
-            <Button mnemonicParsing="false" text="COUI" />
-         </children>
-         <padding>
-            <Insets bottom="20.0" />
-         </padding>
-      </HBox>
-   </center>
-   <top>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <ImageView fitHeight="250.0" fitWidth="250.0" pickOnBounds="true">
+            <ImageView fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
                <image>
-                  <Image url="@../../../../../../Downloads/téléchargement.png" />
+                  <Image url="@../../../../../../Downloads/carte-cadeau-google-play-50-euros.jpg" />
                </image>
+               <viewport>
+                  <Rectangle2D width="300.0" />
+               </viewport>
             </ImageView>
          </children>
       </HBox>
-   </top>
-</BorderPane>
+      <HBox alignment="CENTER" fillHeight="false" maxHeight="-Infinity" prefHeight="50.0" prefWidth="600.0" spacing="40.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button mnemonicParsing="false" text="CNON" HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" text="DESC" HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" text="COUI" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="30.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Button mnemonicParsing="false" text="profil" HBox.hgrow="ALWAYS" />
+            <Button fx:id="RetourAcceuil" mnemonicParsing="false" onAction="#RetourAcceuil" text="Déco" HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" text="chat" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
