@@ -6,7 +6,6 @@ import java.util.Calendar;
 public class MemoireProfil {
 	
 	int age = 0;
-	ArrayList<Profil> memoirePuser;
 	ArrayList<Profil> memoirePHomme;
 	ArrayList<Profil> memoirePFemme;
 	Profil pUser;
@@ -56,9 +55,8 @@ public class MemoireProfil {
 	}
 	
 	public  MemoireProfil() {
-		memoirePuser= new ArrayList<>();
 		pUser = new Profil(null, null, null, null, 0, age , null, null, null, null, 0, null);
-		memoirePuser.add(pUser);
+		
 		memoirePMixtes = new ArrayList<>();
 		p1 = new Profil("p1", "Levy", "Adolphe", "04/03/2002", 179, age, "Adolphe.Levy@yopmail.com", "masculin", "file:ressources/img_profil/Levy_Adolphe.png", "", 0,"courgette1");
 		memoirePMixtes.add(p1);

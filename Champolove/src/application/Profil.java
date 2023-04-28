@@ -14,6 +14,7 @@ public class Profil {
 	String description;
 	int matcher = 0;
 	String mdp;
+	String VotrePreference="mixte";
 
 	public ArrayList<String> Gouts; // question sur la musique, question sur la nourriture, choix taille
 	ArrayList<String> Hobbies; // Sport ? Jeux ? Autre Activité ?

@@ -18,18 +18,15 @@ public class Vue extends Application implements Observer {
 		this.Stage = Stage;
 
 		fenetreLancement();
-		
-		Modele m=new Modele();
-
-		Controleur c=new Controleur(m);
-
 
 	}
 	
 	public void fenetreLancement() {
 		Parent rootLayout;
 		try {
-			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/View.fxml"));
+			FXMLLoader loader = new FXMLLoader();
+		    loader.setLocation(getClass().getResource("/FXML/View.fxml"));
+		    rootLayout = loader.load();
 			Scene scene = new Scene(rootLayout);
 			Stage.setTitle("Champolove");
 			Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
@@ -39,10 +36,6 @@ public class Vue extends Application implements Observer {
 			e.printStackTrace();
 		}
 
-		Modele m=new Modele();
-
-		Controleur c=new Controleur(m);
-		
 	}
 	
 	public Stage getStage() {
