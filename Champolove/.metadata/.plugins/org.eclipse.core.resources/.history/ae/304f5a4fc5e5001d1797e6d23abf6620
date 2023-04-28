@@ -1,0 +1,106 @@
+package application;
+import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Map;
+
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
+
+public class Modele implements Observable{
+	
+	Profil ProfilPrincipal;
+	ArrayList<Profil> historique_match;
+	MemoireProfil memoiremixte;
+	HashMap<String,String[]> dictionnaireDesGouts = new HashMap<>();
+	ArrayList<String> listeHobbies=new ArrayList<>();	
+	
+	
+	public Modele() {
+		memoiremixte = new MemoireProfil();
+		
+		String[] tableauDesStylesDeMusiques= {"Rock","Rap","Pop","Hip-hop", "Jazz", "Blues", "Soul", "Gospel", "Country", "Disco", "Techno", "Reggae", "Salsa", "Flamenco", "Metal", "Funk",
+				"Lofi"};
+		
+		String[] tableauMonAnimalPref = {"Chien", "Chat", "Serpent", "Cheval", "Peroquet"};
+		
+		String[] tableauMonPlatPref = { "Pâtes à la bolognaise", "Pâtes à la carbonara", "Lasagnes", "Croque-monsieur", "Gratin dauphinois", "Burger-frites", "Magret de canard" 
+				,"Moules-frites", "Couscous", "Blanquette de veau" ,"Steak-frites", "Raclette" ,"Tomates farcies"};
+		
+		String[] tableauDesStylesFilmsEtSerie = {"Science-fiction", "Comédie", "Horreur", "Suspence", "Policier", "Aventure", "Romantique", "Guerre", "Histoire", "Action"
+				,"Drame", "Comédie dramatique", "Fantastique", "Western"};
+		
+		dictionnaireDesGouts.put("Tes styles de musiques ?", tableauDesStylesDeMusiques);
+		dictionnaireDesGouts.put("Ton animal favoris", tableauMonAnimalPref);
+		dictionnaireDesGouts.put("Mon plat préféré", tableauMonPlatPref);
+		dictionnaireDesGouts.put("Tes styles de films/séries ?", tableauDesStylesFilmsEtSerie);
+		
+		listeHobbies.add("Jeux vidéo");
+		listeHobbies.add("sport");
+		listeHobbies.add("cuisiner");
+		listeHobbies.add("sport à sensation forte");
+		listeHobbies.add("soirée entre amis");
+		listeHobbies.add("sortie au musée");
+		listeHobbies.add("jouer d'un instrument");
+		listeHobbies.add("peindre");
+		listeHobbies.add("chanter");
+		
+		//pour p1
+		memoiremixte.p1.Gouts.add(tableauDesStylesDeMusiques[0]);
+		memoiremixte.p1.Gouts.add(tableauDesStylesDeMusiques[1]);
+		memoiremixte.p1.Gouts.add(tableauMonAnimalPref[1]);
+		memoiremixte.p1.Gouts.add(tableauMonPlatPref[0]);
+		memoiremixte.p1.Gouts.add(tableauDesStylesFilmsEtSerie[0]);
+		memoiremixte.p1.Gouts.add(tableauDesStylesFilmsEtSerie[1]);
+		
+		//pour p2
+		memoiremixte.p1.Gouts.add(tableauDesStylesDeMusiques[4]);
+		memoiremixte.p1.Gouts.add(tableauDesStylesDeMusiques[5]);
+		memoiremixte.p1.Gouts.add(tableauDesStylesDeMusiques[6]);
+		memoiremixte.p1.Gouts.add(tableauDesStylesDeMusiques[8]);
+		memoiremixte.p1.Gouts.add(tableauMonAnimalPref[0]);
+		memoiremixte.p1.Gouts.add(tableauMonPlatPref[12]);
+		memoiremixte.p1.Gouts.add(tableauDesStylesFilmsEtSerie[7]);
+		memoiremixte.p1.Gouts.add(tableauDesStylesFilmsEtSerie[13]);
+		
+		//pour p3
+		memoiremixte.p1.Gouts.add(tableauDesStylesDeMusiques[10]);
+
+
+
+
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+	
+	public void Historique(ArrayList<Profil> historique_match) {
+		
+	}
+	
+	public void ajouterGoutAuProfilPrincipal(String unGout) {
+		ProfilPrincipal.Gouts.add(unGout);
+	}
+	
+	public void ajouterHobbieAuProfilPrincipal(String unHobbie) {
+		ProfilPrincipal.Gouts.add(unHobbie);
+	}
+	
+	public void ajouterUnTrucAEviterAuProfilPrincipal(String unTrucAEVITER) {
+		ProfilPrincipal.Gouts.add(unTrucAEVITER);
+	}
+
+	@Override
+	public void addListener(InvalidationListener listener) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeListener(InvalidationListener listener) {
+		// TODO Auto-generated method stub
+		
+	}
+}
