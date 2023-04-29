@@ -30,9 +30,9 @@
       </HBox>
       <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="30.0" prefWidth="200.0" spacing="5.0">
          <children>
-            <Button mnemonicParsing="false" text="profil" HBox.hgrow="ALWAYS" />
+            <Button fx:id="afficheProfil" mnemonicParsing="false" onAction="#afficheProfil" text="profil" HBox.hgrow="ALWAYS" />
             <Button fx:id="RetourAcceuil" mnemonicParsing="false" onAction="#RetourAcceuil" text="Déco" HBox.hgrow="ALWAYS" />
-            <Button mnemonicParsing="false" text="chat" HBox.hgrow="ALWAYS" />
+            <Button fx:id="afficheChat" mnemonicParsing="false" onAction="#afficheChat" text="chat" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
    </children>

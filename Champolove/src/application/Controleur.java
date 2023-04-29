@@ -31,72 +31,84 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	private Vue Vue;
 	@FXML private Stage Stage;
 	/*
+	 * 
+	 * 
 	 * Instantiation contrôles fenêtre page d'acceuil
+	 * 
+	 * 
 	 */
 	@FXML private Button inscription;
 	@FXML private Button connection;
 	/*
+	 * 
+	 * 
 	 * Instantiation contrôles fenêtre page de connexion
+	 * 
+	 * 
 	 */
 	@FXML private Button RetourAcceuil;
 	@FXML private Button ValideConnexion;
 	/*
+	 * 
+	 * 
 	 * Instantiation contrôles fenêtre page d'inscription
+	 * 
+	 * 
 	 */
 	@FXML private Button ValideInscription;
 	@FXML private ImageView imageView;
 	@FXML private Button choisirImage;
-	
-	
-	/*
-	 * les variables des données du profilPrincipale
-	 */
-	@FXML private DatePicker DaTeNaissanceProfil;
-	 
+	@FXML private DatePicker DaTeNaissanceProfil;	 
 	@FXML private TextField adresseEmailProfil;
-
 	@FXML private PasswordField mdpProfil;
-
 	@FXML private TextField nomProfil;
-
-	@FXML private TextField TailleProfil;
-	
+	@FXML private TextField TailleProfil;	
 	@FXML private ChoiceBox<?> SexeProfil;
-
-    @FXML private TextField prenomProfil;
-    
-    
+    @FXML private TextField prenomProfil;   
     /*
-	 * les variables Pour la fenêtre principale
+     * 
+     * 
+	 * Instantiation contrôles fenêtre pagePrincipale
+	 * 
+	 * 
 	 */
-    
-    @FXML
-    private ImageView imageDuProfilEnCoursDeLecture;
-
-    @FXML
-    private Button CNON;
-
-    @FXML
-    private Button COUI;
-       
-    public int indexProfilEnCoursDeLecture=0;
-    
-    @FXML
-    private Label prenomProfilEnCoursDeLecrture;
-    
+    @FXML private ImageView imageDuProfilEnCoursDeLecture;
+    @FXML private Button CNON;
+    @FXML private Button COUI;       
+    @FXML private Button afficheProfil;
+    @FXML private Button afficheChat;
+    @FXML private Label prenomProfilEnCoursDeLecrture;  
+    @FXML private Label ageDuProfilEnCoursDeLecture;
+    public int indexProfilEnCoursDeLecture=0;   
     public Profil actuelle;
-    
-    @FXML
-    private Label ageDuProfilEnCoursDeLecture;
-    
-    
-    
+    /*
+     * 
+     * 
+	 * Instantiation contrôles fenêtre pageConv
+	 * 
+	 * 
+	 */
+    @FXML private Button retourPagePrincipale;
+    /*
+     * 
+     * 
+	 * Instantiation contrôles fenêtre pageProfil
+	 * 
+	 * 
+	 */
+    @FXML private Button modifProfil;
+    /*
+     * 
+     * 
+	 * Instantiation contrôles fenêtre pageGestionProfil
+	 * 
+	 * 
+	 */
+    @FXML private Button finModif;
     
 	public Modele modl;
 	
-	
-	
-	
+
 	public Controleur() {
 		// constructeur sans arguments
 	}
@@ -106,11 +118,12 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		System.out.println(event.getTarget());
 		
 	}
-	
-	
-	
 	/*
+	 * 
+	 * 
 	 * Création méthodes fenêtre page d'acceuil
+	 * 
+	 * 
 	 */
 	@FXML private void sInscrire(ActionEvent event) {
 		Parent rootLayout;
@@ -127,8 +140,6 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		}
 	}
 	
-	
-	
 	@FXML private void seConnecter(ActionEvent event) {
 		Parent rootLayout;
 		try {
@@ -142,13 +153,13 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-	
-	
-	
-	
+	}	
 	/*
+	 * 
+	 * 
 	 * Création méthodes fenêtre page de connexion
+	 * 
+	 * 
 	 */
 	@FXML private void RetourAcceuil(ActionEvent event) {
 		Parent rootLayout;
@@ -164,6 +175,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			e.printStackTrace();
 		}
 	}
+	
 	@FXML private void ValideConnexion(ActionEvent event) {
 		Parent rootLayout;
 		try {
@@ -178,11 +190,12 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			e.printStackTrace();
 		}
 	}
-	
-	
-	
 	/*
+	 * 
+	 * 
 	 * Création méthodes fenêtre page d'inscription
+	 * 
+	 * 
 	 */
 	@FXML private void ValideInscription(ActionEvent event) {
 		Parent rootLayout;
@@ -244,25 +257,112 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	        System.out.println(selectedFile.toURI().toString());
 	        imageView.setImage(image);
 	    }
-	    
-	    
-	    
-	}
-	
-	
-	
+	}	
 	/*
-	 * méthode pour changer de profil en cours de selection
+	 * 
+	 * 
+	 * Création méthodes fenêtre pagePrincipale
+	 * 
+	 * 
 	 */
-    @FXML
-    void profilSuivant(ActionEvent event) {
+    @FXML private void profilSuivant(ActionEvent event) {
     	indexProfilEnCoursDeLecture+=1;
     	System.out.println(this.ageDuProfilEnCoursDeLecture.getText());
     	
     }
 	
-	
-	
+    @FXML private void afficheProfil(ActionEvent event) {
+    	Parent rootLayout;
+		try {
+			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pageProfil.fxml"));
+			Scene scene = new Scene(rootLayout);
+			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+			this.Stage.setTitle("Champolove");
+			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.setScene(scene);
+			this.Stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
+    @FXML private void afficheChat(ActionEvent event) {
+    	Parent rootLayout;
+		try {
+			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pageConv.fxml"));
+			Scene scene = new Scene(rootLayout);
+			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+			this.Stage.setTitle("Champolove");
+			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.setScene(scene);
+			this.Stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    /*
+	 * 
+	 * 
+	 * Création méthodes fenêtre pagePrincipale
+	 * 
+	 * 
+	 */
+    @FXML private void retourPagePrincipale(ActionEvent event) {
+    	Parent rootLayout;
+		try {
+			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pagePrincipale.fxml"));
+			Scene scene = new Scene(rootLayout);
+			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+			this.Stage.setTitle("Champolove");
+			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.setScene(scene);
+			this.Stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    /*
+	 * 
+	 * 
+	 * Création méthodes fenêtre pageProfil
+	 * 
+	 * 
+	 */
+    @FXML private void modifProfil(ActionEvent event) {
+    	Parent rootLayout;
+		try {
+			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pageGestionProfil.fxml"));
+			Scene scene = new Scene(rootLayout);
+			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+			this.Stage.setTitle("Champolove");
+			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.setScene(scene);
+			this.Stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    /*
+	 * 
+	 * 
+	 * Création méthodes fenêtre pageGestionProfil
+	 * 
+	 * 
+	 */
+    @FXML private void finModif(ActionEvent event) {
+    	Parent rootLayout;
+		try {
+			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pageProfil.fxml"));
+			Scene scene = new Scene(rootLayout);
+			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+			this.Stage.setTitle("Champolove");
+			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.setScene(scene);
+			this.Stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.modl=new Modele();
