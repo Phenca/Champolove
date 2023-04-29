@@ -50,7 +50,7 @@ public class Vue extends Application implements Observer {
 			voir_video = new MediaView(lire_video);
 			
 			((Pane) rootLayout).getChildren().add(voir_video);
-			
+
 		} catch (IOException e){
 			e.printStackTrace();
 		}
