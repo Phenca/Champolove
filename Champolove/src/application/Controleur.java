@@ -58,10 +58,18 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML private Button ValideInscription;
 	@FXML private ImageView imageView;
 	@FXML private Button choisirImage;
-	@FXML private DatePicker DaTeNaissanceProfil;	 
+
+
+	/*
+	 * les variables des données du profilPrincipale
+	 */
+	@FXML private DatePicker DaTeNaissanceProfil;
+
+
 	@FXML private TextField adresseEmailProfil;
 	@FXML private PasswordField mdpProfil;
 	@FXML private TextField nomProfil;
+
 	@FXML private TextField TailleProfil;	
 	@FXML private ChoiceBox<?> SexeProfil;
     @FXML private TextField prenomProfil;   
@@ -77,7 +85,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
     @FXML private Button COUI;       
     @FXML private Button afficheProfil;
     @FXML private Button afficheChat;
-    @FXML private Label prenomProfilEnCoursDeLecrture;  
+    @FXML private Label prenomProfilEnCoursDeLecture;  
     @FXML private Label ageDuProfilEnCoursDeLecture;
     public int indexProfilEnCoursDeLecture=0;   
     public Profil actuelle;
@@ -109,15 +117,21 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	public Modele modl;
 	
 
+
 	public Controleur() {
 		// constructeur sans arguments
 	}
 	
+
 	@Override
 	public void handle(ActionEvent event) {
 		System.out.println(event.getTarget());
-		
+
 	}
+
+
+
+
 	/*
 	 * 
 	 * 
@@ -139,7 +153,8 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			e.printStackTrace();
 		}
 	}
-	
+
+
 	@FXML private void seConnecter(ActionEvent event) {
 		Parent rootLayout;
 		try {
@@ -153,7 +168,11 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}	
+	}
+
+
+
+
 	/*
 	 * 
 	 * 
@@ -190,6 +209,9 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			e.printStackTrace();
 		}
 	}
+
+
+
 	/*
 	 * 
 	 * 
@@ -201,20 +223,21 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		Parent rootLayout;
 		try {
 			FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(getClass().getResource("/FXML/pagePrincipale.fxml"));
-	        rootLayout = loader.load();
-	        Controleur c=loader.getController();
-	        /*
+			loader.setLocation(getClass().getResource("/FXML/pagePrincipale.fxml"));
+			rootLayout = loader.load();
+			Controleur c=loader.getController();
+
 			System.out.println(this.modl);
 			if(this.modl.memoiremixte.pUser.VotrePreference=="mixte") {
-				c.actuelle=c.modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture);
-				Image imageProfilSelectionEnCours=new Image(this.actuelle.lien_photoProfil);
-				c.imageView.setImage(imageProfilSelectionEnCours);
-				
-				c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(this.actuelle.age));
-				
-				c.prenomProfilEnCoursDeLecrture.setText(this.actuelle.prenom);
-				
+				c.actuelle=c.modl.memoiremixte.memoirePMixtes.get(this.indexProfilEnCoursDeLecture);
+				Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
+				c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
+				System.out.println(c.actuelle.lien_photoProfil);
+
+				c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
+
+				c.prenomProfilEnCoursDeLecture.setText(c.actuelle.prenom);
+
 			}
 			if(this.modl.memoiremixte.pUser.VotrePreference=="femme") {
 				this.actuelle=this.modl.memoiremixte.memoirePFemme.get(indexProfilEnCoursDeLecture);
@@ -222,7 +245,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 				System.out.println(this.actuelle.lien_photoProfil);
 				Image imageProfilSelectionEnCours=new Image(this.actuelle.lien_photoProfil);
 				imageView.setImage(imageProfilSelectionEnCours);
-				
+
 			}
 			if(this.modl.memoiremixte.pUser.VotrePreference=="homme") {
 				this.actuelle=this.modl.memoiremixte.memoirePHomme.get(indexProfilEnCoursDeLecture);
@@ -230,24 +253,25 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 				System.out.println(this.actuelle.lien_photoProfil);
 				Image imageProfilSelectionEnCours=new Image(this.actuelle.lien_photoProfil);
 				imageView.setImage(imageProfilSelectionEnCours);
-				
+
 			}
-			*/
-			
+
+
 			Scene scene = new Scene(rootLayout);
-			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-			this.Stage.setTitle("Champolove");
-			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
-			this.Stage.setScene(scene);
-			this.Stage.show();
-			
-			
+			c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+			c.Stage.setTitle("Champolove");
+			c.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			c.Stage.setScene(scene);
+			c.Stage.show();
+
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	@FXML private void choisirImage(ActionEvent event) {
 		FileChooser fileChooser = new FileChooser();
+<<<<<<< HEAD
 	    fileChooser.setTitle("Select an image");
 	    fileChooser.getExtensionFilters().addAll(
 	            new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg"));
@@ -258,6 +282,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	        imageView.setImage(image);
 	    }
 	}	
+
 	/*
 	 * 
 	 * 
@@ -265,11 +290,6 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	 * 
 	 * 
 	 */
-    @FXML private void profilSuivant(ActionEvent event) {
-    	indexProfilEnCoursDeLecture+=1;
-    	System.out.println(this.ageDuProfilEnCoursDeLecture.getText());
-    	
-    }
 	
     @FXML private void afficheProfil(ActionEvent event) {
     	Parent rootLayout;
@@ -363,12 +383,59 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			e.printStackTrace();
 		}
     }
+
+	@FXML
+	void profilSuivant(ActionEvent event) {
+		Parent rootLayout;
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/FXML/pagePrincipale.fxml"));
+		
+		
+		try {
+			rootLayout = loader.load();
+
+			Controleur c=loader.getController();
+			
+			System.out.println(c.indexProfilEnCoursDeLecture);
+			c.indexProfilEnCoursDeLecture+=1;
+			System.out.println(c.indexProfilEnCoursDeLecture);
+			
+
+			System.out.println(c.actuelle);
+			c.actuelle=c.modl.memoiremixte.memoirePMixtes.get(c.indexProfilEnCoursDeLecture);
+			System.out.println(c.actuelle);
+
+			Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
+			System.out.println(c.imageDuProfilEnCoursDeLecture);
+			c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
+
+			c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
+
+			c.prenomProfilEnCoursDeLecture.setText(c.actuelle.prenom);
+
+			Scene scene = new Scene(rootLayout);
+			c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+			c.Stage.setTitle("Champolove");
+			c.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			c.Stage.setScene(scene);
+			c.Stage.show();
+
+
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+	}
+
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.modl=new Modele();
-		
 	}
-	public void setVue(Vue Vue) {
+	public void setVue(Vue Vue) { 
 		this.Vue = Vue;
 	}
 }

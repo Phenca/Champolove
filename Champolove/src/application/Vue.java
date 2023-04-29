@@ -37,8 +37,10 @@ public class Vue extends Application implements Observer {
 			Stage.setScene(scene);
 			Stage.show();
 			
+			/*
 			String video = "file:ressources/intro_ChampoLove.mp4";
 			Media media = new Media(video);
+			
 			
 			MediaPlayer lire_video = new MediaPlayer(media);
 			lire_video.setAutoPlay(true);
@@ -46,6 +48,7 @@ public class Vue extends Application implements Observer {
 			MediaView voir_video = new MediaView(lire_video);
 			
 			((Pane) rootLayout).getChildren().add(voir_video);
+			*/
 		} catch (IOException e){
 			e.printStackTrace();
 		}
