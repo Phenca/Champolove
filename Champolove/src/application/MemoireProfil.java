@@ -10,6 +10,7 @@ public class MemoireProfil {
 	ArrayList<Profil> memoirePFemme;
 	Profil pUser;
 	ArrayList<Profil> memoirePMixtes;
+	ArrayList<Profil> memoireMatcher;
 	Profil p1;
 	Profil p2;
 	Profil p3;
@@ -56,7 +57,6 @@ public class MemoireProfil {
 	
 	public  MemoireProfil() {
 		pUser = new Profil(null, null, null, null, 0, age , null, null, null, null, 0, null);
-		
 		memoirePMixtes = new ArrayList<>();
 		p1 = new Profil("p1", "Levy", "Adolphe", "04/03/2002", 179, age, "Adolphe.Levy@yopmail.com", "masculin", "file:ressources/img_profil/Levy_Adolphe.png", "", 0,"courgette1");
 		memoirePMixtes.add(p1);
@@ -83,6 +83,7 @@ public class MemoireProfil {
 		
 		memoirePHomme = new ArrayList<>();
 		memoirePFemme = new ArrayList<>();
+		memoireMatcher = new ArrayList<>();
 		
 		for (int i=0; i<memoirePMixtes.size(); i++) {
 			Profil m =  (Profil) memoirePMixtes.get(i);

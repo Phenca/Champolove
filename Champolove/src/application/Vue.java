@@ -8,6 +8,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.layout.Pane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 
 public class Vue extends Application implements Observer {
@@ -16,7 +20,7 @@ public class Vue extends Application implements Observer {
 	@Override
 	public void start(Stage Stage) throws Exception {
 		this.Stage = Stage;
-
+		
 		fenetreLancement();
 
 	}
@@ -32,6 +36,16 @@ public class Vue extends Application implements Observer {
 			Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
 			Stage.setScene(scene);
 			Stage.show();
+			
+			String video = "file:ressources/intro_ChampoLove.mp4";
+			Media media = new Media(video);
+			
+			MediaPlayer lire_video = new MediaPlayer(media);
+			lire_video.setAutoPlay(true);
+			
+			MediaView voir_video = new MediaView(lire_video);
+			
+			((Pane) rootLayout).getChildren().add(voir_video);
 		} catch (IOException e){
 			e.printStackTrace();
 		}
