@@ -1,15 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Button layoutY="2.0" mnemonicParsing="false" text="Button" AnchorPane.leftAnchor="0.0" />
-      <Button layoutX="548.0" layoutY="2.0" mnemonicParsing="false" text="Button" AnchorPane.rightAnchor="-0.0" />
-      <Label layoutX="286.0" layoutY="6.0" text="Modifier profil" />
-   </children>
-</AnchorPane>
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.Controleur">
+   <content>
+      <AnchorPane prefHeight="200.0" prefWidth="595.0">
+         <children>
+            <Button mnemonicParsing="false" text="Annuler" AnchorPane.leftAnchor="0.0" />
+            <Button mnemonicParsing="false" text="Terminer" AnchorPane.rightAnchor="-0.0" />
+            <VBox alignment="TOP_CENTER" fillWidth="false" layoutX="50.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="400.0" spacing="50.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label text="Modifier profil" VBox.vgrow="ALWAYS" />
+                  <GridPane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefWidth="400.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label text="Genre" GridPane.rowIndex="8" />
+                        <Label text="Nom" GridPane.rowIndex="1" />
+                        <Label text="Prénom" GridPane.rowIndex="2" />
+                        <Label text="Date de naissance (DD/MM/YYYY)" GridPane.rowIndex="3" />
+                        <Label text="Age :" GridPane.rowIndex="4" />
+                        <Label text="Taille (en cm)" GridPane.rowIndex="5" />
+                        <Label text="Adresse email" GridPane.rowIndex="6" />
+                        <Label text="Mot de passe" GridPane.rowIndex="7" />
+                        <Label text="Description " GridPane.rowIndex="9" />
+                        <Label text="Préférences musicales" GridPane.rowIndex="10" />
+                        <Label text="Hoobies " GridPane.rowIndex="14" />
+                        <Label text="A Eviter (pas pour le moment) :" GridPane.rowIndex="15" />
+                        <TextField fx:id="prenomProfil" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="TailleProfil" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="adresseEmailProfil" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <DatePicker fx:id="DaTeNaissanceProfil" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <PasswordField fx:id="mdpProfil" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <ImageView fx:id="imageView" fitHeight="200.0" fitWidth="150.0" nodeOrientation="INHERIT" pickOnBounds="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                           <GridPane.margin>
+                              <Insets left="25.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <Button fx:id="choisirImage" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#choisirImage" text="Changer photo profil" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                        <TextField fx:id="TailleProfil1" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Label text="Animal préféré" GridPane.rowIndex="11" />
+                        <Label text="Plat préféré" GridPane.rowIndex="12" />
+                        <Label text="Préférences séries &amp; films" GridPane.rowIndex="13" />
+                        <ListView editable="true" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <ListView editable="true" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <ListView editable="true" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                        <ListView editable="true" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                        <ListView editable="true" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" valignment="CENTER" vgrow="ALWAYS" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

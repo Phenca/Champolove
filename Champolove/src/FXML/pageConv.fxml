@@ -10,17 +10,18 @@
    <content>
       <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <VBox prefHeight="200.0" prefWidth="585.0">
+            <VBox prefWidth="595.0">
                <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="225.0" VBox.vgrow="ALWAYS">
+                  <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Button mnemonicParsing="false" text="&lt;" HBox.hgrow="ALWAYS" />
                         <Label text="Nom de la personne" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
+                  <Label text="Messages" VBox.vgrow="ALWAYS" />
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                        <ListView HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                </children>

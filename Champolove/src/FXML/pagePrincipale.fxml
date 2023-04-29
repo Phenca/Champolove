@@ -7,7 +7,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
    <children>
       <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
@@ -20,8 +19,6 @@
                   <Rectangle2D width="300.0" />
                </viewport>
             </ImageView>
-            <Label fx:id="ageDuProfilEnCoursDeLecture" text="Label" />
-            <Label fx:id="prenomProfilEnCoursDeLecrture" text="Label" />
          </children>
       </HBox>
       <HBox alignment="CENTER" fillHeight="false" maxHeight="-Infinity" prefHeight="50.0" prefWidth="600.0" spacing="40.0" VBox.vgrow="ALWAYS">

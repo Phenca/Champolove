@@ -15,11 +15,14 @@
 
 <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
    <content>
-      <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+      <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefWidth="500.0" spacing="30.0">
+            <VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefWidth="500.0" spacing="75.0">
                <children>
-                  <Label text="Bienvenue sur Champolove" />
+                  <Label text="Bienvenue sur Champolove" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></Label>
                   <GridPane alignment="TOP_CENTER" prefWidth="400.0">
                      <children>
                         <Label text="Nom : " />
@@ -29,7 +32,7 @@
                         <Label text="Age :" GridPane.rowIndex="4" />
                         <Label text="Adresse Email :" GridPane.rowIndex="5" />
                         <Label text="Mot de Passe :" GridPane.rowIndex="6" />
-                        <Label text="Sexe :" GridPane.rowIndex="7" />
+                        <Label text="Genre :" GridPane.rowIndex="7" />
                         <Label text="Description : " GridPane.rowIndex="9" />
                         <Label text="Goûts :" GridPane.rowIndex="10" />
                         <Label text="Hoobies :" GridPane.rowIndex="11" />
@@ -80,10 +83,13 @@
                      </children>
                   </HBox>
                </children>
+               <FlowPane.margin>
+                  <Insets />
+               </FlowPane.margin>
             </VBox>
          </children>
          <padding>
-            <Insets top="100.0" />
+            <Insets top="75.0" />
          </padding>
       </FlowPane>
    </content>
