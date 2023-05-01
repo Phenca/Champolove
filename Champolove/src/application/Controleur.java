@@ -29,6 +29,7 @@ import javafx.stage.Stage;
 
 public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	private Vue Vue;
+	public Controleur c;
 	@FXML private Stage Stage;
 	/*
 	 * 
@@ -81,12 +82,12 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	 */
     @FXML private ImageView imageDuProfilEnCoursDeLecture;
     @FXML private Button CNON;
-    @FXML private Button COUI;       
+    @FXML private Button COUI;
     @FXML private Button afficheProfil;
     @FXML private Button afficheChat;
     @FXML private Label prenomProfilEnCoursDeLecture;  
     @FXML private Label ageDuProfilEnCoursDeLecture;
-    public int indexProfilEnCoursDeLecture=0;   
+    public int indexProfilEnCoursDeLecture=0;
     public Profil actuelle;
     /*
      * 
@@ -104,6 +105,28 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	 * 
 	 */
     @FXML private Button modifProfil;
+    
+    @FXML
+    private Text taillePageProfil;
+    
+    @FXML
+    private Text nomPageProfil;
+    
+    @FXML
+    private Text dateNaissancePageProfil;
+    
+    @FXML
+    private Text prenomPageProfil;
+
+    @FXML
+    private Text agePageProfil;
+
+    @FXML
+    private Text mdpPageProfil;
+
+    @FXML
+    private Text adresseEmailPageProfil;
+    
     /*
      * 
      * 
@@ -112,6 +135,9 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	 * 
 	 */
     @FXML private Button finModif;
+    
+    
+   
     
 	public Modele modl;
 	
@@ -190,6 +216,38 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		Parent rootLayout;
 		try {
 			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pagePrincipale.fxml"));
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("/FXML/pagePrincipale.fxml"));
+			rootLayout = loader.load();
+			c=loader.getController();
+
+			if(this.modl.memoiremixte.pUser.VotrePreference=="mixte") {
+				c.actuelle=c.modl.memoiremixte.memoirePMixtes.get(this.indexProfilEnCoursDeLecture);
+				Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
+				c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
+				System.out.println(c.actuelle.lien_photoProfil);
+
+				c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
+
+				c.prenomProfilEnCoursDeLecture.setText(c.actuelle.prenom);
+
+			}
+			if(this.modl.memoiremixte.pUser.VotrePreference=="femme") {
+				this.actuelle=this.modl.memoiremixte.memoirePFemme.get(indexProfilEnCoursDeLecture);
+				System.out.println(this.actuelle);
+				System.out.println(this.actuelle.lien_photoProfil);
+				Image imageProfilSelectionEnCours=new Image(this.actuelle.lien_photoProfil);
+				imageView.setImage(imageProfilSelectionEnCours);
+
+			}
+			if(this.modl.memoiremixte.pUser.VotrePreference=="homme") {
+				this.actuelle=this.modl.memoiremixte.memoirePHomme.get(indexProfilEnCoursDeLecture);
+				System.out.println(this.actuelle);
+				System.out.println(this.actuelle.lien_photoProfil);
+				Image imageProfilSelectionEnCours=new Image(this.actuelle.lien_photoProfil);
+				imageView.setImage(imageProfilSelectionEnCours);
+
+			}
 			Scene scene = new Scene(rootLayout);
 			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 			this.Stage.setTitle("Champolove");
@@ -208,12 +266,24 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	 * 
 	 */
 	@FXML private void ValideInscription(ActionEvent event) {
+		
+		/*
+		modl.memoiremixte.pUser.prenom=prenomProfil.getText();
+		modl.memoiremixte.pUser.nom=nomProfil.getText();
+		modl.memoiremixte.pUser.adresse_mail=adresseEmailProfil.getText();
+		modl.memoiremixte.pUser.taille=Integer.valueOf(TailleProfil.getText());
+		modl.memoiremixte.pUser.mdp=mdpProfil.getText();
+		modl.memoiremixte.pUser.date_naissance=DaTeNaissanceProfil.toString();
+		*/
+		
+		
+		
 		Parent rootLayout;
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(getClass().getResource("/FXML/pagePrincipale.fxml"));
 			rootLayout = loader.load();
-			Controleur c=loader.getController();
+			c=loader.getController();
 
 			System.out.println(this.modl);
 			if(this.modl.memoiremixte.pUser.VotrePreference=="mixte") {
@@ -281,6 +351,16 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		try {
 			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pageProfil.fxml"));
 			Scene scene = new Scene(rootLayout);
+			
+			/*
+			nomPageProfil.setText(modl.memoiremixte.pUser.nom);
+			prenomPageProfil.setText(modl.memoiremixte.pUser.prenom);
+			adresseEmailPageProfil.setText(modl.memoiremixte.pUser.adresse_mail);
+			mdpPageProfil.setText(modl.memoiremixte.pUser.date_naissance);
+			agePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.age));
+			taillePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.taille));
+			*/
+			
 			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 			this.Stage.setTitle("Champolove");
 			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
@@ -379,10 +459,10 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		try {
 			rootLayout = loader.load();
 
-			Controleur c=loader.getController();
+			c =loader.getController();
 			
 			System.out.println(c.indexProfilEnCoursDeLecture);
-			c.indexProfilEnCoursDeLecture+=1;
+			c.indexProfilEnCoursDeLecture = indexProfilEnCoursDeLecture+1;
 			System.out.println(c.indexProfilEnCoursDeLecture);
 			
 
