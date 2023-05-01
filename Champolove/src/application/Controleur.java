@@ -200,6 +200,38 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		Parent rootLayout;
 		try {
 			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pagePrincipale.fxml"));
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("/FXML/pagePrincipale.fxml"));
+			rootLayout = loader.load();
+			c=loader.getController();
+
+			if(this.modl.memoiremixte.pUser.VotrePreference=="mixte") {
+				c.actuelle=c.modl.memoiremixte.memoirePMixtes.get(this.indexProfilEnCoursDeLecture);
+				Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
+				c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
+				System.out.println(c.actuelle.lien_photoProfil);
+
+				c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
+
+				c.prenomProfilEnCoursDeLecture.setText(c.actuelle.prenom);
+
+			}
+			if(this.modl.memoiremixte.pUser.VotrePreference=="femme") {
+				this.actuelle=this.modl.memoiremixte.memoirePFemme.get(indexProfilEnCoursDeLecture);
+				System.out.println(this.actuelle);
+				System.out.println(this.actuelle.lien_photoProfil);
+				Image imageProfilSelectionEnCours=new Image(this.actuelle.lien_photoProfil);
+				imageView.setImage(imageProfilSelectionEnCours);
+
+			}
+			if(this.modl.memoiremixte.pUser.VotrePreference=="homme") {
+				this.actuelle=this.modl.memoiremixte.memoirePHomme.get(indexProfilEnCoursDeLecture);
+				System.out.println(this.actuelle);
+				System.out.println(this.actuelle.lien_photoProfil);
+				Image imageProfilSelectionEnCours=new Image(this.actuelle.lien_photoProfil);
+				imageView.setImage(imageProfilSelectionEnCours);
+
+			}
 			Scene scene = new Scene(rootLayout);
 			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 			this.Stage.setTitle("Champolove");
@@ -226,7 +258,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(getClass().getResource("/FXML/pagePrincipale.fxml"));
 			rootLayout = loader.load();
-			Controleur c=loader.getController();
+			c=loader.getController();
 
 			System.out.println(this.modl);
 			if(this.modl.memoiremixte.pUser.VotrePreference=="mixte") {
