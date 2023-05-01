@@ -106,6 +106,28 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	 * 
 	 */
     @FXML private Button modifProfil;
+    
+    @FXML
+    private Text taillePageProfil;
+    
+    @FXML
+    private Text nomPageProfil;
+    
+    @FXML
+    private Text dateNaissancePageProfil;
+    
+    @FXML
+    private Text prenomPageProfil;
+
+    @FXML
+    private Text agePageProfil;
+
+    @FXML
+    private Text mdpPageProfil;
+
+    @FXML
+    private Text adresseEmailPageProfil;
+    
     /*
      * 
      * 
@@ -114,6 +136,9 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	 * 
 	 */
     @FXML private Button finModif;
+    
+    
+   
     
 	public Modele modl;
 	
@@ -253,6 +278,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	 * 
 	 */
 	@FXML private void ValideInscription(ActionEvent event) {
+		
 		/*
 		modl.memoiremixte.pUser.prenom=prenomProfil.getText();
 		modl.memoiremixte.pUser.nom=nomProfil.getText();
@@ -339,6 +365,16 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		try {
 			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pageProfil.fxml"));
 			Scene scene = new Scene(rootLayout);
+			
+			/*
+			nomPageProfil.setText(modl.memoiremixte.pUser.nom);
+			prenomPageProfil.setText(modl.memoiremixte.pUser.prenom);
+			adresseEmailPageProfil.setText(modl.memoiremixte.pUser.adresse_mail);
+			mdpPageProfil.setText(modl.memoiremixte.pUser.date_naissance);
+			agePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.age));
+			taillePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.taille));
+			*/
+			
 			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 			this.Stage.setTitle("Champolove");
 			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));

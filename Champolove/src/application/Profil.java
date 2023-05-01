@@ -38,8 +38,8 @@ public class Profil {
 	}
 
 
-	public int compareTo(Profil o) {
-		int res=0;
+	public Double compareTo(Profil o) {
+		Double res=0.0;
 		int totalDesGouts=0;
 		int totalDesHobbies=0;
 

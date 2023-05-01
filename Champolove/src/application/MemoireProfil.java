@@ -2,9 +2,15 @@ package application;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 
 public class MemoireProfil {
-	
+
 	int age = 0;
 	ArrayList<Profil> memoirePHomme;
 	ArrayList<Profil> memoirePFemme;
@@ -21,8 +27,9 @@ public class MemoireProfil {
 	Profil p8;
 	Profil p9;
 	Profil p10;
+	TreeMap<Double,Profil> dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale;
 
-	
+
 	public static int calcul_age(ArrayList<Profil> memoireP, int newage) {
 		Calendar c = Calendar. getInstance();
 		for (int i=0; i<memoireP.size(); i++) {
@@ -32,8 +39,8 @@ public class MemoireProfil {
 			int mois = (c.get(Calendar.MONTH)+1-Integer.valueOf(l[1]));
 			int jour = (c.get(Calendar.DAY_OF_MONTH)-Integer.valueOf(l[0]));
 			if (mois>0) {
-					//m.date_naissance = String.valueOf(age);
-					m.age = newage;
+				//m.date_naissance = String.valueOf(age);
+				m.age = newage;
 			}
 			else if (mois==0){
 				if (jour<0) {
@@ -55,8 +62,9 @@ public class MemoireProfil {
 		}
 		return newage;
 	}
-	
+
 	public  MemoireProfil() {
+		dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale=new TreeMap<Double,Profil>(Collections.reverseOrder());
 		pUser = new Profil(null, null, null, null, 0, age , null, null, null, null, 0, null);
 		memoirePMixtes = new ArrayList<>();
 		p1 = new Profil("p1", "Levy", "Adolphe", "04/03/2002", 179, age, "Adolphe.Levy@yopmail.com", "masculin", "file:ressources/img_profil/Levy_Adolphe.png", "", 0,"courgette1");
@@ -79,13 +87,13 @@ public class MemoireProfil {
 		memoirePMixtes.add(p9);
 		p10 = new Profil("p10", "Pasquier", "Colette", "01/01/1978", 167, age, "Colette.Pasquier@yopmail.com", "féminin", "file:ressources/img_profil/Pasquier_Colette.png", "", 0,"courgette10");
 		memoirePMixtes.add(p10);
-		
+
 		calcul_age(memoirePMixtes, age);
-		
+
 		memoirePHomme = new ArrayList<>();
 		memoirePFemme = new ArrayList<>();
 		memoireMatcher = new ArrayList<>();
-		
+
 		for (int i=0; i<memoirePMixtes.size(); i++) {
 			Profil m =  (Profil) memoirePMixtes.get(i);
 			if (m.sexe == "masculin"){
@@ -97,5 +105,48 @@ public class MemoireProfil {
 		}
 
 	}
-	
+
+	public ArrayList<Profil> selectionDesProfilsOptimiserPourLePuser(){
+		ArrayList<Profil> listeOpti=new ArrayList<Profil>();
+
+		if(pUser.VotrePreference=="mixte") {
+
+			for(int i=0;i<memoirePMixtes.size();i++) {
+				dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.put(pUser.compareTo(memoirePMixtes.get(i)), memoirePMixtes.get(i));
+			}
+
+			for(Map.Entry mapentr : dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.entrySet()) {
+				listeOpti.add((Profil)mapentr.getValue());
+			}
+
+
+		}
+		else if(pUser.VotrePreference=="homme") {
+
+			for(int i=0;i<memoirePHomme.size();i++) {
+				dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.put(pUser.compareTo(memoirePHomme.get(i)), memoirePHomme.get(i));
+			}
+
+			for(Map.Entry mapentr : dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.entrySet()) {
+				listeOpti.add((Profil)mapentr.getValue());
+			}
+
+
+		}
+		else if(pUser.VotrePreference=="femme") {
+
+			for(int i=0;i<memoirePFemme.size();i++) {
+				dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.put(pUser.compareTo(memoirePFemme.get(i)), memoirePFemme.get(i));
+			}
+
+			for(Map.Entry mapentr : dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.entrySet()) {
+				listeOpti.add((Profil)mapentr.getValue());
+			}
+
+		}
+		
+		return listeOpti;
+
+	}
+
 }
