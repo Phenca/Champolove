@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -10,16 +12,16 @@
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
-            <Label layoutX="260.0" styleClass="title" text="CHAMPOLOVE" />
-            <Label layoutX="228.0" layoutY="74.0" text="L'agence de tous vos désirs" />
-            <Label layoutX="266.0" layoutY="150.0" text="Déjà inscrit ?" />
-            <Label layoutX="244.0" layoutY="225.0" text="Toujours pas inscrit ?" />
-            <Button fx:id="inscription" layoutX="245.0" layoutY="250.0" mnemonicParsing="false" onAction="#sInscrire" prefHeight="30.0" prefWidth="120.0" text="S'inscrire ">
+            <Label layoutX="250.0" styleClass="title" text="CHAMPOLOVE" />
+            <Label layoutX="217.0" layoutY="73.0" text="L'agence de tous vos désirs" />
+            <Label layoutX="259.0" layoutY="148.0" text="Déjà inscrit ?" />
+            <Label layoutX="233.0" layoutY="224.0" text="Toujours pas inscrit ?" />
+            <Button fx:id="inscription" layoutX="240.0" layoutY="249.0" mnemonicParsing="false" onAction="#sInscrire" prefHeight="30.0" prefWidth="120.0" text="S'inscrire " textFill="#8a008a">
                <padding>
                   <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                </padding>
             </Button>
-            <Button fx:id="connection" layoutX="245.0" layoutY="175.0" mnemonicParsing="false" onAction="#seConnecter" prefHeight="30.0" prefWidth="120.0" text="Se connecter">
+            <Button fx:id="connection" layoutX="240.0" layoutY="170.0" mnemonicParsing="false" onAction="#seConnecter" prefHeight="30.0" prefWidth="120.0" text="Se connecter">
                <padding>
                   <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                </padding>
