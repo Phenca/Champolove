@@ -29,6 +29,7 @@ import javafx.stage.Stage;
 
 public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	private Vue Vue;
+	public Controleur c;
 	@FXML private Stage Stage;
 	/*
 	 * 
@@ -82,12 +83,12 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	 */
     @FXML private ImageView imageDuProfilEnCoursDeLecture;
     @FXML private Button CNON;
-    @FXML private Button COUI;       
+    @FXML private Button COUI;
     @FXML private Button afficheProfil;
     @FXML private Button afficheChat;
     @FXML private Label prenomProfilEnCoursDeLecture;  
     @FXML private Label ageDuProfilEnCoursDeLecture;
-    public int indexProfilEnCoursDeLecture=0;   
+    public int indexProfilEnCoursDeLecture=0;
     public Profil actuelle;
     /*
      * 
@@ -393,10 +394,10 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		try {
 			rootLayout = loader.load();
 
-			Controleur c=loader.getController();
+			c =loader.getController();
 			
 			System.out.println(c.indexProfilEnCoursDeLecture);
-			c.indexProfilEnCoursDeLecture+=1;
+			c.indexProfilEnCoursDeLecture = indexProfilEnCoursDeLecture+1;
 			System.out.println(c.indexProfilEnCoursDeLecture);
 			
 

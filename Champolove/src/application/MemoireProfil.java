@@ -33,6 +33,7 @@ public class MemoireProfil {
 			int jour = (c.get(Calendar.DAY_OF_MONTH)-Integer.valueOf(l[0]));
 			if (mois>0) {
 					//m.date_naissance = String.valueOf(age);
+					m.age = newage;
 			}
 			else if (mois==0){
 				if (jour<0) {
