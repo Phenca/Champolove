@@ -253,6 +253,17 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	 * 
 	 */
 	@FXML private void ValideInscription(ActionEvent event) {
+		/*
+		modl.memoiremixte.pUser.prenom=prenomProfil.getText();
+		modl.memoiremixte.pUser.nom=nomProfil.getText();
+		modl.memoiremixte.pUser.adresse_mail=adresseEmailProfil.getText();
+		modl.memoiremixte.pUser.taille=Integer.valueOf(TailleProfil.getText());
+		modl.memoiremixte.pUser.mdp=mdpProfil.getText();
+		modl.memoiremixte.pUser.date_naissance=DaTeNaissanceProfil.toString();
+		*/
+		
+		
+		
 		Parent rootLayout;
 		try {
 			FXMLLoader loader = new FXMLLoader();
