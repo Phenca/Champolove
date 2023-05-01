@@ -37,7 +37,7 @@ public class Vue extends Application implements Observer {
 			Stage.setScene(scene);
 			Stage.show();
 			
-			String video = "file:ressources/intro_ChampoLove.mp4";
+			String video = getClass().getResource("/ressources/intro_ChampoLove.mp4").toExternalForm();
 			Media media = new Media(video);
 			
 			MediaPlayer lire_video = new MediaPlayer(media);
