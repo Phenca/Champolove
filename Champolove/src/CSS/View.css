@@ -1,0 +1,14 @@
+.background {
+    -fx-background-color: lavenderblush;
+}
+
+.button {
+    -fx-background-color: darkmagenta, lavenderblush;
+    -fx-background-insets: 0px, 1px;
+    -fx-background-radius: 5px, 4px;
+}
+
+
+.button:hover {
+    -fx-effect: dropshadow(one-pass-box, darkmagenta, 10, 0, 5, 5);
+}

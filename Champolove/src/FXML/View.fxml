@@ -6,25 +6,31 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<FlowPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
+<FlowPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../CSS/View.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
-            <Label layoutX="260.0" text="CHAMPOLOVE" />
-            <Label layoutX="228.0" layoutY="74.0" text="L'agence de tous vos désirs" />
-            <Label layoutX="266.0" layoutY="150.0" text="Déjà inscrit ?" />
-            <Label layoutX="244.0" layoutY="225.0" text="Toujours pas inscrit ?" />
-            <Button fx:id="inscription" layoutX="254.0" layoutY="250.0" mnemonicParsing="false" onAction="#sInscrire" text="S'inscrire ">
+            <Label layoutX="260.0" styleClass="titile" text="CHAMPOLOVE" />
+            <Label layoutX="228.0" layoutY="74.0" styleClass="text" text="L'agence de tous vos désirs" />
+            <Label layoutX="266.0" layoutY="150.0" styleClass="text" text="Déjà inscrit ?" />
+            <Label layoutX="244.0" layoutY="225.0" styleClass="text" text="Toujours pas inscrit ?" />
+            <Button fx:id="inscription" layoutX="254.0" layoutY="250.0" mnemonicParsing="false" onAction="#sInscrire" styleClass="btn" text="S'inscrire ">
                <padding>
                   <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                </padding>
             </Button>
-            <Button fx:id="connection" layoutX="245.0" layoutY="175.0" mnemonicParsing="false" onAction="#seConnecter" text="Se connecter">
+            <Button fx:id="connection" layoutX="245.0" layoutY="175.0" mnemonicParsing="false" onAction="#seConnecter" styleClass="btn" text="Se connecter">
                <padding>
                   <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                </padding>
             </Button>
          </children>
+         <FlowPane.margin>
+            <Insets />
+         </FlowPane.margin>
       </Pane>
    </children>
+   <padding>
+      <Insets top="25.0" />
+   </padding>
 </FlowPane>

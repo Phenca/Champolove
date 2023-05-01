@@ -1,5 +1,6 @@
 package application;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
@@ -16,6 +17,9 @@ import javafx.stage.Stage;
 
 public class Vue extends Application implements Observer {
 	private Stage Stage;
+	Media media;
+	protected MediaPlayer lire_video;
+	MediaView voir_video;
 
 	@Override
 	public void start(Stage Stage) throws Exception {
@@ -37,15 +41,18 @@ public class Vue extends Application implements Observer {
 			Stage.setScene(scene);
 			Stage.show();
 			
+
 			String video = getClass().getResource("/ressources/intro_ChampoLove.mp4").toExternalForm();
-			Media media = new Media(video);
-			
-			MediaPlayer lire_video = new MediaPlayer(media);
+			media = new Media(video);
+
+			lire_video = new MediaPlayer(media);
+
 			lire_video.setAutoPlay(true);
 			
-			MediaView voir_video = new MediaView(lire_video);
+			voir_video = new MediaView(lire_video);
 			
 			((Pane) rootLayout).getChildren().add(voir_video);
+
 		} catch (IOException e){
 			e.printStackTrace();
 		}
