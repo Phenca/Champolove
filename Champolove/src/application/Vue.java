@@ -91,10 +91,9 @@ public class Vue extends Application implements Observer, Initializable {
 		    rootLayout = loader.load();
 			Scene scene = new Scene(rootLayout);
 			Stage.setTitle("Champolove");
-			Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
 			Stage.setScene(scene);
 			Stage.show();
-
 			} catch (IOException e){
 			e.printStackTrace();
 		}
