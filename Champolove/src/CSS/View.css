@@ -8,7 +8,7 @@
     -fx-background-radius: 5px, 4px;
     -fx-cursor: hand;
     -fx-font-family: "Georgia";
-
+    -fx-text-fill: black;
 }
 
 .button:hover {

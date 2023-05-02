@@ -59,7 +59,6 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML private Button ValideInscription;
 	@FXML private ImageView imageView;
 	@FXML private Button choisirImage;
-	@FXML private Label nom;
 	/*
 	 * 
 	 * 
