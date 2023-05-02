@@ -10,4 +10,3 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/OpenJFX 11"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
-

@@ -99,11 +99,7 @@ public class Vue extends Application implements Observer, Initializable {
 			Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
 			Stage.setScene(scene);
 			Stage.show();
-
-			String video = getClass().getResource("/ressources/intro_ChampoLove.mp4").toExternalForm();
-
-
-		} catch (IOException e){
+			} catch (IOException e){
 			e.printStackTrace();
 		}
 

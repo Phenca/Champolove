@@ -2,6 +2,15 @@
     -fx-background-color: rgb(230, 230, 230);
 }
 
+VBox GridPane{
+    -fx-background-color: lightgray;
+    -fx-border-color: black;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-padding: 10px;
+}
+
 .button {
     -fx-background-color: darkmagenta, rgb(230, 230, 230);
     -fx-background-insets: 0px, 1px;
@@ -30,13 +39,18 @@
     -fx-font-size: 14px;
 }
 
-@font-face {
-    font-family: 'Rochester';
-    src: url('../Fonts/Rochester-Regular.ttf');
+.text-field {
+    -fx-background-color: lightblue;
+    -fx-background-radius: 20px;
+    -fx-padding: 5px;
+    -fx-border-color: #CCC;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-font-size: 14px;
+    -fx-font-family: "Georgia";
 }
 
-.title {
-    -fx-font-family: 'Rochester';
-    -fx-font-size: 24px;
-    -fx-text-fill: goldenrod;
+.text-field:focused {
+    -fx-border-color: rgb(73, 185, 223);
+    
 }
