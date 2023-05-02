@@ -167,7 +167,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			Scene scene = new Scene(rootLayout);
 			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 			this.Stage.setTitle("Champolove");
-			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
 			this.Stage.setScene(scene);
 			this.Stage.show();
 		} catch (IOException e) {
@@ -183,7 +183,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			Scene scene = new Scene(rootLayout);
 			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 			this.Stage.setTitle("Champolove");
-			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
 			this.Stage.setScene(scene);
 			this.Stage.show();
 		} catch (IOException e) {
@@ -204,7 +204,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			Scene scene = new Scene(rootLayout);
 			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 			this.Stage.setTitle("Champolove");
-			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
 			this.Stage.setScene(scene);
 			this.Stage.show();
 		} catch (IOException e) {
@@ -251,7 +251,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			Scene scene = new Scene(rootLayout);
 			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 			this.Stage.setTitle("Champolove");
-			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
 			this.Stage.setScene(scene);
 			this.Stage.show();
 		} catch (IOException e) {
@@ -318,7 +318,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			Scene scene = new Scene(rootLayout);
 			c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 			c.Stage.setTitle("Champolove");
-			c.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			c.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
 			c.Stage.setScene(scene);
 			c.Stage.show();
 
@@ -363,7 +363,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			
 			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 			this.Stage.setTitle("Champolove");
-			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
 			this.Stage.setScene(scene);
 			this.Stage.show();
 		} catch (IOException e) {
@@ -378,7 +378,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			Scene scene = new Scene(rootLayout);
 			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 			this.Stage.setTitle("Champolove");
-			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
 			this.Stage.setScene(scene);
 			this.Stage.show();
 		} catch (IOException e) {
@@ -399,7 +399,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			Scene scene = new Scene(rootLayout);
 			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 			this.Stage.setTitle("Champolove");
-			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
 			this.Stage.setScene(scene);
 			this.Stage.show();
 		} catch (IOException e) {
@@ -420,7 +420,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			Scene scene = new Scene(rootLayout);
 			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 			this.Stage.setTitle("Champolove");
-			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
 			this.Stage.setScene(scene);
 			this.Stage.show();
 		} catch (IOException e) {
@@ -441,7 +441,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			Scene scene = new Scene(rootLayout);
 			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 			this.Stage.setTitle("Champolove");
-			this.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			this.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
 			this.Stage.setScene(scene);
 			this.Stage.show();
 		} catch (IOException e) {
@@ -481,7 +481,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			Scene scene = new Scene(rootLayout);
 			c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 			c.Stage.setTitle("Champolove");
-			c.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+			c.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
 			c.Stage.setScene(scene);
 			c.Stage.show();
 
