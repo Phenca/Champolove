@@ -43,6 +43,7 @@ public class Vue extends Application implements Observer, Initializable {
 	@Override
 	public void start(Stage Stage) throws Exception {
 		this.Stage = Stage;
+		loadSplashScreen();
 		fenetreLancement();
 
 	}
@@ -50,7 +51,7 @@ public class Vue extends Application implements Observer, Initializable {
 	private void loadSplashScreen(){
 		try {
 			StackPane pane = new StackPane();
-			Media media = Media(getClass().getResource("/ressources/intro_ChampoLove.mp4").toString());
+			Media media = Media(getClass().getResource("file:src/ressources/intro_ChampoLove.mp4").toString());
 			MediaPlayer mediaPlayer = new MediaPlayer(media);
 	        MediaView mediaView = new MediaView(mediaPlayer);
 	        pane.getChildren().add(mediaView);
