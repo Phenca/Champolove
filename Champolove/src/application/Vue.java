@@ -21,6 +21,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 public class Vue extends Application implements Observer, Initializable {
@@ -48,41 +49,45 @@ public class Vue extends Application implements Observer, Initializable {
 	
 	private void loadSplashScreen(){
 		try {
-			StackPane pane = FXMLLoader.load(getClass().getResource(("ressources/Intro_ChampoLove.gif")));
-			root.getChildren().setAll(pane);
+			StackPane pane = new StackPane();
+			Media media = Media(getClass().getResource("/ressources/intro_ChampoLove.mp4").toString());
+			MediaPlayer mediaPlayer = new MediaPlayer(media);
+	        MediaView mediaView = new MediaView(mediaPlayer);
+	        pane.getChildren().add(mediaView);
+	        Scene scene = new Scene(pane);
+	        Stage stage = new Stage();
+	        stage.initOwner(Stage);
+	        stage.initStyle(StageStyle.UNDECORATED);
+	        stage.setScene(scene);
+	        stage.show();
 			
-			FadeTransition fadeIn = new FadeTransition(Duration.seconds(1), pane);
-			fadeIn.setFromValue(0);
-			fadeIn.setToValue(1);
-			fadeIn.setCycleCount(1);
-			
-			FadeTransition fadeOut = new FadeTransition(Duration.seconds(1), pane);
-			fadeOut.setFromValue(1);
-			fadeOut.setToValue(0);
-			fadeOut.setCycleCount(1);
-			
-			fadeIn.play();
-			
-			fadeIn.setOnFinished((e) -> {
-				fadeOut.play(); 
-			});
-			
-			fadeOut.setOnFinished((e) -> {
-				try {
-					AnchorPane parentContent = FXMLLoader.load(getClass().getResource(("FXMLDocument.fxml")));
-					root.getChildren().setAll(pane);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-			});
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+	        mediaPlayer.setOnReady(() -> {
+	            mediaPlayer.play();
+	            mediaView.fitWidthProperty().bind(stage.widthProperty());
+	            mediaView.fitHeightProperty().bind(stage.heightProperty());
+	        });
+
+	        mediaPlayer.setOnEndOfMedia(() -> {
+	            stage.close();
+	            try {
+	                AnchorPane parentContent = FXMLLoader.load(getClass().getResource("/FXML/View.fxml"));
+	                root.getChildren().setAll(parentContent);
+	            } catch (IOException e1) {
+	                e1.printStackTrace();
+	            }
+	        });
+	        
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 	}
 	
+	private Media Media(String externalForm) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	public void fenetreLancement() {
 		Parent rootLayout;
 		try {
