@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<FlowPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
+<FlowPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../CSS/fenLogIn.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
    <children>
       <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="400.0" spacing="100.0">
          <children>
@@ -20,13 +20,13 @@
                   <Label text="Adresse Email :" />
                   <Label text="Mot de passe :" GridPane.rowIndex="1">
                      <GridPane.margin>
-                        <Insets top="25.0" />
+                        <Insets />
                      </GridPane.margin>
                   </Label>
                   <TextField GridPane.columnIndex="1" />
                   <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
-                        <Insets top="25.0" />
+                        <Insets />
                      </GridPane.margin>
                   </PasswordField>
                </children>
@@ -37,7 +37,6 @@
                <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <VBox.margin>
                   <Insets />
@@ -45,13 +44,13 @@
             </GridPane>
             <HBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="400.0" spacing="40.0">
                <children>
-                  <Button fx:id="RetourAcceuil" mnemonicParsing="false" onAction="#RetourAcceuil" prefHeight="25.0" prefWidth="73.0" text="Retour">
+                  <Button fx:id="RetourAcceuil" mnemonicParsing="false" onAction="#RetourAcceuil" prefHeight="30.0" prefWidth="75.0" text="Retour">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="inscription" mnemonicParsing="false" onAction="#sInscrire" text="Je n'ai pas de compte" />
-                  <Button fx:id="ValideConnexion" mnemonicParsing="false" onAction="#ValideConnexion" prefWidth="73.0" text="Connexion">
+                  <Button fx:id="inscription" mnemonicParsing="false" onAction="#sInscrire" prefHeight="30.0" prefWidth="150.0" text="Je n'ai pas de compte" />
+                  <Button fx:id="ValideConnexion" mnemonicParsing="false" onAction="#ValideConnexion" prefHeight="30.0" prefWidth="75.0" text="Connexion">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>

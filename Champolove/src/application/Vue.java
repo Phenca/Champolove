@@ -95,18 +95,7 @@ public class Vue extends Application implements Observer, Initializable {
 			Stage.setScene(scene);
 			Stage.show();
 
-			String video = getClass().getResource("/ressources/intro_ChampoLove.mp4").toExternalForm();
-			media = new Media(video);
-
-			lire_video = new MediaPlayer(media);
-
-			lire_video.setAutoPlay(true);
-			
-			voir_video = new MediaView(lire_video);
-			
-			((Pane) rootLayout).getChildren().add(voir_video);
-
-		} catch (IOException e){
+			} catch (IOException e){
 			e.printStackTrace();
 		}
 

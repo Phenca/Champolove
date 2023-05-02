@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../CSS/fenSingIn.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
    <content>
-      <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+      <FlowPane alignment="TOP_CENTER" columnHalignment="RIGHT" minHeight="-Infinity" prefHeight="1050.0" prefWidth="200.0" rowValignment="TOP">
          <children>
             <VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefWidth="500.0" spacing="75.0">
                <children>
@@ -23,7 +23,7 @@
                      <VBox.margin>
                         <Insets />
                      </VBox.margin></Label>
-                  <GridPane alignment="TOP_CENTER" prefWidth="400.0">
+                  <GridPane alignment="TOP_CENTER" prefWidth="400.0" vgap="3.0">
                      <children>
                         <Label text="Nom : " />
                         <Label text="Prénom : " GridPane.rowIndex="1" />
@@ -75,11 +75,11 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </GridPane>
-                  <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="400.0" spacing="20.0">
+                  <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="400.0" spacing="20.0">
                      <children>
-                        <Button fx:id="RetourAcceuil" mnemonicParsing="false" onAction="#RetourAcceuil" prefHeight="25.0" prefWidth="73.0" text="Acceuil" />
-                        <Button fx:id="connection" mnemonicParsing="false" onAction="#seConnecter" prefHeight="25.0" prefWidth="119.0" text="J'ai déjà un compte" />
-                        <Button fx:id="ValideInscription" mnemonicParsing="false" onAction="#ValideInscription" prefHeight="25.0" prefWidth="73.0" text="S'inscrire" />
+                        <Button fx:id="RetourAcceuil" mnemonicParsing="false" onAction="#RetourAcceuil" prefHeight="30.0" prefWidth="75.0" text="Acceuil" />
+                        <Button fx:id="connection" mnemonicParsing="false" onAction="#seConnecter" prefHeight="30.0" prefWidth="130.0" text="J'ai déjà un compte" />
+                        <Button fx:id="ValideInscription" mnemonicParsing="false" onAction="#ValideInscription" prefHeight="30.0" prefWidth="75.0" text="S'inscrire" />
                      </children>
                   </HBox>
                </children>
