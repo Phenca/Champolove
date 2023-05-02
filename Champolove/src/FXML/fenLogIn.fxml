@@ -23,8 +23,8 @@
                         <Insets />
                      </GridPane.margin>
                   </Label>
-                  <TextField GridPane.columnIndex="1" />
-                  <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextField fx:id="adresseEmailConnexion" GridPane.columnIndex="1" />
+                  <PasswordField fx:id="mdpConnexion" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>

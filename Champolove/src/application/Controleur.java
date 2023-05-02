@@ -49,6 +49,8 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	 */
 	@FXML private Button RetourAcceuil;
 	@FXML private Button ValideConnexion;
+	@FXML private PasswordField mdpConnexion;
+	@FXML private TextField adresseEmailConnexion;
 	/*
 	 * 
 	 * 
@@ -72,81 +74,88 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML private TextField nomProfil;
 	@FXML private TextField TailleProfil;	
 	@FXML private ChoiceBox<?> SexeProfil;
-    @FXML private TextField prenomProfil;   
-    /*
-     * 
-     * 
+	@FXML private TextField prenomProfil;   
+	/*
+	 * 
+	 * 
 	 * Instantiation contrôles fenêtre pagePrincipale
 	 * 
 	 * 
 	 */
-    @FXML private ImageView imageDuProfilEnCoursDeLecture;
-    @FXML private Button CNON;
-    @FXML private Button COUI;
-    @FXML private Button afficheProfil;
-    @FXML private Button afficheChat;
-    @FXML private Label prenomProfilEnCoursDeLecture;  
-    @FXML private Label ageDuProfilEnCoursDeLecture;
-    public int indexProfilEnCoursDeLecture=0;
-    public Profil actuelle;
-    /*
-     * 
-     * 
+	@FXML private ImageView imageDuProfilEnCoursDeLecture;
+	@FXML private Button CNON;
+	@FXML private Button COUI;
+	@FXML private Button afficheProfil;
+	@FXML private Button afficheChat;
+	@FXML private Label prenomProfilEnCoursDeLecture;  
+	@FXML private Label ageDuProfilEnCoursDeLecture;
+	public int indexProfilEnCoursDeLecture=0;
+	public Profil actuelle;
+	/*
+	 * 
+	 * 
 	 * Instantiation contrôles fenêtre pageConv
 	 * 
 	 * 
 	 */
-    @FXML private Button retourPagePrincipale;
-    /*
-     * 
-     * 
+	@FXML private Button retourPagePrincipale;
+	/*
+	 * 
+	 * 
 	 * Instantiation contrôles fenêtre pageProfil
 	 * 
 	 * 
 	 */
-    @FXML private Button modifProfil;
-    
-    @FXML
-    private Text taillePageProfil;
-    
-    @FXML
-    private Text nomPageProfil;
-    
-    @FXML
-    private Text dateNaissancePageProfil;
-    
-    @FXML
-    private Text prenomPageProfil;
+	@FXML private Button modifProfil;
 
-    @FXML
-    private Text agePageProfil;
+	@FXML
+	private Text taillePageProfil;
 
-    @FXML
-    private Text mdpPageProfil;
+	@FXML
+	private Text nomPageProfil;
 
-    @FXML
-    private Text adresseEmailPageProfil;
-    
-    /*
-     * 
-     * 
+	@FXML
+	private Text dateNaissancePageProfil;
+
+	@FXML
+	private Text prenomPageProfil;
+
+	@FXML
+	private Text agePageProfil;
+
+	@FXML
+	private Text mdpPageProfil;
+
+	@FXML
+	private Text adresseEmailPageProfil;
+
+	/*
+	 * 
+	 * 
 	 * Instantiation contrôles fenêtre pageGestionProfil
 	 * 
 	 * 
 	 */
-    @FXML private Button finModif;
-    
-    
-   
-    
+	@FXML private Button finModif;
+	@FXML private DatePicker DaTeNaissanceProfil2;
+	@FXML private TextField adresseEmailProfil2;
+	@FXML private PasswordField mdpProfil2;
+	@FXML private TextField nomProfil2;
+	@FXML private TextField TailleProfil2;	
+	@FXML private ChoiceBox<?> SexeProfil2;
+	@FXML private TextField prenomProfil2;   
+
+
+
+
 	public Modele modl;
-	
+
 
 
 	public Controleur() {
 		// constructeur sans arguments
 	}
-	
+
 
 	@Override
 	public void handle(ActionEvent event) {
@@ -211,18 +220,31 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			e.printStackTrace();
 		}
 	}
-	
-	@FXML private void ValideConnexion(ActionEvent event) {
-		Parent rootLayout;
-		try {
-			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pagePrincipale.fxml"));
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/FXML/pagePrincipale.fxml"));
-			rootLayout = loader.load();
-			c=loader.getController();
 
+	@FXML private void ValideConnexion(ActionEvent event) throws IOException{
+
+		Parent rootLayout;
+
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/FXML/pagePrincipale.fxml"));
+		rootLayout = loader.load();
+		Controleur c=loader.getController();
+
+		System.out.println(adresseEmailConnexion.getText());
+		System.out.println(mdpConnexion.getText());
+		if(adresseEmailConnexion.getText().equals("MadameVousConnaissezLeSUUUUUUUUUUUUU") && mdpConnexion.getText().equals("PaulCluzel2022")) {
+			System.out.println("life");
+			c.modl.memoiremixte.pUser.prenom="Admin";
+			c.modl.memoiremixte.pUser.nom="Admin";
+			c.modl.memoiremixte.pUser.adresse_mail="MadameVousConnaissezLeSUUUUUUUUUUUUU";
+			c.modl.memoiremixte.pUser.taille=2727;
+			c.modl.memoiremixte.pUser.mdp="PaulCluzel2022";
+			c.modl.memoiremixte.pUser.date_naissance="";
+
+
+			System.out.println(this.modl);
 			if(this.modl.memoiremixte.pUser.VotrePreference=="mixte") {
-				c.actuelle=c.modl.memoiremixte.memoirePMixtes.get(this.indexProfilEnCoursDeLecture);
+				c.actuelle=modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture);
 				Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
 				c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
 				System.out.println(c.actuelle.lien_photoProfil);
@@ -248,15 +270,20 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 				imageView.setImage(imageProfilSelectionEnCours);
 
 			}
+
+
 			Scene scene = new Scene(rootLayout);
-			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-			this.Stage.setTitle("Champolove");
-			this.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
-			this.Stage.setScene(scene);
-			this.Stage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
+			c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+			c.Stage.setTitle("Champolove");
+			c.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
+			c.Stage.setScene(scene);
+			c.Stage.show();
+
 		}
+
+
+
+
 	}
 	/*
 	 * 
@@ -265,79 +292,54 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	 * 
 	 * 
 	 */
-	@FXML private void ValideInscription(ActionEvent event) {
-		
-		/*
-		modl.memoiremixte.pUser.prenom=prenomProfil.getText();
-		modl.memoiremixte.pUser.nom=nomProfil.getText();
-		modl.memoiremixte.pUser.adresse_mail=adresseEmailProfil.getText();
-		modl.memoiremixte.pUser.taille=Integer.valueOf(TailleProfil.getText());
-		modl.memoiremixte.pUser.mdp=mdpProfil.getText();
-		modl.memoiremixte.pUser.date_naissance=DaTeNaissanceProfil.toString();
-		*/
-		
-		
-		
+	@FXML private void ValideInscription(ActionEvent event) throws IOException{
+
 		Parent rootLayout;
-		try {
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("/FXML/pagePrincipale.fxml"));
-			rootLayout = loader.load();
-			c=loader.getController();
 
-			System.out.println(this.modl);
-			if(this.modl.memoiremixte.pUser.VotrePreference=="mixte") {
-				c.actuelle=c.modl.memoiremixte.memoirePMixtes.get(this.indexProfilEnCoursDeLecture);
-				Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
-				c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
-				System.out.println(c.actuelle.lien_photoProfil);
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/FXML/pagePrincipale.fxml"));
+		rootLayout = loader.load();
+		Controleur c=loader.getController();
 
-				c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
+		c.modl.memoiremixte.pUser.prenom=prenomProfil.getText();
+		c.modl.memoiremixte.pUser.nom=nomProfil.getText();
+		c.modl.memoiremixte.pUser.adresse_mail=adresseEmailProfil.getText();
+		c.modl.memoiremixte.pUser.taille=Integer.valueOf(TailleProfil.getText());
+		c.modl.memoiremixte.pUser.mdp=mdpProfil.getText();
+		c.modl.memoiremixte.pUser.date_naissance=DaTeNaissanceProfil.toString();
 
-				c.prenomProfilEnCoursDeLecture.setText(c.actuelle.prenom);
+		System.out.println(this.modl);
+		if(this.modl.memoiremixte.pUser.VotrePreference=="mixte") {
+			c.actuelle=modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture);
+			Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
+			c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
+			System.out.println(c.actuelle.lien_photoProfil);
 
-			}
-			if(this.modl.memoiremixte.pUser.VotrePreference=="femme") {
-				this.actuelle=this.modl.memoiremixte.memoirePFemme.get(indexProfilEnCoursDeLecture);
-				System.out.println(this.actuelle);
-				System.out.println(this.actuelle.lien_photoProfil);
-				Image imageProfilSelectionEnCours=new Image(this.actuelle.lien_photoProfil);
-				imageView.setImage(imageProfilSelectionEnCours);
+			c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
 
-			}
-			if(this.modl.memoiremixte.pUser.VotrePreference=="homme") {
-				this.actuelle=this.modl.memoiremixte.memoirePHomme.get(indexProfilEnCoursDeLecture);
-				System.out.println(this.actuelle);
-				System.out.println(this.actuelle.lien_photoProfil);
-				Image imageProfilSelectionEnCours=new Image(this.actuelle.lien_photoProfil);
-				imageView.setImage(imageProfilSelectionEnCours);
-
-			}
-
-
-			Scene scene = new Scene(rootLayout);
-			c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-			c.Stage.setTitle("Champolove");
-			c.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
-			c.Stage.setScene(scene);
-			c.Stage.show();
-
-
-		} catch (IOException e) {
-			e.printStackTrace();
+			c.prenomProfilEnCoursDeLecture.setText(c.actuelle.prenom);
 		}
+
+		Scene scene = new Scene(rootLayout);
+		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+		c.Stage.setTitle("Champolove");
+		c.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
+		c.Stage.setScene(scene);
+		c.Stage.show();
+
 	}
+
 	@FXML private void choisirImage(ActionEvent event) {
 		FileChooser fileChooser = new FileChooser();
-	    fileChooser.setTitle("Select an image");
-	    fileChooser.getExtensionFilters().addAll(
-	            new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg"));
-	    File selectedFile = fileChooser.showOpenDialog(Stage);
-	    if (selectedFile != null && selectedFile.exists()) {
-	        Image image = new Image(selectedFile.toURI().toString());
-	        System.out.println(selectedFile.toURI().toString());
-	        imageView.setImage(image);
-	    }
+		fileChooser.setTitle("Select an image");
+		fileChooser.getExtensionFilters().addAll(
+				new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg"));
+		File selectedFile = fileChooser.showOpenDialog(Stage);
+		if (selectedFile != null && selectedFile.exists()) {
+			Image image = new Image(selectedFile.toURI().toString());
+			System.out.println(selectedFile.toURI().toString());
+			imageView.setImage(image);
+		}
 	}	
 	/*
 	 * 
@@ -346,152 +348,210 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	 * 
 	 * 
 	 */
-    @FXML private void afficheProfil(ActionEvent event) {
-    	Parent rootLayout;
-		try {
-			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pageProfil.fxml"));
-			Scene scene = new Scene(rootLayout);
-			
-			/*
-			nomPageProfil.setText(modl.memoiremixte.pUser.nom);
-			prenomPageProfil.setText(modl.memoiremixte.pUser.prenom);
-			adresseEmailPageProfil.setText(modl.memoiremixte.pUser.adresse_mail);
-			mdpPageProfil.setText(modl.memoiremixte.pUser.date_naissance);
-			agePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.age));
-			taillePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.taille));
-			*/
-			
-			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-			this.Stage.setTitle("Champolove");
-			this.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
-			this.Stage.setScene(scene);
-			this.Stage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-    }
-    
-    @FXML private void afficheChat(ActionEvent event) {
-    	Parent rootLayout;
-		try {
-			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pageConv.fxml"));
-			Scene scene = new Scene(rootLayout);
-			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-			this.Stage.setTitle("Champolove");
-			this.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
-			this.Stage.setScene(scene);
-			this.Stage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-    }
-    /*
+
+	@FXML
+	void profilSuivant(ActionEvent event) {
+
+		indexProfilEnCoursDeLecture = indexProfilEnCoursDeLecture+1;
+		actuelle=modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture);
+		Image imageProfilSelectionEnCours=new Image(actuelle.lien_photoProfil);
+		imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
+
+		ageDuProfilEnCoursDeLecture.setText(String.valueOf(actuelle.age));
+
+		prenomProfilEnCoursDeLecture.setText(actuelle.prenom);
+
+
+	}
+
+
+
+	@FXML private void afficheProfil(ActionEvent event) throws IOException{
+		Parent rootLayout;
+
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/FXML/pageProfil.fxml"));
+		rootLayout = loader.load();
+		Controleur c=loader.getController();
+
+
+		//Cette Partie sert à sauvergarder les données utiles qui changent constament, c'est à garder//////
+		c.modl.memoiremixte.pUser.prenom=modl.memoiremixte.pUser.prenom;
+		c.modl.memoiremixte.pUser.nom=modl.memoiremixte.pUser.nom;
+		c.modl.memoiremixte.pUser.adresse_mail=modl.memoiremixte.pUser.adresse_mail;
+		c.modl.memoiremixte.pUser.taille=modl.memoiremixte.pUser.taille;
+		c.modl.memoiremixte.pUser.mdp=modl.memoiremixte.pUser.mdp;
+		c.modl.memoiremixte.pUser.date_naissance=modl.memoiremixte.pUser.date_naissance;
+		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
+		//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+		c.nomPageProfil.setText(modl.memoiremixte.pUser.nom);
+		c.prenomPageProfil.setText(modl.memoiremixte.pUser.prenom);
+		c.adresseEmailPageProfil.setText(modl.memoiremixte.pUser.adresse_mail);
+		c.mdpPageProfil.setText(modl.memoiremixte.pUser.mdp);
+		c.agePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.age));
+		c.taillePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.taille));
+
+		Scene scene = new Scene(rootLayout);
+		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+		c.Stage.setTitle("Champolove");
+		c.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+		c.Stage.setScene(scene);
+		c.Stage.show();
+
+	}
+
+	@FXML private void afficheChat(ActionEvent event) throws IOException{
+		Parent rootLayout;
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/FXML/pageConv.fxml"));
+		rootLayout = loader.load();
+		Controleur c=loader.getController();
+
+		//Cette Partie sert à sauvergarder les données utiles qui changent constament, c'est à garder//////
+		c.modl.memoiremixte.pUser.prenom=modl.memoiremixte.pUser.prenom;
+		c.modl.memoiremixte.pUser.nom=modl.memoiremixte.pUser.nom;
+		c.modl.memoiremixte.pUser.adresse_mail=modl.memoiremixte.pUser.adresse_mail;
+		c.modl.memoiremixte.pUser.taille=modl.memoiremixte.pUser.taille;
+		c.modl.memoiremixte.pUser.mdp=modl.memoiremixte.pUser.mdp;
+		c.modl.memoiremixte.pUser.date_naissance=modl.memoiremixte.pUser.date_naissance;
+		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
+		//////////////////////////////////////////////////////////////////////////////////////////////////
+
+		Scene scene = new Scene(rootLayout);
+		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+		c.Stage.setTitle("Champolove");
+		c.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+		c.Stage.setScene(scene);
+		c.Stage.show();
+
+	}
+	/*
 	 * 
 	 * 
 	 * Création méthodes fenêtre pagePrincipale
 	 * 
 	 * 
 	 */
-    @FXML private void retourPagePrincipale(ActionEvent event) {
-    	Parent rootLayout;
-		try {
-			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pagePrincipale.fxml"));
-			Scene scene = new Scene(rootLayout);
-			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-			this.Stage.setTitle("Champolove");
-			this.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
-			this.Stage.setScene(scene);
-			this.Stage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
+
+	@FXML private void retourPagePrincipale(ActionEvent event) throws IOException{
+
+
+		Parent rootLayout;
+
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/FXML/pagePrincipale.fxml"));
+		rootLayout = loader.load();
+		Controleur c=loader.getController();
+
+
+		//Cette Partie sert à sauvergarder les données utiles qui changent constament, c'est à garder//////
+		c.modl.memoiremixte.pUser.prenom=modl.memoiremixte.pUser.prenom;
+		c.modl.memoiremixte.pUser.nom=modl.memoiremixte.pUser.nom;
+		c.modl.memoiremixte.pUser.adresse_mail=modl.memoiremixte.pUser.adresse_mail;
+		c.modl.memoiremixte.pUser.taille=modl.memoiremixte.pUser.taille;
+		c.modl.memoiremixte.pUser.mdp=modl.memoiremixte.pUser.mdp;
+		c.modl.memoiremixte.pUser.date_naissance=modl.memoiremixte.pUser.date_naissance;
+		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
+		//////////////////////////////////////////////////////////////////////////////////////////////////
+
+		System.out.println(this.modl);
+		if(this.modl.memoiremixte.pUser.VotrePreference=="mixte") {
+			c.actuelle=modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture);
+			Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
+			c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
+			System.out.println(c.actuelle.lien_photoProfil);
+
+			c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
+
+			c.prenomProfilEnCoursDeLecture.setText(c.actuelle.prenom);
+
 		}
-    }
-    /*
+		Scene scene = new Scene(rootLayout);
+		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+		c.Stage.setTitle("Champolove");
+		c.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
+		c.Stage.setScene(scene);
+		c.Stage.show();
+	}
+	/*
 	 * 
 	 * 
 	 * Création méthodes fenêtre pageProfil
 	 * 
 	 * 
 	 */
-    @FXML private void modifProfil(ActionEvent event) {
-    	Parent rootLayout;
-		try {
-			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pageGestionProfil.fxml"));
-			Scene scene = new Scene(rootLayout);
-			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-			this.Stage.setTitle("Champolove");
-			this.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
-			this.Stage.setScene(scene);
-			this.Stage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-    }
-    /*
+	@FXML private void modifProfil(ActionEvent event) throws IOException{
+		Parent rootLayout;
+
+
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/FXML/pageGestionProfil.fxml"));
+		rootLayout = loader.load();
+		Controleur c=loader.getController();
+
+		//Cette Partie sert à sauvergarder les données utiles qui changent constament, c'est à garder//////
+		c.modl.memoiremixte.pUser.prenom=modl.memoiremixte.pUser.prenom;
+		c.modl.memoiremixte.pUser.nom=modl.memoiremixte.pUser.nom;
+		c.modl.memoiremixte.pUser.adresse_mail=modl.memoiremixte.pUser.adresse_mail;
+		c.modl.memoiremixte.pUser.taille=modl.memoiremixte.pUser.taille;
+		c.modl.memoiremixte.pUser.mdp=modl.memoiremixte.pUser.mdp;
+		c.modl.memoiremixte.pUser.date_naissance=modl.memoiremixte.pUser.date_naissance;
+		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
+		//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+		Scene scene = new Scene(rootLayout);
+		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+		c.Stage.setTitle("Champolove");
+		c.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+		c.Stage.setScene(scene);
+		c.Stage.show();
+
+	}
+	/*
 	 * 
 	 * 
 	 * Création méthodes fenêtre pageGestionProfil
 	 * 
 	 * 
 	 */
-    @FXML private void finModif(ActionEvent event) {
-    	Parent rootLayout;
-		try {
-			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pageProfil.fxml"));
-			Scene scene = new Scene(rootLayout);
-			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-			this.Stage.setTitle("Champolove");
-			this.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
-			this.Stage.setScene(scene);
-			this.Stage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-    }
 
-	@FXML
-	void profilSuivant(ActionEvent event) {
+	@FXML private void finModif(ActionEvent event) throws IOException{
+
 		Parent rootLayout;
+
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/FXML/pagePrincipale.fxml"));
-		
-		
-		try {
-			rootLayout = loader.load();
-
-			c =loader.getController();
-			
-			System.out.println(c.indexProfilEnCoursDeLecture);
-			c.indexProfilEnCoursDeLecture = indexProfilEnCoursDeLecture+1;
-			System.out.println(c.indexProfilEnCoursDeLecture);
-			
-
-			System.out.println(c.actuelle);
-			c.actuelle=c.modl.memoiremixte.memoirePMixtes.get(c.indexProfilEnCoursDeLecture);
-			System.out.println(c.actuelle);
-
-			Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
-			System.out.println(c.imageDuProfilEnCoursDeLecture);
-			c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
-
-			c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
-
-			c.prenomProfilEnCoursDeLecture.setText(c.actuelle.prenom);
-
-			Scene scene = new Scene(rootLayout);
-			c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-			c.Stage.setTitle("Champolove");
-			c.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
-			c.Stage.setScene(scene);
-			c.Stage.show();
+		loader.setLocation(getClass().getResource("/FXML/pageProfil.fxml"));
+		rootLayout = loader.load();
+		Controleur c=loader.getController();
 
 
+		c.modl.memoiremixte.pUser.prenom=prenomProfil2.getText();
+		c.modl.memoiremixte.pUser.nom=nomProfil2.getText();
+		c.modl.memoiremixte.pUser.adresse_mail=adresseEmailProfil2.getText();
+		c.modl.memoiremixte.pUser.taille=Integer.valueOf(TailleProfil2.getText());
+		c.modl.memoiremixte.pUser.mdp=mdpProfil2.getText();
+		c.modl.memoiremixte.pUser.date_naissance=DaTeNaissanceProfil2.toString();
+		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
 
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
+		c.nomPageProfil.setText(c.modl.memoiremixte.pUser.nom);
+		c.prenomPageProfil.setText(c.modl.memoiremixte.pUser.prenom);
+		c.adresseEmailPageProfil.setText(c.modl.memoiremixte.pUser.adresse_mail);
+		c.mdpPageProfil.setText(c.modl.memoiremixte.pUser.mdp);
+		c.agePageProfil.setText(String.valueOf(c.modl.memoiremixte.pUser.age));
+		c.taillePageProfil.setText(String.valueOf(c.modl.memoiremixte.pUser.taille));
+
+
+		Scene scene = new Scene(rootLayout);
+		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+		c.Stage.setTitle("Champolove");
+		c.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+		c.Stage.setScene(scene);
+		c.Stage.show();
 
 	}
 
