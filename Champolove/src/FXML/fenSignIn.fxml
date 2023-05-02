@@ -77,9 +77,9 @@
                   </GridPane>
                   <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="400.0" spacing="20.0">
                      <children>
-                        <Button fx:id="RetourAcceuil" mnemonicParsing="false" onAction="#RetourAcceuil" prefHeight="30.0" prefWidth="75.0" text="Acceuil" />
-                        <Button fx:id="connection" mnemonicParsing="false" onAction="#seConnecter" prefHeight="30.0" prefWidth="130.0" text="J'ai déjà un compte" />
-                        <Button fx:id="ValideInscription" mnemonicParsing="false" onAction="#ValideInscription" prefHeight="30.0" prefWidth="75.0" text="S'inscrire" />
+                        <Button fx:id="RetourAcceuil" mnemonicParsing="false" onAction="#RetourAcceuil" prefHeight="30.0" prefWidth="90.0" text="Acceuil" />
+                        <Button fx:id="connection" mnemonicParsing="false" onAction="#seConnecter" prefHeight="30.0" prefWidth="150.0" text="J'ai déjà un compte" />
+                        <Button fx:id="ValideInscription" mnemonicParsing="false" onAction="#ValideInscription" prefHeight="30.0" prefWidth="90.0" text="S'inscrire" />
                      </children>
                   </HBox>
                </children>

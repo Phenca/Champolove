@@ -87,6 +87,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML private Button COUI;
 	@FXML private Button afficheProfil;
 	@FXML private Button afficheChat;
+	@FXML private Button afficheDescription;
 	@FXML private Label prenomProfilEnCoursDeLecture;  
 	@FXML private Label ageDuProfilEnCoursDeLecture;
 	public int indexProfilEnCoursDeLecture=0;
@@ -425,7 +426,20 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
 		c.Stage.setScene(scene);
 		c.Stage.show();
-
+	}
+	@FXML private void afficheDescription(ActionEvent event) {
+		Parent rootLayout;
+		try {
+			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pageDescription.fxml"));
+			Scene scene = new Scene(rootLayout);
+			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+			this.Stage.setTitle("Champolove");
+			this.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
+			this.Stage.setScene(scene);
+			this.Stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	/*
 	 * 

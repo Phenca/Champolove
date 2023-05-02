@@ -7,29 +7,21 @@
 <?import javafx.scene.layout.*?>
 
 <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
-   <content>
-      <FlowPane alignment="TOP_CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <VBox prefWidth="595.0">
-               <children>
-                  <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" VBox.vgrow="ALWAYS">
-                     <children>
-                        <Button fx:id="retourPagePrincipale" mnemonicParsing="false" onAction="#retourPagePrincipale" text="&lt;" HBox.hgrow="ALWAYS" />
-                        <Label text="Nom de la personne" HBox.hgrow="ALWAYS" />
-                     </children>
-                  </HBox>
-                  <Label text="Messages" VBox.vgrow="ALWAYS" />
-                  <HBox prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <ListView HBox.hgrow="ALWAYS" />
-                     </children>
-                  </HBox>
-               </children>
-            </VBox>
-         </children>
-      </FlowPane>
-   </content>
    <opaqueInsets>
       <Insets />
    </opaqueInsets>
+   <content>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="retourPagePrincipale1" mnemonicParsing="false" onAction="#retourPagePrincipale" prefHeight="30.0" prefWidth="30.0" text="&lt;" />
+            <VBox alignment="TOP_CENTER" layoutX="70.0" spacing="50.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label text="Nom de la personne" />
+                  <ListView maxWidth="577.0" minHeight="400.0" minWidth="400.0" prefWidth="500.0" />
+               </children>
+            </VBox>
+            <Label layoutY="40.0" text="Messages" />
+         </children>
+      </AnchorPane>
+   </content>
 </ScrollPane>

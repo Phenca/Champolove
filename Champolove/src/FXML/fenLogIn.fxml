@@ -8,7 +8,7 @@
 
 <FlowPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../CSS/fenLogIn.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
    <children>
-      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="400.0" spacing="100.0">
+      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="500.0" spacing="100.0">
          <children>
             <Label text="Connexion à Champolove">
                <VBox.margin>
@@ -42,15 +42,15 @@
                   <Insets />
                </VBox.margin>
             </GridPane>
-            <HBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="400.0" spacing="40.0">
+            <HBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="500.0" spacing="40.0">
                <children>
-                  <Button fx:id="RetourAcceuil" mnemonicParsing="false" onAction="#RetourAcceuil" prefHeight="30.0" prefWidth="75.0" text="Retour">
+                  <Button fx:id="RetourAcceuil" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#RetourAcceuil" prefHeight="30.0" prefWidth="90.0" text="Retour">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="inscription" mnemonicParsing="false" onAction="#sInscrire" prefHeight="30.0" prefWidth="150.0" text="Je n'ai pas de compte" />
-                  <Button fx:id="ValideConnexion" mnemonicParsing="false" onAction="#ValideConnexion" prefHeight="30.0" prefWidth="75.0" text="Connexion">
+                  <Button fx:id="inscription" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#sInscrire" prefHeight="30.0" prefWidth="150.0" text="Je n'ai pas de compte" />
+                  <Button fx:id="ValideConnexion" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ValideConnexion" prefHeight="30.0" prefWidth="90.0" text="Connexion">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
