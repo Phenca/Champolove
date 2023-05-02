@@ -28,7 +28,7 @@ public class Vue extends Application implements Observer, Initializable {
 	private Stage Stage;
 	private AnchorPane root;
 	public static AnchorPane rootP;
-
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
