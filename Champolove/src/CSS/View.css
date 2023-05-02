@@ -25,11 +25,18 @@
     -fx-effect: dropshadow(three-pass-box, darkmagenta, 10, 0, 0, 0);
 }
 
-.title {
-
-}
-
 .label {
     -fx-font-family: "Georgia";
     -fx-font-size: 14px;
+}
+
+@font-face {
+    font-family: 'Rochester';
+    src: url('../Fonts/Rochester-Regular.ttf');
+}
+
+.title {
+    -fx-font-family: 'Rochester';
+    -fx-font-size: 24px;
+    -fx-text-fill: goldenrod;
 }

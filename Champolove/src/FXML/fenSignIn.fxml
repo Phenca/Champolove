@@ -25,7 +25,7 @@
                      </VBox.margin></Label>
                   <GridPane alignment="TOP_CENTER" prefWidth="400.0" vgap="3.0">
                      <children>
-                        <Label text="Nom : " />
+                        <Label fx:id="nom" text="Nom : " />
                         <Label text="Prénom : " GridPane.rowIndex="1" />
                         <Label text="Date de naissance (DD/MM/YYYY) :" GridPane.rowIndex="2" />
                         <Label text="Taille (en cm) :" GridPane.rowIndex="3" />
