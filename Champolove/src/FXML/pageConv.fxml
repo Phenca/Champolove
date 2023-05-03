@@ -13,7 +13,14 @@
    <content>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button fx:id="retourPagePrincipale1" mnemonicParsing="false" onAction="#retourPagePrincipale" prefHeight="30.0" prefWidth="30.0" text="&lt;" />
+            <Button fx:id="retourPagePrincipale1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#retourPagePrincipale" prefHeight="30.0" prefWidth="30.0">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../ressources/logo/arrow.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
             <VBox alignment="TOP_CENTER" layoutX="70.0" spacing="50.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Label text="Nom de la personne" />

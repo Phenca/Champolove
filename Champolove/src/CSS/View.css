@@ -32,7 +32,9 @@
 
 @font-face {
     font-family: 'Rochester';
-    src: url('../Fonts/Rochester-Regular.ttf');
+    font-style: normal;
+    font-weight: 400;
+    src: url('/Fonts/Rochester-Regular.ttf');
 }
 
 .title {
