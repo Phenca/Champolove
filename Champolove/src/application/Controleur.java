@@ -51,6 +51,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML private Button ValideConnexion;
 	@FXML private PasswordField mdpConnexion;
 	@FXML private TextField adresseEmailConnexion;
+	@FXML private Text messageLogIn;
 	/*
 	 * 
 	 * 
@@ -236,13 +237,13 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 
 		System.out.println(adresseEmailConnexion.getText());
 		System.out.println(mdpConnexion.getText());
-		if(adresseEmailConnexion.getText().equals("MadameVousConnaissezLeSUUUUUUUUUUUUU") && mdpConnexion.getText().equals("PaulCluzel2022")) {
+		if(adresseEmailConnexion.getText().equals("root") && mdpConnexion.getText().equals("root")) {
 			System.out.println("life");
 			c.modl.memoiremixte.pUser.prenom="Admin";
 			c.modl.memoiremixte.pUser.nom="Admin";
-			c.modl.memoiremixte.pUser.adresse_mail="MadameVousConnaissezLeSUUUUUUUUUUUUU";
+			c.modl.memoiremixte.pUser.adresse_mail="root";
 			c.modl.memoiremixte.pUser.taille=2727;
-			c.modl.memoiremixte.pUser.mdp="PaulCluzel2022";
+			c.modl.memoiremixte.pUser.mdp="root";
 			c.modl.memoiremixte.pUser.date_naissance="";
 
 
@@ -283,6 +284,8 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			c.Stage.setScene(scene);
 			c.Stage.show();
 
+		}else {
+			messageLogIn.setText("Mots de passe ou adresse mail incorrect, veuillez ressayez");
 		}
 
 
