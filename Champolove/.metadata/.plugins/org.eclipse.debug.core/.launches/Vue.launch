@@ -14,5 +14,5 @@
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="application.Vue"/>
     <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="Champolove"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Champolove"/>
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="--module-path D:\Users\Soran\Documents\UnivJava\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml,javafx.media"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="--module-path /home/ubuntu/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml,javafx.media"/>
 </launchConfiguration>

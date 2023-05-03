@@ -123,6 +123,9 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 
 	@FXML
 	private Text agePageProfil;
+	
+	@FXML
+	private Text genrePageProfil;
 
 	@FXML
 	private Text mdpPageProfil;
@@ -445,11 +448,15 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		//////////////////////////////////////////////////////////////////////////////////////////////////
 		
 		
-		c.nomPageProfil.setText(modl.memoiremixte.pUser.nom);
-		c.prenomPageProfil.setText(modl.memoiremixte.pUser.prenom);
-		c.agePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.age));
-		c.taillePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.taille));
-
+		c.nomPageProfil.setText(modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).nom);
+		c.prenomPageProfil.setText(modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).prenom);
+		c.dateNaissancePageProfil.setText(String.valueOf(modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).date_naissance));
+		c.agePageProfil.setText(String.valueOf(modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).age));
+		c.taillePageProfil.setText(String.valueOf(modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).taille));
+		c.genrePageProfil.setText(modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).sexe);
+		
+		
+		
 		Scene scene = new Scene(rootLayout);
 		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 		c.Stage.setTitle("Champolove");

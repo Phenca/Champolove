@@ -16,12 +16,12 @@
                <children>
                   <GridPane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefWidth="400.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <Label text="Genre" GridPane.rowIndex="5" />
                         <Label text="Nom" />
                         <Label text="Prénom" GridPane.rowIndex="1" />
                         <Label text="Date de naissance (DD/MM/YYYY)" GridPane.rowIndex="2" />
                         <Label text="Age " GridPane.rowIndex="3" />
                         <Label text="Taille (en cm)" GridPane.rowIndex="4" />
+                        <Label text="Genre" GridPane.rowIndex="5" />
                         <Label text="Description " GridPane.rowIndex="6" />
                         <Label text="Préférences musicales" GridPane.rowIndex="7" />
                         <Label text="Hoobies " GridPane.rowIndex="11" />
@@ -40,7 +40,7 @@
                         <Text fx:id="dateNaissancePageProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Text fx:id="agePageProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Text fx:id="taillePageProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Text fx:id="genrePageProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />

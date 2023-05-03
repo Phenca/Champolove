@@ -20,12 +20,12 @@ public class Profil {
 	ArrayList<String> Hobbies; // Sport ? Jeux ? Autre Activité ?
 
 
-	public Profil(String id, String nom, String prenom, String date_naissance,int age, int taille, String adresse_mail, String sexe, String lien_photoP, String descri, int matcher, String motsDePasse) {
+	public Profil(String nom, String prenom, String date_naissance,int taille, int age, String adresse_mail, String sexe, String lien_photoP, String descri, int matcher, String motsDePasse) {
 		this.nom=nom;
 		this.prenom=prenom;
 		this.date_naissance=date_naissance;
-		this.age=0;
 		this.taille=taille;
+		this.age=0;
 		this.adresse_mail = adresse_mail;
 		this.sexe=sexe;
 		this.lien_photoProfil=lien_photoP;
