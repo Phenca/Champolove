@@ -18,40 +18,40 @@ public class Modele implements Observable{
 	public Modele() {
 		memoiremixte = new MemoireProfil();
 		
-		String[] tableauDesStylesDeMusiques= {"Rock","Rap","Pop","Hip-hop", "Jazz", "Blues", "Soul", "Gospel", "Country", "Disco", "Techno", "Reggae", "Salsa", "Flamenco", "Metal", "Funk",
-				"Lofi"};
+		String[] tableauDesStylesDeMusiques= {"Rock","Rap","Pop","Hip-Hop", "Jazz", "Blues", "Soul", "Gospel", "Country", "Disco", "Techno", "Reggae", "Salsa", "Flamenco", "Metal", "Funk",
+				"Lo-Fi"};
 		
-		String[] tableauMonAnimalCompagnie = {"Chien", "Chat", "Serpent", "Cheval", "Peroquet", "rat", "hamster", "lapin", "poule", "canari", "poisson"};
+		String[] tableauMonAnimalCompagnie = {"Chien", "Chat", "Serpent", "Cheval", "Peroquet", "Rat", "Hamster", "Lapin", "Poule", "Canari", "Poisson"};
 		
 		String[] tableauMonPlatPref = { "Pâtes à la bolognaise", "Pâtes à la carbonara", "Lasagnes", "Croque-monsieur", "Gratin dauphinois", "Burger-frites", "Magret de canard" 
-				,"Moules-frites", "Couscous", "Blanquette de veau" ,"Steak-frites", "Raclette" ,"Tomates farcies"};
+				,"Moules-frites", "Couscous", "Blanquette de veau" ,"Steak-frites", "Raclette" ,"Tomates farcies","Pizza"};
 		
-		String[] tableauDesStylesFilmsEtSerie = {"Science-fiction", "Comédie", "Horreur", "Suspence", "Policier", "Aventure", "Romantique", "Guerre", "Histoire", "Action"
-				,"Drame", "Comédie dramatique", "Fantastique", "Western"};
+		String[] tableauDesStylesFilmsEtSerie = {"Science-Fiction", "Comédie", "Horreur", "Suspence", "Policier", "Aventure", "Romantique", "Guerre", "Histoire", "Action"
+				,"Drame", "Comédie Dramatique", "Fantastique", "Western"};
 		
 		dictionnaireDesGouts.put("Tes styles de musiques ?", tableauDesStylesDeMusiques);
 		dictionnaireDesGouts.put("Ton animal favoris", tableauMonAnimalCompagnie);
 		dictionnaireDesGouts.put("Mon plat préféré", tableauMonPlatPref);
 		dictionnaireDesGouts.put("Tes styles de films/séries ?", tableauDesStylesFilmsEtSerie);
 		
-		listeHobbies.add("Jeux vidéo");//0
-		listeHobbies.add("sport");//1
-		listeHobbies.add("cuisiner");//2
-		listeHobbies.add("sport à sensation forte");//3
-		listeHobbies.add("soirée entre amis");//4
-		listeHobbies.add("sortie au musée");//5
-		listeHobbies.add("jouer d'un instrument");//6
-		listeHobbies.add("peindre");//7
-		listeHobbies.add("chanter");//8
-		listeHobbies.add("jardinage");//9
-		listeHobbies.add("ballade en fôret");//10
-		listeHobbies.add("shopping");//11
-		listeHobbies.add("lecture");//12
-		listeHobbies.add("danse");//13
-		listeHobbies.add("pêche");//14
-		listeHobbies.add("vélo");//15
-		listeHobbies.add("chasse");//16
-		listeHobbies.add("cueillette de champignons");//17
+		listeHobbies.add("Jeu vidéo");//0
+		listeHobbies.add("Sport");//1
+		listeHobbies.add("Cuisine");//2
+		listeHobbies.add("Sport à sensations");//3
+		listeHobbies.add("Soirées entre amis");//4
+		listeHobbies.add("Sorties culturelles");//5
+		listeHobbies.add("Faire de la musique");//6
+		listeHobbies.add("Peinture");//7
+		listeHobbies.add("Chant");//8
+		listeHobbies.add("Jardinage");//9
+		listeHobbies.add("Marche");//10
+		listeHobbies.add("Shopping");//11
+		listeHobbies.add("Lecture");//12
+		listeHobbies.add("Danse");//13
+		listeHobbies.add("Pêche");//14
+		listeHobbies.add("Vélo");//15
+		listeHobbies.add("Chasse");//16
+		listeHobbies.add("Cueillette de champignons");//17
 
 		//pour p1
 		memoiremixte.p1.Gouts.add(tableauDesStylesDeMusiques[0]);

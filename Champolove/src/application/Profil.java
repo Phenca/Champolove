@@ -20,6 +20,7 @@ public class Profil {
 	ArrayList<String> Hobbies; // Sport ? Jeux ? Autre Activité ?
 	
 	public ArrayList<Profil> listeDesProfilsOptimale;
+	public ArrayList<Profil> memoireMatcher;
 
 
 	public Profil(String nom, String prenom, String date_naissance,int taille, int age, String adresse_mail, String sexe, String lien_photoP, String descri, int matcher, String motsDePasse) {
@@ -38,6 +39,7 @@ public class Profil {
 		this.Gouts= new ArrayList<>();
 		this.Hobbies= new ArrayList<>();
 		this.listeDesProfilsOptimale=new ArrayList<>();
+		this.memoireMatcher = new ArrayList<>();
 		
 		
 	}
@@ -51,7 +53,7 @@ public class Profil {
 
 		for(int i=0; i<this.Gouts.size(); i++) {
 			for(int j=0; j<o.Gouts.size(); j++) {
-				if(this.Gouts.get(i)==o.Gouts.get(j)) {
+				if(this.Gouts.get(i).equals(o.Gouts.get(j))) {
 					res+=1;
 				}
 			}
@@ -61,7 +63,7 @@ public class Profil {
 		
 		for(int i=0; i<this.Hobbies.size(); i++) {
 			for(int j=0; j<o.Hobbies.size(); j++) {
-				if(this.Hobbies.get(i)==o.Hobbies.get(j)) {
+				if(this.Hobbies.get(i).equals(o.Hobbies.get(j))) {
 					res+=1;
 				}
 			}
