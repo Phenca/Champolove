@@ -16,7 +16,6 @@ public class MemoireProfil {
 	ArrayList<Profil> memoirePFemme;
 	Profil pUser;
 	ArrayList<Profil> memoirePMixtes;
-	ArrayList<Profil> memoireMatcher;
 	Profil p1;
 	Profil p2;
 	Profil p3;
@@ -92,7 +91,7 @@ public class MemoireProfil {
 
 		memoirePHomme = new ArrayList<>();
 		memoirePFemme = new ArrayList<>();
-		memoireMatcher = new ArrayList<>();
+		
 
 		for (int i=0; i<memoirePMixtes.size(); i++) {
 			Profil m =  (Profil) memoirePMixtes.get(i);

@@ -133,7 +133,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 
 	@FXML
 	private Text adresseEmailPageProfil;
-	
+
 	@FXML
 	private Text HobbiesPageProfil;
 
@@ -300,7 +300,242 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.modl.memoiremixte.pUser.mdp=mdpProfil.getText();
 		c.modl.memoiremixte.pUser.date_naissance=DaTeNaissanceProfil.toString();
 
-		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.memoirePMixtes;
+		
+		/*
+		if(checkBoxRock.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Rock");
+		}
+		if(checkBoxRap.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Rap");
+		}
+		if(checkBoxPop.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Pop");
+		}
+		if(checkBoxHipHop.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Hip-Hop");
+		}
+		if(checkBoxJazz.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Jazz");
+		}
+		if(checkBoxBlues.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Blues");
+		}
+		if(checkBoxSoul.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Soul");
+		}
+		if(checkBoxGospel.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Gospel");
+		}
+		if(checkBoxCountry.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Country");
+		}
+		if(checkBoxDisco.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Disco");
+		}
+		if(checkBoxTechno.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Techno");
+		}
+		if(checkBoxReggae.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Reggae");
+		}
+		if(checkBoxSalsa.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Salsa");
+		}
+		if(checkBoxFlamenco.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Flamenco");
+		}
+		if(checkBoxMetal.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Metal");
+		}
+		if(checkBoxFunk.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Funk");
+		}
+		if(checkBoxLoFi.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Lo-Fi");
+		}
+		if(checkBoxChien.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Chien");
+		}
+		if(checkBoxChat.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Chat");
+		}
+		if(checkBoxSerpent.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Serpent");
+		}
+		if(checkBoxCheval.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Cheval");
+		}
+		if(checkBoxPeroquet.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Peroquet");
+		}
+		if(checkBoxRat.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Rat");
+		}
+		if(checkBoxHamster.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Hamster");
+		}
+		if(checkBoxLapin.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Lapin");
+		}
+		if(checkBoxPoule.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Poule");
+		}
+		if(checkBoxCanari.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Canari");
+		}
+		if(checkBoxPoisson.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Poisson");
+		}
+		if(checkBoxPatesalabolognaise.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Pâtes à la bolognaise");
+		}
+		if(checkBoxPatesalacarbonara.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Pâtes à la carbonara");
+		}
+		if(checkBoxLasagnes.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Lasagnes");
+		}
+		if(checkBoxCroquemonsieur.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Croque-monsieur");
+		}
+		if(checkBoxGratindauphinois.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Gratin dauphinois");
+		}
+		if(checkBoxBurgerfrites.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Burger-frites");
+		}
+		if(checkBoxMagretdecanard.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Magret de canard");
+		}
+		if(checkBoxMoulesfrites.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Moules-frites");
+		}
+		if(checkBoxCouscous.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Couscous");
+		}
+		if(checkBoxBlanquettedeveau.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Blanquette de veau");
+		}
+		if(checkBoxSteakfrites.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Steak-frites");
+		}
+		if(checkBoxRaclette.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Raclette");
+		}
+		if(checkBoxTomatesfarcies.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Tomates farcies");
+		}
+		if(checkBoxPizza.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Pizza");
+		}
+		if(checkBoxScienceFiction.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Science-Fiction");
+		}
+		if(checkBoxComedie.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Comédie");
+		}
+
+		if(checkBoxHorreur.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Horreur");
+		}
+		if(checkBoxSuspence.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Suspence");
+		}
+		if(checkBoxPolicier.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Policier");
+		}
+		if(checkBoxAventure.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Aventure");
+		}
+		if(checkBoxRomantique.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Romantique");
+		}
+
+		if(checkBoxGuerre.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Guerre");
+		}
+		if(checkBoxHistoire.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Histoire");
+		}
+		if(checkBoxAction.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Action");
+		}
+		if(checkBoxDrame.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Drame");
+		}
+		if(checkBoxComedieDramatique.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Comédie Dramatique");
+		}
+
+		if(checkBoxFantastique.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Fantastique");
+		}
+		if(checkBoxWestern.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Western");
+		}
+
+
+
+		if(checkBoxSport.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Sport");
+		}
+		if(checkBoxJeuvideo.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Jeu vidéo");
+		}
+		if(checkBoxCuisine.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Cuisine");
+		}
+		if(checkBoxSportasensations.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Sport à sensations");
+		}
+		if(checkBoxSoireesentreamis.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Soirées entre amis");
+		}
+		if(checkBoxSortiesculturelles.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Sorties culturelles");
+		}
+		if(checkBoxFairedelamusique.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Faire de la musique");
+		}
+		if(checkBoxPeinture.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Peinture");
+		}
+		if(checkBoxChant.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Chant");
+		}
+		if(checkBoxJardinage.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Jardinage");
+		}
+		if(checkBoxMarche.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Marche");
+		}
+		if(checkBoxShopping.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Shopping");
+		}
+		if(checkBoxLecture.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Lecture");
+		}
+		if(checkBoxDanse.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Danse");
+		}
+		if(checkBoxPeche.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Pêche");
+		}
+		if(checkBoxVelo.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Vélo");
+		}
+		if(checkBoxChasse.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Chasse");
+		}
+		if(checkBoxCueillettedechampignons.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Cueillettedechampignons");
+		}
+
+		
+		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=c.modl.memoiremixte.selectionDesProfilsOptimiserPourLePuser();
+		 */
+		
+		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=c.modl.memoiremixte.memoirePMixtes;
 
 		c.actuelle=c.modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture);
 		Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
@@ -342,16 +577,40 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	 */
 
 	@FXML
-	void profilSuivant(ActionEvent event) {
+	void profilSuivantCNON(ActionEvent event) {
 
 		if(indexProfilEnCoursDeLecture<modl.memoiremixte.pUser.listeDesProfilsOptimale.size()-1) {
 			indexProfilEnCoursDeLecture = indexProfilEnCoursDeLecture+1;
+
 			actuelle=modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture);
+			modl.memoiremixte.pUser.memoireMatcher.add(actuelle);
+
 			Image imageProfilSelectionEnCours=new Image(actuelle.lien_photoProfil);
 			imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
 
 			ageDuProfilEnCoursDeLecture.setText(String.valueOf(actuelle.age));
+			prenomProfilEnCoursDeLecture.setText(actuelle.prenom);
+		}
+		else {
 
+		}
+
+	}
+
+
+	@FXML
+	void profilSuivantCOUI(ActionEvent event) {
+
+		if(indexProfilEnCoursDeLecture<modl.memoiremixte.pUser.listeDesProfilsOptimale.size()-1) {
+			indexProfilEnCoursDeLecture = indexProfilEnCoursDeLecture+1;
+
+			actuelle=modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture);
+			modl.memoiremixte.pUser.memoireMatcher.add(actuelle);
+
+			Image imageProfilSelectionEnCours=new Image(actuelle.lien_photoProfil);
+			imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
+
+			ageDuProfilEnCoursDeLecture.setText(String.valueOf(actuelle.age));
 			prenomProfilEnCoursDeLecture.setText(actuelle.prenom);
 		}
 		else {
@@ -441,7 +700,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
 		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.pUser.listeDesProfilsOptimale;
 		//////////////////////////////////////////////////////////////////////////////////////////////////
-		
+
 
 		c.nomPageProfil.setText(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).nom);
 		c.prenomPageProfil.setText(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).prenom);
@@ -449,12 +708,12 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.agePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).age));
 		c.taillePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).taille));
 		c.genrePageProfil.setText(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).sexe);
-		
+
 		for (int i=0; i<modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).Gouts.size(); i++) {
-			
+
 		}
 		for (int toto=0; toto<modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).Hobbies.size(); toto++) {
-			
+
 		}
 
 		Scene scene = new Scene(rootLayout);

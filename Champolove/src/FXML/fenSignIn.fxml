@@ -84,7 +84,7 @@
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox mnemonicParsing="false" text="Hip-Hop" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                        <CheckBox fx:id="checkBoxHipHop" mnemonicParsing="false" text="Hip-Hop" GridPane.columnIndex="1" GridPane.rowIndex="11">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>

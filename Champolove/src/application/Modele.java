@@ -34,7 +34,7 @@ public class Modele implements Observable{
 		dictionnaireDesGouts.put("Mon plat préféré", tableauMonPlatPref);
 		dictionnaireDesGouts.put("Tes styles de films/séries ?", tableauDesStylesFilmsEtSerie);
 		
-		listeHobbies.add("Jeux vidéo");//0
+		listeHobbies.add("Jeu vidéo");//0
 		listeHobbies.add("Sport");//1
 		listeHobbies.add("Cuisine");//2
 		listeHobbies.add("Sport à sensations");//3

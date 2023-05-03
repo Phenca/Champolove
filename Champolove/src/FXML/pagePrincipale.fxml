@@ -25,9 +25,9 @@
       </HBox>
       <HBox alignment="CENTER" fillHeight="false" maxHeight="-Infinity" prefHeight="50.0" prefWidth="600.0" spacing="40.0" VBox.vgrow="ALWAYS">
          <children>
-            <Button mnemonicParsing="false" onAction="#profilSuivant" prefHeight="30.0" prefWidth="60.0" text="CNON" HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#profilSuivantCNON" prefHeight="30.0" prefWidth="60.0" text="CNON" HBox.hgrow="ALWAYS" />
             <Button fx:id="afficheDescription" mnemonicParsing="false" onAction="#afficheDescription" prefHeight="30.0" prefWidth="60.0" text="DESC" HBox.hgrow="ALWAYS" />
-            <Button mnemonicParsing="false" onAction="#profilSuivant" prefHeight="30.0" prefWidth="60.0" text="COUI" HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#profilSuivantCOUI" prefHeight="30.0" prefWidth="60.0" text="COUI" HBox.hgrow="ALWAYS" />
          </children>
       </HBox>
       <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="30.0" prefWidth="200.0" spacing="5.0">
