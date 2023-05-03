@@ -133,6 +133,9 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 
 	@FXML
 	private Text adresseEmailPageProfil;
+	
+	@FXML
+	private Text HobbiesPageProfil;
 
 	/*
 	 * 
@@ -457,8 +460,12 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.agePageProfil.setText(String.valueOf(modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).age));
 		c.taillePageProfil.setText(String.valueOf(modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).taille));
 		c.genrePageProfil.setText(modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).sexe);
-		
-		
+		for (int i=0; i<modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).Gouts.size(); i++) {
+			
+		}
+		for (int toto=0; toto<modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).Hobbies.size(); toto++) {
+			c.HobbiesPageProfil.setText(modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).Hobbies.get(toto));
+		}
 		
 		Scene scene = new Scene(rootLayout);
 		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
