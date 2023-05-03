@@ -58,7 +58,7 @@ public class Profil {
 				}
 			}
 		}
-		totalDesGouts=(this.Gouts.size()+o.Gouts.size());
+		totalDesGouts=(this.Gouts.size()+1);
 		
 		
 		for(int i=0; i<this.Hobbies.size(); i++) {
@@ -69,7 +69,7 @@ public class Profil {
 			}
 		}
 		
-		totalDesHobbies=(this.Hobbies.size()+o.Hobbies.size());
+		totalDesHobbies=(this.Hobbies.size()+1);
 
 
 		return res/((totalDesGouts + totalDesHobbies) - res); ///ça donne un pourcentage, ce qu'il faut comprendre c'est que le deuxième res qui est a l extreminite sert juste a eleminer les doublons des points communs dans les totals de chaque gouts, hobbies et aEviter

@@ -26,7 +26,7 @@ public class Modele implements Observable{
 		String[] tableauMonPlatPref = { "Pâtes à la bolognaise", "Pâtes à la carbonara", "Lasagnes", "Croque-monsieur", "Gratin dauphinois", "Burger-frites", "Magret de canard" 
 				,"Moules-frites", "Couscous", "Blanquette de veau" ,"Steak-frites", "Raclette" ,"Tomates farcies","Pizza"};
 		
-		String[] tableauDesStylesFilmsEtSerie = {"Science-Fiction", "Comédie", "Horreur", "Suspence", "Policier", "Aventure", "Romantique", "Guerre", "Histoire", "Action"
+		String[] tableauDesStylesFilmsEtSerie = {"Science-Fiction", "Comédie", "Horreur", "Suspense", "Policier", "Aventure", "Romantique", "Guerre", "Histoire", "Action"
 				,"Drame", "Comédie Dramatique", "Fantastique", "Western"};
 		
 		dictionnaireDesGouts.put("Tes styles de musiques ?", tableauDesStylesDeMusiques);
@@ -34,7 +34,7 @@ public class Modele implements Observable{
 		dictionnaireDesGouts.put("Mon plat préféré", tableauMonPlatPref);
 		dictionnaireDesGouts.put("Tes styles de films/séries ?", tableauDesStylesFilmsEtSerie);
 		
-		listeHobbies.add("Jeu vidéo");//0
+		listeHobbies.add("Jeu Vidéo");//0
 		listeHobbies.add("Sport");//1
 		listeHobbies.add("Cuisine");//2
 		listeHobbies.add("Sport à sensations");//3
@@ -46,7 +46,6 @@ public class Modele implements Observable{
 		listeHobbies.add("Jardinage");//9
 		listeHobbies.add("Marche");//10
 		listeHobbies.add("Shopping");//11
-		listeHobbies.add("Lecture");//12
 		listeHobbies.add("Danse");//13
 		listeHobbies.add("Pêche");//14
 		listeHobbies.add("Vélo");//15
@@ -139,7 +138,6 @@ public class Modele implements Observable{
 		memoiremixte.p8.Hobbies.add(listeHobbies.get(7));
 		memoiremixte.p8.Hobbies.add(listeHobbies.get(9));
 		memoiremixte.p8.Hobbies.add(listeHobbies.get(10));
-		memoiremixte.p8.Hobbies.add(listeHobbies.get(12));
 
 		//pour p9
 		memoiremixte.p9.Gouts.add(tableauMonAnimalCompagnie[9]);
@@ -149,10 +147,9 @@ public class Modele implements Observable{
 		memoiremixte.p9.Gouts.add(tableauMonPlatPref[9]);
 		memoiremixte.p9.Gouts.add(tableauDesStylesFilmsEtSerie[8]);
 		memoiremixte.p9.Gouts.add(tableauDesStylesFilmsEtSerie[11]);
-		memoiremixte.p9.Hobbies.add(listeHobbies.get(12));
-		memoiremixte.p9.Hobbies.add(listeHobbies.get(14));
+		memoiremixte.p9.Hobbies.add(listeHobbies.get(13));
+		memoiremixte.p9.Hobbies.add(listeHobbies.get(15));
 		memoiremixte.p9.Hobbies.add(listeHobbies.get(16));
-		memoiremixte.p9.Hobbies.add(listeHobbies.get(17));
 
 		//pour p10
 		memoiremixte.p10.Gouts.add(tableauDesStylesDeMusiques[16]);
@@ -167,7 +164,6 @@ public class Modele implements Observable{
 		memoiremixte.p10.Hobbies.add(listeHobbies.get(0));//championne de candy crush
 		memoiremixte.p10.Hobbies.add(listeHobbies.get(1));
 		memoiremixte.p10.Hobbies.add(listeHobbies.get(4));
-		memoiremixte.p10.Hobbies.add(listeHobbies.get(12));
 
 		
 	}
