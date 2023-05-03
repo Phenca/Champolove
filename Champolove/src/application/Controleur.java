@@ -133,6 +133,9 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 
 	@FXML
 	private Text adresseEmailPageProfil;
+	
+	@FXML
+	private Text HobbiesPageProfil;
 
 	/*
 	 * 
@@ -438,7 +441,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
 		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.pUser.listeDesProfilsOptimale;
 		//////////////////////////////////////////////////////////////////////////////////////////////////
-
+		
 
 		c.nomPageProfil.setText(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).nom);
 		c.prenomPageProfil.setText(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).prenom);
@@ -446,8 +449,13 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.agePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).age));
 		c.taillePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).taille));
 		c.genrePageProfil.setText(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).sexe);
-
-
+		
+		for (int i=0; i<modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).Gouts.size(); i++) {
+			
+		}
+		for (int toto=0; toto<modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).Hobbies.size(); toto++) {
+			
+		}
 
 		Scene scene = new Scene(rootLayout);
 		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
