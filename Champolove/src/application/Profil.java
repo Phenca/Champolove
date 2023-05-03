@@ -18,14 +18,16 @@ public class Profil {
 
 	public ArrayList<String> Gouts; // question sur la musique, question sur la nourriture, choix taille
 	ArrayList<String> Hobbies; // Sport ? Jeux ? Autre Activité ?
+	
+	public ArrayList<Profil> listeDesProfilsOptimale;
 
 
-	public Profil(String id, String nom, String prenom, String date_naissance,int age, int taille, String adresse_mail, String sexe, String lien_photoP, String descri, int matcher, String motsDePasse) {
+	public Profil(String nom, String prenom, String date_naissance,int taille, int age, String adresse_mail, String sexe, String lien_photoP, String descri, int matcher, String motsDePasse) {
 		this.nom=nom;
 		this.prenom=prenom;
 		this.date_naissance=date_naissance;
-		this.age=0;
 		this.taille=taille;
+		this.age=0;
 		this.adresse_mail = adresse_mail;
 		this.sexe=sexe;
 		this.lien_photoProfil=lien_photoP;
@@ -33,8 +35,11 @@ public class Profil {
 		this.matcher = 0;
 		this.mdp=motsDePasse;
 		
-		Gouts= new ArrayList<>();
-		Hobbies= new ArrayList<>();
+		this.Gouts= new ArrayList<>();
+		this.Hobbies= new ArrayList<>();
+		this.listeDesProfilsOptimale=new ArrayList<>();
+		
+		
 	}
 
 

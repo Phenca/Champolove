@@ -59,5 +59,6 @@
             </HBox>
          </children>
       </VBox>
+      <Text fx:id="messageLogIn" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text=" " />
    </children>
 </FlowPane>
