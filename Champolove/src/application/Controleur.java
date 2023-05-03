@@ -124,7 +124,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 
 	@FXML
 	private Text agePageProfil;
-	
+
 	@FXML
 	private Text genrePageProfil;
 
@@ -249,35 +249,17 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			c.modl.memoiremixte.pUser.mdp="root";
 			c.modl.memoiremixte.pUser.date_naissance="";
 
+			c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.memoirePMixtes;
 
-			System.out.println(this.modl);
-			if(this.modl.memoiremixte.pUser.VotrePreference=="mixte") {
-				c.actuelle=modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture);
-				Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
-				c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
-				System.out.println(c.actuelle.lien_photoProfil);
+			c.actuelle=c.modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture);
+			Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
+			c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
+			System.out.println(c.actuelle.lien_photoProfil);
 
-				c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
+			c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
 
-				c.prenomProfilEnCoursDeLecture.setText(c.actuelle.prenom);
+			c.prenomProfilEnCoursDeLecture.setText(c.actuelle.prenom);
 
-			}
-			if(this.modl.memoiremixte.pUser.VotrePreference=="femme") {
-				this.actuelle=this.modl.memoiremixte.memoirePFemme.get(indexProfilEnCoursDeLecture);
-				System.out.println(this.actuelle);
-				System.out.println(this.actuelle.lien_photoProfil);
-				Image imageProfilSelectionEnCours=new Image(this.actuelle.lien_photoProfil);
-				imageView.setImage(imageProfilSelectionEnCours);
-
-			}
-			if(this.modl.memoiremixte.pUser.VotrePreference=="homme") {
-				this.actuelle=this.modl.memoiremixte.memoirePHomme.get(indexProfilEnCoursDeLecture);
-				System.out.println(this.actuelle);
-				System.out.println(this.actuelle.lien_photoProfil);
-				Image imageProfilSelectionEnCours=new Image(this.actuelle.lien_photoProfil);
-				imageView.setImage(imageProfilSelectionEnCours);
-
-			}
 
 
 			Scene scene = new Scene(rootLayout);
@@ -318,17 +300,17 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.modl.memoiremixte.pUser.mdp=mdpProfil.getText();
 		c.modl.memoiremixte.pUser.date_naissance=DaTeNaissanceProfil.toString();
 
-		System.out.println(this.modl);
-		if(this.modl.memoiremixte.pUser.VotrePreference=="mixte") {
-			c.actuelle=modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture);
-			Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
-			c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
-			System.out.println(c.actuelle.lien_photoProfil);
+		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.memoirePMixtes;
 
-			c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
+		c.actuelle=c.modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture);
+		Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
+		c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
+		System.out.println(c.actuelle.lien_photoProfil);
 
-			c.prenomProfilEnCoursDeLecture.setText(c.actuelle.prenom);
-		}
+		c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
+
+		c.prenomProfilEnCoursDeLecture.setText(c.actuelle.prenom);
+
 
 		Scene scene = new Scene(rootLayout);
 		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
@@ -362,15 +344,19 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML
 	void profilSuivant(ActionEvent event) {
 
-		indexProfilEnCoursDeLecture = indexProfilEnCoursDeLecture+1;
-		actuelle=modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture);
-		Image imageProfilSelectionEnCours=new Image(actuelle.lien_photoProfil);
-		imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
+		if(indexProfilEnCoursDeLecture<modl.memoiremixte.pUser.listeDesProfilsOptimale.size()-1) {
+			indexProfilEnCoursDeLecture = indexProfilEnCoursDeLecture+1;
+			actuelle=modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture);
+			Image imageProfilSelectionEnCours=new Image(actuelle.lien_photoProfil);
+			imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
 
-		ageDuProfilEnCoursDeLecture.setText(String.valueOf(actuelle.age));
+			ageDuProfilEnCoursDeLecture.setText(String.valueOf(actuelle.age));
 
-		prenomProfilEnCoursDeLecture.setText(actuelle.prenom);
+			prenomProfilEnCoursDeLecture.setText(actuelle.prenom);
+		}
+		else {
 
+		}
 
 	}
 
@@ -393,6 +379,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.modl.memoiremixte.pUser.mdp=modl.memoiremixte.pUser.mdp;
 		c.modl.memoiremixte.pUser.date_naissance=modl.memoiremixte.pUser.date_naissance;
 		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
+		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.pUser.listeDesProfilsOptimale;
 		//////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -427,6 +414,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.modl.memoiremixte.pUser.mdp=modl.memoiremixte.pUser.mdp;
 		c.modl.memoiremixte.pUser.date_naissance=modl.memoiremixte.pUser.date_naissance;
 		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
+		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.pUser.listeDesProfilsOptimale;
 		//////////////////////////////////////////////////////////////////////////////////////////////////
 
 		Scene scene = new Scene(rootLayout);
@@ -451,22 +439,24 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.modl.memoiremixte.pUser.mdp=modl.memoiremixte.pUser.mdp;
 		c.modl.memoiremixte.pUser.date_naissance=modl.memoiremixte.pUser.date_naissance;
 		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
+		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.pUser.listeDesProfilsOptimale;
 		//////////////////////////////////////////////////////////////////////////////////////////////////
 		
+
+		c.nomPageProfil.setText(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).nom);
+		c.prenomPageProfil.setText(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).prenom);
+		c.dateNaissancePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).date_naissance));
+		c.agePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).age));
+		c.taillePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).taille));
+		c.genrePageProfil.setText(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).sexe);
 		
-		c.nomPageProfil.setText(modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).nom);
-		c.prenomPageProfil.setText(modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).prenom);
-		c.dateNaissancePageProfil.setText(String.valueOf(modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).date_naissance));
-		c.agePageProfil.setText(String.valueOf(modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).age));
-		c.taillePageProfil.setText(String.valueOf(modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).taille));
-		c.genrePageProfil.setText(modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).sexe);
-		for (int i=0; i<modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).Gouts.size(); i++) {
+		for (int i=0; i<modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).Gouts.size(); i++) {
 			
 		}
-		for (int toto=0; toto<modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).Hobbies.size(); toto++) {
-			c.HobbiesPageProfil.setText(modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture).Hobbies.get(toto));
+		for (int toto=0; toto<modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).Hobbies.size(); toto++) {
+			
 		}
-		
+
 		Scene scene = new Scene(rootLayout);
 		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 		c.Stage.setTitle("Champolove");
@@ -502,6 +492,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.modl.memoiremixte.pUser.mdp=modl.memoiremixte.pUser.mdp;
 		c.modl.memoiremixte.pUser.date_naissance=modl.memoiremixte.pUser.date_naissance;
 		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
+		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.pUser.listeDesProfilsOptimale;
 		//////////////////////////////////////////////////////////////////////////////////////////////////
 
 		System.out.println(this.modl);
@@ -547,6 +538,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.modl.memoiremixte.pUser.mdp=modl.memoiremixte.pUser.mdp;
 		c.modl.memoiremixte.pUser.date_naissance=modl.memoiremixte.pUser.date_naissance;
 		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
+		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.pUser.listeDesProfilsOptimale;
 		//////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -584,6 +576,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.modl.memoiremixte.pUser.mdp=mdpProfil2.getText();
 		c.modl.memoiremixte.pUser.date_naissance=DaTeNaissanceProfil2.toString();
 		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
+		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.pUser.listeDesProfilsOptimale;
 
 
 		c.nomPageProfil.setText(c.modl.memoiremixte.pUser.nom);
