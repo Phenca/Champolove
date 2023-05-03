@@ -427,19 +427,36 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.Stage.setScene(scene);
 		c.Stage.show();
 	}
-	@FXML private void afficheDescription(ActionEvent event) {
-		Parent rootLayout;
-		try {
-			rootLayout = FXMLLoader.load(getClass().getResource("/FXML/pageDescription.fxml"));
-			Scene scene = new Scene(rootLayout);
-			this.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-			this.Stage.setTitle("Champolove");
-			this.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
-			this.Stage.setScene(scene);
-			this.Stage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	@FXML private void afficheDescription(ActionEvent event) throws IOException{
+		Parent rootLayout;	
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/FXML/pageDescription.fxml"));
+		rootLayout = loader.load();
+		Controleur c=loader.getController();
+
+		//Cette Partie sert à sauvergarder les données utiles qui changent constament, c'est à garder//////
+		c.modl.memoiremixte.pUser.prenom=modl.memoiremixte.pUser.prenom;
+		c.modl.memoiremixte.pUser.nom=modl.memoiremixte.pUser.nom;
+		c.modl.memoiremixte.pUser.adresse_mail=modl.memoiremixte.pUser.adresse_mail;
+		c.modl.memoiremixte.pUser.taille=modl.memoiremixte.pUser.taille;
+		c.modl.memoiremixte.pUser.mdp=modl.memoiremixte.pUser.mdp;
+		c.modl.memoiremixte.pUser.date_naissance=modl.memoiremixte.pUser.date_naissance;
+		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
+		//////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		
+		c.nomPageProfil.setText(modl.memoiremixte.pUser.nom);
+		c.prenomPageProfil.setText(modl.memoiremixte.pUser.prenom);
+		c.agePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.age));
+		c.taillePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.taille));
+
+		Scene scene = new Scene(rootLayout);
+		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+		c.Stage.setTitle("Champolove");
+		c.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+		c.Stage.setScene(scene);
+		c.Stage.show();
+
 	}
 	/*
 	 * 
