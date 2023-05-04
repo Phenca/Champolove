@@ -72,6 +72,7 @@
                   </GridPane>
                </children>
             </VBox>
+            <Label fx:id="RendezVous" layoutX="91.0" layoutY="7.0" text="Aucun rendez vous pris avec cette personne" textFill="#ff9500" />
          </children>
          <padding>
             <Insets top="30.0" />
