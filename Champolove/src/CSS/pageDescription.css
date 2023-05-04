@@ -1,0 +1,24 @@
+.background {
+    -fx-background-color: rgb(230, 230, 230);
+}
+
+.label {
+    -fx-font-family: "Georgia";
+    -fx-font-size: 14px;
+}
+
+.text {
+    -fx-font-family: "Georgia";
+    -fx-font-size: 14px;
+}
+
+.button {
+    -fx-background-insets: 0px, 1px;
+    -fx-background-radius: 5px, 4px;
+    -fx-cursor: hand;
+}
+
+.button:pressed {
+    -fx-translate-x: 2px;
+    -fx-effect: dropshadow(three-pass-box, darkmagenta, 2, 0, 0, 0);
+}

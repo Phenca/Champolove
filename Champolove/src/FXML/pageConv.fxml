@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" styleClass="background" stylesheets="@../CSS/pageConv.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
    <opaqueInsets>
       <Insets />
    </opaqueInsets>
@@ -89,7 +89,7 @@
                   <HBox alignment="BOTTOM_CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" VBox.vgrow="ALWAYS">
                      <children>
                         <DatePicker fx:id="DateDuRendezVous" HBox.hgrow="ALWAYS" />
-                        <Button mnemonicParsing="false" text="Prendre rendez-vous" onAction="#enregistrezLeRendezVous" HBox.hgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" onAction="#enregistrezLeRendezVous" text="Prendre rendez-vous" HBox.hgrow="ALWAYS" />
                      </children>
                      <VBox.margin>
                         <Insets />
