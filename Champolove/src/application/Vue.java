@@ -44,7 +44,6 @@ public class Vue extends Application implements Observer, Initializable {
 	@Override
 	public void start(Stage Stage) throws Exception {
 		this.Stage = Stage;
-		loadSplashScreen();
 		fenetreLancement();
 
 	}

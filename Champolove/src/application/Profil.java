@@ -35,7 +35,7 @@ public class Profil {
 		this.description=descri;
 		this.matcher = 0;
 		this.mdp=motsDePasse;
-		
+	
 		this.Gouts= new ArrayList<>();
 		this.Hobbies= new ArrayList<>();
 		this.listeDesProfilsOptimale=new ArrayList<>();

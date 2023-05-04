@@ -3,11 +3,8 @@ package application;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -84,6 +81,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML private CheckBox checkBoxMetal;
 	@FXML private CheckBox checkBoxFunk;
 	@FXML private CheckBox checkBoxLoFi;
+	@FXML private CheckBox checkBoxClassique;
 	@FXML private CheckBox checkBoxChien;
 	@FXML private CheckBox checkBoxChat;
 	@FXML private CheckBox checkBoxSerpent;
@@ -109,6 +107,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML private CheckBox checkBoxRaclette;
 	@FXML private CheckBox checkBoxTomatesfarcies;
 	@FXML private CheckBox checkBoxPizza;
+	@FXML private CheckBox checkBoxOmelette;
 	@FXML private CheckBox checkBoxScienceFiction;
 	@FXML private CheckBox checkBoxComedie;
 	@FXML private CheckBox checkBoxHorreur;
@@ -153,8 +152,9 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML private PasswordField mdpProfil;
 	@FXML private TextField nomProfil;
 	@FXML private TextField TailleProfil;	
-	@FXML private ChoiceBox<?> SexeProfil;
-	@FXML private TextField prenomProfil;   
+	@FXML private ChoiceBox<String> SexeProfil;
+	@FXML private TextField prenomProfil;
+	
 	/*
 	 * 
 	 * 
@@ -214,6 +214,9 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	private Text adresseEmailPageProfil;
 
 	@FXML
+	private Text DescriptionPageProfil;
+	
+	@FXML
 	private Text HobbiesPageProfil;
 
 	/*
@@ -229,10 +232,10 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML private PasswordField mdpProfil2;
 	@FXML private TextField nomProfil2;
 	@FXML private TextField TailleProfil2;	
-	@FXML private ChoiceBox<?> SexeProfil2;
+	@FXML private ChoiceBox<String> SexeProfil2;
 	@FXML private TextField prenomProfil2;   
 
-
+	
 
 
 	public Modele modl;
@@ -243,12 +246,12 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		// constructeur sans arguments
 	}
 
-
 	@Override
 	public void handle(ActionEvent event) {
 		System.out.println(event.getTarget());
 
 	}
+	
 	/*
 	 * 
 	 * 
@@ -378,6 +381,8 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.modl.memoiremixte.pUser.taille=Integer.valueOf(TailleProfil.getText());
 		c.modl.memoiremixte.pUser.mdp=mdpProfil.getText();
 		c.modl.memoiremixte.pUser.date_naissance=DaTeNaissanceProfil.toString();
+		c.modl.memoiremixte.pUser.sexe=SexeProfil.toString();
+		
 
 		
 		/*
@@ -787,14 +792,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.agePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).age));
 		c.taillePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).taille));
 		c.genrePageProfil.setText(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).sexe);
-
-		for (int i=0; i<modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).Gouts.size(); i++) {
-
-		}
-
-		for (int toto=0; toto<modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).Hobbies.size(); toto++) {
-
-		}
+		c.DescriptionPageProfil.setText(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).description);
 
 		Scene scene = new Scene(rootLayout);
 		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();

@@ -19,15 +19,21 @@ public class Modele implements Observable{
 		memoiremixte = new MemoireProfil();
 		
 		String[] tableauDesStylesDeMusiques= {"Rock","Rap","Pop","Hip-Hop", "Jazz", "Blues", "Soul", "Gospel", "Country", "Disco", "Techno", "Reggae", "Salsa", "Flamenco", "Metal", "Funk",
-				"Lo-Fi"};
+				"Lo-Fi", "Classique"};
+		//Rock =0, Rap=1, Pop=2, Hip-Hop=3, Jazz=4, Blues=5, Soul=6, Gospel=7, Country=8, Disco=9, Techno=10, Reggae=11, Salsa=12, Flamenco=13, Metal=14, Funk=15, Lo-Fi=16, Classique=17 
 		
 		String[] tableauMonAnimalCompagnie = {"Chien", "Chat", "Serpent", "Cheval", "Peroquet", "Rat", "Hamster", "Lapin", "Poule", "Canari", "Poisson"};
+		//Chien=0, Chat=1, Serpent=2, Cheval=3, Peroquet=4, Rat=5, Hamster=6, Lapin=7, Poule=8, Canari=9, Poisson=10
 		
 		String[] tableauMonPlatPref = { "Pâtes à la bolognaise", "Pâtes à la carbonara", "Lasagnes", "Croque-monsieur", "Gratin dauphinois", "Burger-frites", "Magret de canard" 
-				,"Moules-frites", "Couscous", "Blanquette de veau" ,"Steak-frites", "Raclette" ,"Tomates farcies","Pizza"};
+				,"Moules-frites", "Couscous", "Blanquette de veau" ,"Steak-frites", "Raclette" ,"Tomates farcies","Pizza", "Omelette"};
+		//Pâtes à la bolognaise=0, Pâtes à la carbonara=1, Lasagnes=2, Croque-monsieur=3, Gratin dauphinois=4, Burger-frites=5, Magret de canard=6, Moules-frites=7, Couscous=8, Blanquette de veau=9
+		//Steak-frites=10, Raclette=11, Tomates farcies=12, Pizza=13, Omelette=14
 		
 		String[] tableauDesStylesFilmsEtSerie = {"Science-Fiction", "Comédie", "Horreur", "Suspence", "Policier", "Aventure", "Romantique", "Guerre", "Histoire", "Action"
 				,"Drame", "Comédie Dramatique", "Fantastique", "Western"};
+		//Science-Fiction=0, Comédie=1, Horreur=2, Suspence=3, Policier=4, Aventure=5, Romantique=6, Guerre=7, Histoire=8, Action=9, Drame=10, Comédie Dramatique=11
+		//Fantastique=12, Western=13
 		
 		dictionnaireDesGouts.put("Tes styles de musiques ?", tableauDesStylesDeMusiques);
 		dictionnaireDesGouts.put("Ton animal favoris", tableauMonAnimalCompagnie);
@@ -164,11 +170,70 @@ public class Modele implements Observable{
 		memoiremixte.p10.Gouts.add(tableauDesStylesFilmsEtSerie[1]);
 		memoiremixte.p10.Gouts.add(tableauDesStylesFilmsEtSerie[6]);
 		memoiremixte.p10.Gouts.add(tableauDesStylesFilmsEtSerie[10]);
-		memoiremixte.p10.Hobbies.add(listeHobbies.get(0));//championne de candy crush
+		memoiremixte.p10.Hobbies.add(listeHobbies.get(0));
 		memoiremixte.p10.Hobbies.add(listeHobbies.get(1));
 		memoiremixte.p10.Hobbies.add(listeHobbies.get(4));
 		memoiremixte.p10.Hobbies.add(listeHobbies.get(12));
+		
+		//pour p11
+		memoiremixte.p11.Gouts.add(tableauDesStylesDeMusiques[0]);
+		memoiremixte.p11.Gouts.add(tableauDesStylesDeMusiques[14]);
+		memoiremixte.p11.Gouts.add(tableauDesStylesDeMusiques[17]);
+		memoiremixte.p11.Gouts.add(tableauMonAnimalCompagnie[0]);
+		memoiremixte.p11.Gouts.add(tableauMonAnimalCompagnie[1]);
+		memoiremixte.p11.Gouts.add(tableauMonAnimalCompagnie[1]);
+		memoiremixte.p11.Gouts.add(tableauMonAnimalCompagnie[1]);
+		memoiremixte.p11.Gouts.add(tableauMonPlatPref[13]);
+		memoiremixte.p11.Gouts.add(tableauMonPlatPref[14]);
+		memoiremixte.p11.Gouts.add(tableauDesStylesFilmsEtSerie[0]);
+		memoiremixte.p11.Gouts.add(tableauDesStylesFilmsEtSerie[9]);
+		memoiremixte.p11.Gouts.add(tableauDesStylesFilmsEtSerie[12]);
+		memoiremixte.p11.Hobbies.add(listeHobbies.get(1));
+		memoiremixte.p11.Hobbies.add(listeHobbies.get(3));
+		memoiremixte.p11.Hobbies.add(listeHobbies.get(5));
+		
+		//pour p12
+		memoiremixte.p12.Gouts.add(tableauMonAnimalCompagnie[4]);
+		memoiremixte.p12.Gouts.add(tableauMonAnimalCompagnie[6]);
+		memoiremixte.p12.Gouts.add(tableauMonPlatPref[6]);
+		memoiremixte.p12.Gouts.add(tableauMonPlatPref[9]);
+		memoiremixte.p12.Hobbies.add(listeHobbies.get(11));
+		memoiremixte.p12.Hobbies.add(listeHobbies.get(13));
+		memoiremixte.p12.Hobbies.add(listeHobbies.get(15));
 
+		//pour p13
+		memoiremixte.p13.Gouts.add(tableauDesStylesDeMusiques[5]);
+		memoiremixte.p13.Gouts.add(tableauDesStylesDeMusiques[9]);
+		memoiremixte.p13.Gouts.add(tableauDesStylesDeMusiques[12]);
+		memoiremixte.p13.Gouts.add(tableauMonPlatPref[6]);
+		memoiremixte.p13.Gouts.add(tableauMonPlatPref[13]);
+		memoiremixte.p13.Gouts.add(tableauDesStylesFilmsEtSerie[8]);
+		memoiremixte.p13.Gouts.add(tableauDesStylesFilmsEtSerie[11]);
+		memoiremixte.p13.Hobbies.add(listeHobbies.get(2));
+		memoiremixte.p13.Hobbies.add(listeHobbies.get(4));
+		memoiremixte.p13.Hobbies.add(listeHobbies.get(6));
+		memoiremixte.p13.Hobbies.add(listeHobbies.get(9));
+		memoiremixte.p13.Hobbies.add(listeHobbies.get(10));
+		memoiremixte.p13.Hobbies.add(listeHobbies.get(17));
+		
+		//pour p14
+		memoiremixte.p14.Gouts.add(tableauDesStylesDeMusiques[1]);
+		memoiremixte.p14.Gouts.add(tableauDesStylesDeMusiques[2]);
+		memoiremixte.p14.Gouts.add(tableauDesStylesDeMusiques[10]);
+		memoiremixte.p14.Gouts.add(tableauMonPlatPref[1]);
+		memoiremixte.p14.Gouts.add(tableauMonPlatPref[3]);
+		memoiremixte.p14.Gouts.add(tableauMonPlatPref[4]);
+		memoiremixte.p14.Gouts.add(tableauMonPlatPref[7]);
+		memoiremixte.p14.Gouts.add(tableauDesStylesFilmsEtSerie[3]);
+		memoiremixte.p14.Hobbies.add(listeHobbies.get(0));
+		memoiremixte.p14.Hobbies.add(listeHobbies.get(2));
+		memoiremixte.p14.Hobbies.add(listeHobbies.get(12));
+		memoiremixte.p14.Hobbies.add(listeHobbies.get(16));
+
+		//pour p15
+
+		
+		
 		
 	}
 	
