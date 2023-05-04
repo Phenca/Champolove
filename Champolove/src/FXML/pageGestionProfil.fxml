@@ -151,16 +151,12 @@
                               <Insets left="85.0" />
                            </GridPane.margin>
                         </CheckBox>
-<<<<<<< HEAD
-                        <CheckBox mnemonicParsing="false" text="Classique" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                        <CheckBox fx:id="checkBoxClassique" mnemonicParsing="false" text="Classique" GridPane.columnIndex="1" GridPane.rowIndex="13">
                            <GridPane.margin>
                               <Insets left="85.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox mnemonicParsing="false" text="Chien" GridPane.rowIndex="15">
-=======
                         <CheckBox fx:id="checkBoxChien" mnemonicParsing="false" text="Chien" GridPane.rowIndex="15">
->>>>>>> e13ff5ebeabfb189f25ccca556742765153df16c
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
@@ -285,16 +281,12 @@
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-<<<<<<< HEAD
-                        <CheckBox mnemonicParsing="false" text="Omelette" GridPane.columnIndex="1" GridPane.rowIndex="24">
+                        <CheckBox fx:id="checkBoxOmelette" mnemonicParsing="false" text="Omelette" GridPane.columnIndex="1" GridPane.rowIndex="24">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox mnemonicParsing="false" text="Science-Fiction" GridPane.rowIndex="26">
-=======
                         <CheckBox fx:id="checkBoxScienceFiction" mnemonicParsing="false" text="Science-Fiction" GridPane.rowIndex="26">
->>>>>>> e13ff5ebeabfb189f25ccca556742765153df16c
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>

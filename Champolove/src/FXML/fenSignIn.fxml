@@ -329,11 +329,7 @@
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-<<<<<<< HEAD
                         <CheckBox fx:id="checkBoxDrames" mnemonicParsing="false" text="Drames" GridPane.rowIndex="32">
-=======
-                        <CheckBox fx:id="checkBoxDrame" mnemonicParsing="false" text="Drame" GridPane.rowIndex="31">
->>>>>>> e13ff5ebeabfb189f25ccca556742765153df16c
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
