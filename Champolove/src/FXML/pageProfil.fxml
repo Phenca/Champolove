@@ -7,7 +7,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../CSS/pageProfil.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
    <content>
       <AnchorPane prefHeight="200.0" prefWidth="595.0">
          <children>
@@ -34,13 +34,12 @@
                         <Label text="Description " GridPane.rowIndex="9" />
                         <Label text="Préférences musicales" GridPane.rowIndex="10" />
                         <Label text="Hoobies " GridPane.rowIndex="14" />
-                        <Label text="A Eviter (pas pour le moment) :" GridPane.rowIndex="15" />
                         <ImageView fx:id="imageView" fitHeight="200.0" fitWidth="150.0" nodeOrientation="INHERIT" pickOnBounds="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                            <GridPane.margin>
                               <Insets left="125.0" />
                            </GridPane.margin>
                         </ImageView>
-                        <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <TextArea fx:id="descriptionPageProfil" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                         <Label text="Animal préféré" GridPane.rowIndex="11" />
                         <Label text="Plat préféré" GridPane.rowIndex="12" />
                         <Label text="Préférences séries &amp; films" GridPane.rowIndex="13" />
@@ -49,14 +48,14 @@
                         <ListView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
                         <ListView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
                         <ListView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="14" />
-                        <Text fx:id="nomPageProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Text fx:id="prenomPageProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Text fx:id="dateNaissancePageProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Text fx:id="agePageProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Text fx:id="taillePageProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <Text fx:id="adresseEmailPageProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                        <Text fx:id="mdpPageProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Text fx:id="nomPageProfil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Text fx:id="prenomPageProfil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Text fx:id="dateNaissancePageProfil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Text fx:id="agePageProfil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Text fx:id="taillePageProfil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Text fx:id="adresseEmailPageProfil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Text fx:id="mdpPageProfil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                      </children>
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />

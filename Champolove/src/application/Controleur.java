@@ -3,8 +3,12 @@ package application;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -20,6 +24,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -63,6 +68,9 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	 * 
 	 * 
 	 */
+	@FXML private TextArea descriptionProfil2;
+	@FXML private TextArea descriptionPageProfil;
+	@FXML private TextArea descriptionProfil;
 	@FXML private Button ValideInscription;
 	@FXML private ImageView imageView;
 	@FXML private Button choisirImage;
@@ -83,7 +91,6 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML private CheckBox checkBoxMetal;
 	@FXML private CheckBox checkBoxFunk;
 	@FXML private CheckBox checkBoxLoFi;
-	@FXML private CheckBox checkBoxClassique;
 	@FXML private CheckBox checkBoxChien;
 	@FXML private CheckBox checkBoxChat;
 	@FXML private CheckBox checkBoxSerpent;
@@ -109,7 +116,6 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML private CheckBox checkBoxRaclette;
 	@FXML private CheckBox checkBoxTomatesfarcies;
 	@FXML private CheckBox checkBoxPizza;
-	@FXML private CheckBox checkBoxOmelette;
 	@FXML private CheckBox checkBoxScienceFiction;
 	@FXML private CheckBox checkBoxComedie;
 	@FXML private CheckBox checkBoxHorreur;
@@ -154,9 +160,8 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML private PasswordField mdpProfil;
 	@FXML private TextField nomProfil;
 	@FXML private TextField TailleProfil;	
-	@FXML private ChoiceBox<String> SexeProfil;
-	@FXML private TextField prenomProfil;
-	
+	@FXML private ChoiceBox<?> SexeProfil;
+	@FXML private TextField prenomProfil;   
 	/*
 	 * 
 	 * 
@@ -182,6 +187,12 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	 * 
 	 */
 	@FXML private Button retourPagePrincipale;
+	@FXML private ImageView imageDuProfilMatcherEnCours;
+	private int indexProfilMatchEnCoursDeLecture=0;
+	@FXML private Label ageDuProfilMatchEnCoursDeLecture;
+	@FXML private Label prenomProfilMatchEnCoursDeLecture;
+	@FXML private Label RendezVous;
+	@FXML private DatePicker DateDuRendezVous;
 	/*
 	 * 
 	 * 
@@ -216,9 +227,6 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	private Text adresseEmailPageProfil;
 
 	@FXML
-	private Text DescriptionPageProfil;
-	
-	@FXML
 	private Text HobbiesPageProfil;
 
 	/*
@@ -234,10 +242,10 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML private PasswordField mdpProfil2;
 	@FXML private TextField nomProfil2;
 	@FXML private TextField TailleProfil2;	
-	@FXML private ChoiceBox<String> SexeProfil2;
+	@FXML private ChoiceBox<?> SexeProfil2;
 	@FXML private TextField prenomProfil2;   
 
-	
+
 
 
 	public Modele modl;
@@ -248,12 +256,12 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		// constructeur sans arguments
 	}
 
+
 	@Override
 	public void handle(ActionEvent event) {
 		System.out.println(event.getTarget());
 
 	}
-	
 	/*
 	 * 
 	 * 
@@ -383,11 +391,10 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.modl.memoiremixte.pUser.taille=Integer.valueOf(TailleProfil.getText());
 		c.modl.memoiremixte.pUser.mdp=mdpProfil.getText();
 		c.modl.memoiremixte.pUser.date_naissance=DaTeNaissanceProfil.toString();
-		c.modl.memoiremixte.pUser.sexe=SexeProfil.toString();
-		
+		c.modl.memoiremixte.pUser.description=descriptionProfil.getText();
 
-		
-		
+
+
 		if(checkBoxRock.isSelected()) {
 			c.modl.memoiremixte.pUser.Gouts.add("Rock");
 		}
@@ -614,9 +621,9 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			c.modl.memoiremixte.pUser.Hobbies.add("Cueillettedechampignons");
 		}
 
-		
+
 		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=c.modl.memoiremixte.selectionDesProfilsOptimiserPourLePuser();
-		 
+
 
 		c.actuelle=c.modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture);
 		Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
@@ -664,7 +671,6 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			indexProfilEnCoursDeLecture = indexProfilEnCoursDeLecture+1;
 
 			actuelle=modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture);
-			modl.memoiremixte.pUser.memoireMatcher.add(actuelle);
 
 			Image imageProfilSelectionEnCours=new Image(actuelle.lien_photoProfil);
 			imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
@@ -685,8 +691,9 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		if(indexProfilEnCoursDeLecture<modl.memoiremixte.pUser.listeDesProfilsOptimale.size()-1) {
 			indexProfilEnCoursDeLecture = indexProfilEnCoursDeLecture+1;
 
-			actuelle=modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture);
 			modl.memoiremixte.pUser.memoireMatcher.add(actuelle);
+			actuelle=modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture);
+
 
 			Image imageProfilSelectionEnCours=new Image(actuelle.lien_photoProfil);
 			imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
@@ -720,6 +727,10 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.modl.memoiremixte.pUser.date_naissance=modl.memoiremixte.pUser.date_naissance;
 		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
 		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.pUser.listeDesProfilsOptimale;
+		c.modl.memoiremixte.pUser.description=modl.memoiremixte.pUser.description;
+		c.modl.memoiremixte.pUser.memoireMatcher=modl.memoiremixte.pUser.memoireMatcher;
+		c.indexProfilMatchEnCoursDeLecture=indexProfilMatchEnCoursDeLecture;
+		c.modl.memoiremixte.pUser.dictionnaireDesRendezVous=modl.memoiremixte.pUser.dictionnaireDesRendezVous;
 		//////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -729,6 +740,8 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.mdpPageProfil.setText(modl.memoiremixte.pUser.mdp);
 		c.agePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.age));
 		c.taillePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.taille));
+		c.descriptionPageProfil.setText(modl.memoiremixte.pUser.description);
+
 
 		Scene scene = new Scene(rootLayout);
 		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
@@ -739,31 +752,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 
 	}
 
-	@FXML private void afficheChat(ActionEvent event) throws IOException{
-		Parent rootLayout;
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("/FXML/pageConv.fxml"));
-		rootLayout = loader.load();
-		Controleur c=loader.getController();
 
-		//Cette Partie sert à sauvergarder les données utiles qui changent constament, c'est à garder//////
-		c.modl.memoiremixte.pUser.prenom=modl.memoiremixte.pUser.prenom;
-		c.modl.memoiremixte.pUser.nom=modl.memoiremixte.pUser.nom;
-		c.modl.memoiremixte.pUser.adresse_mail=modl.memoiremixte.pUser.adresse_mail;
-		c.modl.memoiremixte.pUser.taille=modl.memoiremixte.pUser.taille;
-		c.modl.memoiremixte.pUser.mdp=modl.memoiremixte.pUser.mdp;
-		c.modl.memoiremixte.pUser.date_naissance=modl.memoiremixte.pUser.date_naissance;
-		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
-		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.pUser.listeDesProfilsOptimale;
-		//////////////////////////////////////////////////////////////////////////////////////////////////
-
-		Scene scene = new Scene(rootLayout);
-		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-		c.Stage.setTitle("Champolove");
-		c.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
-		c.Stage.setScene(scene);
-		c.Stage.show();
-	}
 	@FXML private void afficheDescription(ActionEvent event) throws IOException{
 		Parent rootLayout;	
 		FXMLLoader loader = new FXMLLoader();
@@ -780,6 +769,10 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.modl.memoiremixte.pUser.date_naissance=modl.memoiremixte.pUser.date_naissance;
 		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
 		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.pUser.listeDesProfilsOptimale;
+		c.modl.memoiremixte.pUser.description=modl.memoiremixte.pUser.description;
+		c.modl.memoiremixte.pUser.memoireMatcher=modl.memoiremixte.pUser.memoireMatcher;
+		c.indexProfilMatchEnCoursDeLecture=indexProfilMatchEnCoursDeLecture;
+		c.modl.memoiremixte.pUser.dictionnaireDesRendezVous=modl.memoiremixte.pUser.dictionnaireDesRendezVous;
 		//////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -789,7 +782,14 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.agePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).age));
 		c.taillePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).taille));
 		c.genrePageProfil.setText(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).sexe);
-		c.DescriptionPageProfil.setText(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).description);
+
+		for (int i=0; i<modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).Gouts.size(); i++) {
+
+		}
+
+		for (int toto=0; toto<modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).Hobbies.size(); toto++) {
+
+		}
 
 		Scene scene = new Scene(rootLayout);
 		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
@@ -827,20 +827,23 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.modl.memoiremixte.pUser.date_naissance=modl.memoiremixte.pUser.date_naissance;
 		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
 		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.pUser.listeDesProfilsOptimale;
+		c.modl.memoiremixte.pUser.description=modl.memoiremixte.pUser.description;
+		c.modl.memoiremixte.pUser.memoireMatcher=modl.memoiremixte.pUser.memoireMatcher;
+		c.indexProfilMatchEnCoursDeLecture=indexProfilMatchEnCoursDeLecture;
+		c.modl.memoiremixte.pUser.dictionnaireDesRendezVous=modl.memoiremixte.pUser.dictionnaireDesRendezVous;
 		//////////////////////////////////////////////////////////////////////////////////////////////////
 
-		System.out.println(this.modl);
-		if(this.modl.memoiremixte.pUser.VotrePreference=="mixte") {
-			c.actuelle=modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture);
-			Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
-			c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
-			System.out.println(c.actuelle.lien_photoProfil);
 
-			c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
+		c.actuelle=modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture);
+		Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
+		c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
+		System.out.println(c.actuelle.lien_photoProfil);
 
-			c.prenomProfilEnCoursDeLecture.setText(c.actuelle.prenom);
+		c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
 
-		}
+		c.prenomProfilEnCoursDeLecture.setText(c.actuelle.prenom);
+
+
 		Scene scene = new Scene(rootLayout);
 		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 		c.Stage.setTitle("Champolove");
@@ -863,7 +866,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		loader.setLocation(getClass().getResource("/FXML/pageGestionProfil.fxml"));
 		rootLayout = loader.load();
 		Controleur c=loader.getController();
-		
+
 
 		//Cette Partie sert à sauvergarder les données utiles qui changent constament, c'est à garder//////
 		c.modl.memoiremixte.pUser.prenom=modl.memoiremixte.pUser.prenom;
@@ -874,6 +877,10 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.modl.memoiremixte.pUser.date_naissance=modl.memoiremixte.pUser.date_naissance;
 		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
 		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.pUser.listeDesProfilsOptimale;
+		c.modl.memoiremixte.pUser.description=modl.memoiremixte.pUser.description;
+		c.modl.memoiremixte.pUser.memoireMatcher=modl.memoiremixte.pUser.memoireMatcher;
+		c.indexProfilMatchEnCoursDeLecture=indexProfilMatchEnCoursDeLecture;
+		c.modl.memoiremixte.pUser.dictionnaireDesRendezVous=modl.memoiremixte.pUser.dictionnaireDesRendezVous;
 		//////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -902,10 +909,10 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		loader.setLocation(getClass().getResource("/FXML/pageProfil.fxml"));
 		rootLayout = loader.load();
 		Controleur c=loader.getController();
-		
-		
-		
-		
+
+
+
+
 		if(checkBoxRock.isSelected()) {
 			c.modl.memoiremixte.pUser.Gouts.add("Rock");
 		}
@@ -1132,9 +1139,9 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			c.modl.memoiremixte.pUser.Hobbies.add("Cueillettedechampignons");
 		}
 
-		
+
 		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=c.modl.memoiremixte.selectionDesProfilsOptimiserPourLePuser();
-		
+
 
 		c.modl.memoiremixte.pUser.prenom=prenomProfil2.getText();
 		c.modl.memoiremixte.pUser.nom=nomProfil2.getText();
@@ -1143,6 +1150,9 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.modl.memoiremixte.pUser.mdp=mdpProfil2.getText();
 		c.modl.memoiremixte.pUser.date_naissance=DaTeNaissanceProfil2.toString();
 		c.indexProfilEnCoursDeLecture=0;
+		c.modl.memoiremixte.pUser.description=descriptionProfil2.getText();
+		c.modl.memoiremixte.pUser.memoireMatcher=new ArrayList<Profil>();
+
 
 
 		c.nomPageProfil.setText(c.modl.memoiremixte.pUser.nom);
@@ -1151,6 +1161,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.mdpPageProfil.setText(c.modl.memoiremixte.pUser.mdp);
 		c.agePageProfil.setText(String.valueOf(c.modl.memoiremixte.pUser.age));
 		c.taillePageProfil.setText(String.valueOf(c.modl.memoiremixte.pUser.taille));
+		c.descriptionPageProfil.setText(c.modl.memoiremixte.pUser.description);
 
 
 		Scene scene = new Scene(rootLayout);
@@ -1161,6 +1172,197 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.Stage.show();
 
 	}
+
+
+	/*
+	 * 
+	 * 
+	 * méthode de la page de conversation
+	 * 
+	 * 
+	 * 
+	 */
+
+	@FXML private void afficheChat(ActionEvent event) throws IOException{
+		Parent rootLayout;
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/FXML/pageConv.fxml"));
+		rootLayout = loader.load();
+		Controleur c=loader.getController();
+
+		//Cette Partie sert à sauvergarder les données utiles qui changent constament, c'est à garder//////
+		c.modl.memoiremixte.pUser.prenom=modl.memoiremixte.pUser.prenom;
+		c.modl.memoiremixte.pUser.nom=modl.memoiremixte.pUser.nom;
+		c.modl.memoiremixte.pUser.adresse_mail=modl.memoiremixte.pUser.adresse_mail;
+		c.modl.memoiremixte.pUser.taille=modl.memoiremixte.pUser.taille;
+		c.modl.memoiremixte.pUser.mdp=modl.memoiremixte.pUser.mdp;
+		c.modl.memoiremixte.pUser.date_naissance=modl.memoiremixte.pUser.date_naissance;
+		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
+		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.pUser.listeDesProfilsOptimale;
+		c.modl.memoiremixte.pUser.description=modl.memoiremixte.pUser.description;
+		c.modl.memoiremixte.pUser.memoireMatcher=modl.memoiremixte.pUser.memoireMatcher;
+		c.indexProfilMatchEnCoursDeLecture=indexProfilMatchEnCoursDeLecture;
+		c.modl.memoiremixte.pUser.dictionnaireDesRendezVous=modl.memoiremixte.pUser.dictionnaireDesRendezVous;
+		//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+		c.actuelle=modl.memoiremixte.pUser.memoireMatcher.get(indexProfilMatchEnCoursDeLecture);
+
+		Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
+		c.imageDuProfilMatcherEnCours.setImage(imageProfilSelectionEnCours);
+
+		c.ageDuProfilMatchEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
+		c.prenomProfilMatchEnCoursDeLecture.setText(c.actuelle.prenom);
+
+
+		Scene scene = new Scene(rootLayout);
+		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+		c.Stage.setTitle("Champolove");
+		c.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+		c.Stage.setScene(scene);
+		c.Stage.show();
+	}
+	
+	@FXML private void enregistrezLeRendezVous(ActionEvent event) {
+
+
+		modl.memoiremixte.pUser.dictionnaireDesRendezVous.put(indexProfilMatchEnCoursDeLecture, (String)("Rendez vous pris le "+String.valueOf(DateDuRendezVous.getValue())));
+	}
+
+	@FXML private void afficheDescriptionMatcher(ActionEvent event) throws IOException{
+		Parent rootLayout;	
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/FXML/pageChat.fxml"));
+		rootLayout = loader.load();
+		Controleur c=loader.getController();
+
+		//Cette Partie sert à sauvergarder les données utiles qui changent constament, c'est à garder//////
+		c.modl.memoiremixte.pUser.prenom=modl.memoiremixte.pUser.prenom;
+		c.modl.memoiremixte.pUser.nom=modl.memoiremixte.pUser.nom;
+		c.modl.memoiremixte.pUser.adresse_mail=modl.memoiremixte.pUser.adresse_mail;
+		c.modl.memoiremixte.pUser.taille=modl.memoiremixte.pUser.taille;
+		c.modl.memoiremixte.pUser.mdp=modl.memoiremixte.pUser.mdp;
+		c.modl.memoiremixte.pUser.date_naissance=modl.memoiremixte.pUser.date_naissance;
+		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
+		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.pUser.listeDesProfilsOptimale;
+		c.modl.memoiremixte.pUser.description=modl.memoiremixte.pUser.description;
+		c.modl.memoiremixte.pUser.memoireMatcher=modl.memoiremixte.pUser.memoireMatcher;
+		c.indexProfilMatchEnCoursDeLecture=indexProfilMatchEnCoursDeLecture;
+		c.modl.memoiremixte.pUser.dictionnaireDesRendezVous=modl.memoiremixte.pUser.dictionnaireDesRendezVous;
+		//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+		c.nomPageProfil.setText(modl.memoiremixte.pUser.memoireMatcher.get(indexProfilMatchEnCoursDeLecture).nom);
+		c.prenomPageProfil.setText(modl.memoiremixte.pUser.memoireMatcher.get(indexProfilMatchEnCoursDeLecture).prenom);
+		c.dateNaissancePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.memoireMatcher.get(indexProfilMatchEnCoursDeLecture).date_naissance));
+		c.agePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.memoireMatcher.get(indexProfilMatchEnCoursDeLecture).age));
+		c.taillePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.memoireMatcher.get(indexProfilMatchEnCoursDeLecture).taille));
+		c.genrePageProfil.setText(modl.memoiremixte.pUser.memoireMatcher.get(indexProfilMatchEnCoursDeLecture).sexe);
+		
+		if(modl.memoiremixte.pUser.dictionnaireDesRendezVous.containsKey(indexProfilMatchEnCoursDeLecture)) {
+			c.RendezVous.setText(modl.memoiremixte.pUser.dictionnaireDesRendezVous.get(indexProfilMatchEnCoursDeLecture));
+		}
+		
+
+		for (int i=0; i<modl.memoiremixte.pUser.memoireMatcher.get(indexProfilMatchEnCoursDeLecture).Gouts.size(); i++) {
+
+		}
+
+		for (int toto=0; toto<modl.memoiremixte.pUser.memoireMatcher.get(indexProfilMatchEnCoursDeLecture).Hobbies.size(); toto++) {
+
+		}
+
+		Scene scene = new Scene(rootLayout);
+		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+		c.Stage.setTitle("Champolove");
+		c.Stage.getIcons().add(new Image("file:ressources/logo/logo.png"));
+		c.Stage.setScene(scene);
+		c.Stage.show();
+	}
+
+	
+
+	@FXML private void profilSuivantMatcherArrier(ActionEvent event) {
+
+		if(indexProfilMatchEnCoursDeLecture>0) {
+			indexProfilMatchEnCoursDeLecture = indexProfilMatchEnCoursDeLecture-1;
+
+			actuelle=modl.memoiremixte.pUser.memoireMatcher.get(indexProfilMatchEnCoursDeLecture);
+
+			Image imageProfilSelectionEnCours=new Image(actuelle.lien_photoProfil);
+			imageDuProfilMatcherEnCours.setImage(imageProfilSelectionEnCours);
+
+			ageDuProfilMatchEnCoursDeLecture.setText(String.valueOf(actuelle.age));
+			prenomProfilMatchEnCoursDeLecture.setText(actuelle.prenom);
+		}
+		else {
+
+		}
+	}
+
+	@FXML private void profilSuivantMatcherAvant() {
+		if(indexProfilMatchEnCoursDeLecture<modl.memoiremixte.pUser.memoireMatcher.size()-1) {
+			indexProfilMatchEnCoursDeLecture = indexProfilMatchEnCoursDeLecture+1;
+
+			actuelle=modl.memoiremixte.pUser.memoireMatcher.get(indexProfilMatchEnCoursDeLecture);
+
+			Image imageProfilSelectionEnCours=new Image(actuelle.lien_photoProfil);
+			imageDuProfilMatcherEnCours.setImage(imageProfilSelectionEnCours);
+
+			ageDuProfilMatchEnCoursDeLecture.setText(String.valueOf(actuelle.age));
+			prenomProfilMatchEnCoursDeLecture.setText(actuelle.prenom);
+		}
+		else {
+
+		}
+	}
+
+
+	@FXML private void retourPageConv(ActionEvent event) throws IOException{
+
+		Parent rootLayout;
+
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/FXML/pageConv.fxml"));
+		rootLayout = loader.load();
+		Controleur c=loader.getController();
+
+
+		//Cette Partie sert à sauvergarder les données utiles qui changent constament, c'est à garder//////
+		c.modl.memoiremixte.pUser.prenom=modl.memoiremixte.pUser.prenom;
+		c.modl.memoiremixte.pUser.nom=modl.memoiremixte.pUser.nom;
+		c.modl.memoiremixte.pUser.adresse_mail=modl.memoiremixte.pUser.adresse_mail;
+		c.modl.memoiremixte.pUser.taille=modl.memoiremixte.pUser.taille;
+		c.modl.memoiremixte.pUser.mdp=modl.memoiremixte.pUser.mdp;
+		c.modl.memoiremixte.pUser.date_naissance=modl.memoiremixte.pUser.date_naissance;
+		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
+		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.pUser.listeDesProfilsOptimale;
+		c.modl.memoiremixte.pUser.description=modl.memoiremixte.pUser.description;
+		c.modl.memoiremixte.pUser.memoireMatcher=modl.memoiremixte.pUser.memoireMatcher;
+		c.indexProfilMatchEnCoursDeLecture=indexProfilMatchEnCoursDeLecture;
+		c.modl.memoiremixte.pUser.dictionnaireDesRendezVous=modl.memoiremixte.pUser.dictionnaireDesRendezVous;
+		//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+		c.actuelle=modl.memoiremixte.pUser.memoireMatcher.get(indexProfilMatchEnCoursDeLecture);
+
+		Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
+		c.imageDuProfilMatcherEnCours.setImage(imageProfilSelectionEnCours);
+
+		c.ageDuProfilMatchEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
+		c.prenomProfilMatchEnCoursDeLecture.setText(c.actuelle.prenom);
+
+
+		Scene scene = new Scene(rootLayout);
+		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+		c.Stage.setTitle("Champolove");
+		c.Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
+		c.Stage.setScene(scene);
+		c.Stage.show();
+	}
+
+
+
 
 
 	@Override

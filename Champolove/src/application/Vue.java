@@ -99,6 +99,7 @@ public class Vue extends Application implements Observer, Initializable {
 			loader.setLocation(getClass().getResource("/FXML/View.fxml"));
 			rootLayout = loader.load();
 			Scene scene = new Scene(rootLayout);
+			scene.getStylesheets().add("/CSS/View.css");
 			Stage.setTitle("Champolove");
 			Stage.getIcons().add(new Image("file:src/ressources/logo/logo.png"));
 			Stage.setScene(scene);

@@ -7,7 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../CSS/pageGestionProfil.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
    <content>
       <AnchorPane prefHeight="200.0" prefWidth="595.0">
          <children>
@@ -50,8 +50,8 @@
                            </GridPane.margin>
                         </ImageView>
                         <Button fx:id="choisirImage" mnemonicParsing="false" onAction="#choisirImage" text="Changer photo profil" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                        <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                        <Label minWidth="120.0" text="Animaux de Compagnie " GridPane.rowIndex="14">
+                        <TextArea fx:id="descriptionProfil2" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Label minWidth="120.0" text="Animaux préférés " GridPane.rowIndex="14">
                            <GridPane.margin>
                               <Insets left="178.0" top="10.0" />
                            </GridPane.margin>

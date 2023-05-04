@@ -31,14 +31,12 @@
 }
 
 @font-face {
-    font-family: 'Rochester';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/Fonts/Rochester-Regular.ttf');
+    font-family: Rochester;
+    src: url('../Fonts/Rochester-Regular.ttf');
 }
 
 .title {
-    -fx-font-family: 'Rochester';
+    -fx-font-family: Rochester;
     -fx-font-size: 24px;
     -fx-text-fill: goldenrod;
 }
