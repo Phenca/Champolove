@@ -63,8 +63,8 @@
                            </GridPane.margin>
                         </ImageView>
                         <Button fx:id="choisirImage" mnemonicParsing="false" onAction="#choisirImage" text="Importer une photo de profil :" GridPane.rowIndex="8" />
-                        <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                        <Label minWidth="120.0" text="Animaux de Compagnie :" GridPane.rowIndex="14">
+                        <TextArea fx:id="descriptionProfil" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Label minWidth="120.0" text="Animaux préférés :" GridPane.rowIndex="14">
                            <GridPane.margin>
                               <Insets left="178.0" top="10.0" />
                            </GridPane.margin>
@@ -329,7 +329,7 @@
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxDrames" mnemonicParsing="false" text="Drames" GridPane.rowIndex="32">
+                        <CheckBox fx:id="checkBoxDrame" mnemonicParsing="false" text="Drames" GridPane.rowIndex="32">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>

@@ -1,5 +1,6 @@
 package application;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Profil {
 
@@ -21,6 +22,7 @@ public class Profil {
 	
 	public ArrayList<Profil> listeDesProfilsOptimale;
 	public ArrayList<Profil> memoireMatcher;
+	public HashMap<Integer,String> dictionnaireDesRendezVous;
 
 
 	public Profil(String nom, String prenom, String date_naissance,int taille, int age, String adresse_mail, String sexe, String lien_photoP, String descri, int matcher, String motsDePasse) {
@@ -35,11 +37,12 @@ public class Profil {
 		this.description=descri;
 		this.matcher = 0;
 		this.mdp=motsDePasse;
-	
+		
 		this.Gouts= new ArrayList<>();
 		this.Hobbies= new ArrayList<>();
 		this.listeDesProfilsOptimale=new ArrayList<>();
 		this.memoireMatcher = new ArrayList<>();
+		this.dictionnaireDesRendezVous=new HashMap<>();
 		
 		
 	}
