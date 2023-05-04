@@ -52,11 +52,11 @@ public class Modele implements Observable{
 		listeHobbies.add("Jardinage");//9
 		listeHobbies.add("Marche");//10
 		listeHobbies.add("Shopping");//11
-		listeHobbies.add("Danse");//13
-		listeHobbies.add("Pêche");//14
-		listeHobbies.add("Vélo");//15
-		listeHobbies.add("Chasse");//16
-		listeHobbies.add("Cueillette de champignons");//17
+		listeHobbies.add("Danse");//12
+		listeHobbies.add("Pêche");//13
+		listeHobbies.add("Vélo");//14
+		listeHobbies.add("Chasse");//15
+		listeHobbies.add("Cueillette de champignons");//16
 
 		//pour p1
 		memoiremixte.p1.Gouts.add(tableauDesStylesDeMusiques[0]);
@@ -211,7 +211,7 @@ public class Modele implements Observable{
 		memoiremixte.p13.Hobbies.add(listeHobbies.get(6));
 		memoiremixte.p13.Hobbies.add(listeHobbies.get(9));
 		memoiremixte.p13.Hobbies.add(listeHobbies.get(10));
-		memoiremixte.p13.Hobbies.add(listeHobbies.get(17));
+		memoiremixte.p13.Hobbies.add(listeHobbies.get(16));
 		
 		//pour p14
 		memoiremixte.p14.Gouts.add(tableauDesStylesDeMusiques[1]);
@@ -225,7 +225,7 @@ public class Modele implements Observable{
 		memoiremixte.p14.Hobbies.add(listeHobbies.get(0));
 		memoiremixte.p14.Hobbies.add(listeHobbies.get(2));
 		memoiremixte.p14.Hobbies.add(listeHobbies.get(12));
-		memoiremixte.p14.Hobbies.add(listeHobbies.get(16));
+		memoiremixte.p14.Hobbies.add(listeHobbies.get(15));
 
 		//pour p15
 
