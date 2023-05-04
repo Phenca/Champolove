@@ -28,7 +28,8 @@ public class MemoireProfil {
 	Profil p13;
 	Profil p14;
 	Profil p15;
-	TreeMap<Double,Profil> dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale;
+	
+	TreeMap<Double,ArrayList<Profil>> dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale;
 
 
 	public static int calcul_age(ArrayList<Profil> memoireP, int newage) {
@@ -65,7 +66,7 @@ public class MemoireProfil {
 	}
 
 	public  MemoireProfil() {
-		dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale=new TreeMap<Double,Profil>(Collections.reverseOrder());
+		dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale=new TreeMap<Double,ArrayList<Profil>>(Collections.reverseOrder());
 		pUser = new Profil(null, null, null, 0, age , null, null, null, null, 0, null);
 		memoirePMixtes = new ArrayList<>();
 		p1 = new Profil("Levy", "Adolphe", "04/03/2002", 179, age, "Adolphe.Levy@yopmail.com", "masculin", "file:src/ressources/img_profil/Levy_Adolphe.png", "Je suis un passionné de jeux vidéo et de sport, j'adore les compétitions et les défis. J'aime passer du temps avec mes amis, organiser des soirées et partager des moments de rigolade. Je suis ouvert d'esprit, honnête et j'aime rencontrer de nouvelles personnes. Si tu cherches un partenaire de jeu ou un ami pour partager des soirées animées, fais-moi signe !", 0,"courgette1");
@@ -105,7 +106,7 @@ public class MemoireProfil {
 
 		memoirePHomme = new ArrayList<>();
 		memoirePFemme = new ArrayList<>();
-		
+
 
 		for (int i=0; i<memoirePMixtes.size(); i++) {
 			Profil m =  (Profil) memoirePMixtes.get(i);
@@ -121,45 +122,107 @@ public class MemoireProfil {
 
 	public ArrayList<Profil> selectionDesProfilsOptimiserPourLePuser(){
 		ArrayList<Profil> listeOpti=new ArrayList<Profil>();
+		ArrayList<Profil> listeAucuneCompatibiliterDonc0DansLeCompareTo=new ArrayList<>();
 
 		if(pUser.VotrePreference=="mixte") {
 
-			for(int i=0;i<memoirePMixtes.size();i++) {
-				dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.put(pUser.compareTo(memoirePMixtes.get(i)), memoirePMixtes.get(i));
+			for(Profil pno : memoirePMixtes) {
+
+				if(pUser.compareTo(pno)==0.0) {
+					System.out.println("abababababab");
+					listeAucuneCompatibiliterDonc0DansLeCompareTo.add(pno);
+				}else {
+					if (dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.containsKey(pUser.compareTo(pno))) {
+						dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.get(pUser.compareTo(pno)).add(pno);
+					}else {
+						ArrayList<Profil> listeDeProfilPourLeDico=new ArrayList<>();
+						listeDeProfilPourLeDico.add(pno);
+						dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.put(pUser.compareTo(pno), listeDeProfilPourLeDico);
+					}
+
+				}
+
 			}
 
 			for(Map.Entry mapentr : dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.entrySet()) {
-				listeOpti.add((Profil)mapentr.getValue());
+				System.out.println(mapentr.getKey());
+				for(Profil ptruc : ((ArrayList<Profil>)mapentr.getValue())) {
+					listeOpti.add(ptruc);
+				}
+				
 			}
+			for(Profil p : listeAucuneCompatibiliterDonc0DansLeCompareTo) {
+				System.out.println(p.nom);
+				listeOpti.add(p);
+			}
+			System.out.println(listeOpti.size());
+			
 
 
 		}
 		else if(pUser.VotrePreference=="homme") {
 
-			for(int i=0;i<memoirePHomme.size();i++) {
-				dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.put(pUser.compareTo(memoirePHomme.get(i)), memoirePHomme.get(i));
+			for(Profil pno : memoirePHomme) {
+
+				if(pUser.compareTo(pno)==0.0) {
+					System.out.println("abababababab");
+					listeAucuneCompatibiliterDonc0DansLeCompareTo.add(pno);
+				}else {
+					if (dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.containsKey(pUser.compareTo(pno))) {
+						dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.get(pUser.compareTo(pno)).add(pno);
+					}else {
+						ArrayList<Profil> listeDeProfilPourLeDico=new ArrayList<>();
+						listeDeProfilPourLeDico.add(pno);
+						dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.put(pUser.compareTo(pno), listeDeProfilPourLeDico);
+					}
+
+				}
+
 			}
 
 			for(Map.Entry mapentr : dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.entrySet()) {
-				listeOpti.add((Profil)mapentr.getValue());
+				for(Profil ptruc : ((ArrayList<Profil>)mapentr.getValue())) {
+					listeOpti.add(ptruc);
+				}
 			}
-
+			for(Profil p : listeAucuneCompatibiliterDonc0DansLeCompareTo) {
+				System.out.println(p.nom);
+				listeOpti.add(p);
+			}
 
 		}
 		else if(pUser.VotrePreference=="femme") {
 
-			for(int i=0;i<memoirePFemme.size();i++) {
-				dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.put(pUser.compareTo(memoirePFemme.get(i)), memoirePFemme.get(i));
+			for(Profil pno : memoirePFemme) {
+
+				if(pUser.compareTo(pno)==0.0) {
+					System.out.println("abababababab");
+					listeAucuneCompatibiliterDonc0DansLeCompareTo.add(pno);
+				}else {
+					if (dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.containsKey(pUser.compareTo(pno))) {
+						dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.get(pUser.compareTo(pno)).add(pno);
+					}else {
+						ArrayList<Profil> listeDeProfilPourLeDico=new ArrayList<>();
+						listeDeProfilPourLeDico.add(pno);
+						dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.put(pUser.compareTo(pno), listeDeProfilPourLeDico);
+					}
+
+				}
+
 			}
 
 			for(Map.Entry mapentr : dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale.entrySet()) {
-				listeOpti.add((Profil)mapentr.getValue());
+				for(Profil ptruc : ((ArrayList<Profil>)mapentr.getValue())) {
+					listeOpti.add(ptruc);
+				}
+			}
+			for(Profil p : listeAucuneCompatibiliterDonc0DansLeCompareTo) {
+				System.out.println(p.nom);
+				listeOpti.add(p);
 			}
 
 		}
-		
 		return listeOpti;
 
 	}
-
 }

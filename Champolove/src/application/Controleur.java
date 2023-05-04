@@ -23,6 +23,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.FileChooser;
@@ -114,7 +116,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML private CheckBox checkBoxPolicier;
 	@FXML private CheckBox checkBoxAventure;
 	@FXML private CheckBox checkBoxHistoire;
-	@FXML private CheckBox checkBoxDrames;
+	@FXML private CheckBox checkBoxDrame;
 	@FXML private CheckBox checkBoxSuspense;
 	@FXML private CheckBox checkBoxRomantique;
 	@FXML private CheckBox checkBoxGuerre;
@@ -385,7 +387,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		
 
 		
-		/*
+		
 		if(checkBoxRock.isSelected()) {
 			c.modl.memoiremixte.pUser.Gouts.add("Rock");
 		}
@@ -522,8 +524,8 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		if(checkBoxHorreur.isSelected()) {
 			c.modl.memoiremixte.pUser.Gouts.add("Horreur");
 		}
-		if(checkBoxSuspence.isSelected()) {
-			c.modl.memoiremixte.pUser.Gouts.add("Suspence");
+		if(checkBoxSuspense.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Suspense");
 		}
 		if(checkBoxPolicier.isSelected()) {
 			c.modl.memoiremixte.pUser.Gouts.add("Policier");
@@ -563,8 +565,8 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		if(checkBoxSport.isSelected()) {
 			c.modl.memoiremixte.pUser.Hobbies.add("Sport");
 		}
-		if(checkBoxJeuvideo.isSelected()) {
-			c.modl.memoiremixte.pUser.Hobbies.add("Jeu vidéo");
+		if(checkBoxJeuVideo.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Jeu Vidéo");
 		}
 		if(checkBoxCuisine.isSelected()) {
 			c.modl.memoiremixte.pUser.Hobbies.add("Cuisine");
@@ -596,9 +598,6 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		if(checkBoxShopping.isSelected()) {
 			c.modl.memoiremixte.pUser.Hobbies.add("Shopping");
 		}
-		if(checkBoxLecture.isSelected()) {
-			c.modl.memoiremixte.pUser.Hobbies.add("Lecture");
-		}
 		if(checkBoxDanse.isSelected()) {
 			c.modl.memoiremixte.pUser.Hobbies.add("Danse");
 		}
@@ -617,9 +616,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 
 		
 		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=c.modl.memoiremixte.selectionDesProfilsOptimiserPourLePuser();
-		 */
-		
-		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=c.modl.memoiremixte.memoirePMixtes;
+		 
 
 		c.actuelle=c.modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture);
 		Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
@@ -834,7 +831,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 
 		System.out.println(this.modl);
 		if(this.modl.memoiremixte.pUser.VotrePreference=="mixte") {
-			c.actuelle=modl.memoiremixte.memoirePMixtes.get(indexProfilEnCoursDeLecture);
+			c.actuelle=modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture);
 			Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
 			c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
 			System.out.println(c.actuelle.lien_photoProfil);
@@ -866,6 +863,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		loader.setLocation(getClass().getResource("/FXML/pageGestionProfil.fxml"));
 		rootLayout = loader.load();
 		Controleur c=loader.getController();
+		
 
 		//Cette Partie sert à sauvergarder les données utiles qui changent constament, c'est à garder//////
 		c.modl.memoiremixte.pUser.prenom=modl.memoiremixte.pUser.prenom;
@@ -904,7 +902,239 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		loader.setLocation(getClass().getResource("/FXML/pageProfil.fxml"));
 		rootLayout = loader.load();
 		Controleur c=loader.getController();
+		
+		
+		
+		
+		if(checkBoxRock.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Rock");
+		}
+		if(checkBoxRap.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Rap");
+		}
+		if(checkBoxPop.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Pop");
+		}
+		if(checkBoxHipHop.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Hip-Hop");
+		}
+		if(checkBoxJazz.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Jazz");
+		}
+		if(checkBoxBlues.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Blues");
+		}
+		if(checkBoxSoul.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Soul");
+		}
+		if(checkBoxGospel.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Gospel");
+		}
+		if(checkBoxCountry.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Country");
+		}
+		if(checkBoxDisco.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Disco");
+		}
+		if(checkBoxTechno.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Techno");
+		}
+		if(checkBoxReggae.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Reggae");
+		}
+		if(checkBoxSalsa.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Salsa");
+		}
+		if(checkBoxFlamenco.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Flamenco");
+		}
+		if(checkBoxMetal.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Metal");
+		}
+		if(checkBoxFunk.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Funk");
+		}
+		if(checkBoxLoFi.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Lo-Fi");
+		}
+		if(checkBoxChien.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Chien");
+		}
+		if(checkBoxChat.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Chat");
+		}
+		if(checkBoxSerpent.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Serpent");
+		}
+		if(checkBoxCheval.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Cheval");
+		}
+		if(checkBoxPeroquet.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Peroquet");
+		}
+		if(checkBoxRat.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Rat");
+		}
+		if(checkBoxHamster.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Hamster");
+		}
+		if(checkBoxLapin.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Lapin");
+		}
+		if(checkBoxPoule.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Poule");
+		}
+		if(checkBoxCanari.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Canari");
+		}
+		if(checkBoxPoisson.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Poisson");
+		}
+		if(checkBoxPatesalabolognaise.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Pâtes à la bolognaise");
+		}
+		if(checkBoxPatesalacarbonara.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Pâtes à la carbonara");
+		}
+		if(checkBoxLasagnes.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Lasagnes");
+		}
+		if(checkBoxCroquemonsieur.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Croque-monsieur");
+		}
+		if(checkBoxGratindauphinois.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Gratin dauphinois");
+		}
+		if(checkBoxBurgerfrites.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Burger-frites");
+		}
+		if(checkBoxMagretdecanard.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Magret de canard");
+		}
+		if(checkBoxMoulesfrites.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Moules-frites");
+		}
+		if(checkBoxCouscous.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Couscous");
+		}
+		if(checkBoxBlanquettedeveau.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Blanquette de veau");
+		}
+		if(checkBoxSteakfrites.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Steak-frites");
+		}
+		if(checkBoxRaclette.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Raclette");
+		}
+		if(checkBoxTomatesfarcies.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Tomates farcies");
+		}
+		if(checkBoxPizza.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Pizza");
+		}
+		if(checkBoxScienceFiction.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Science-Fiction");
+		}
+		if(checkBoxComedie.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Comédie");
+		}
 
+		if(checkBoxHorreur.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Horreur");
+		}
+		if(checkBoxSuspense.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Suspense");
+		}
+		if(checkBoxPolicier.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Policier");
+		}
+		if(checkBoxAventure.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Aventure");
+		}
+		if(checkBoxRomantique.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Romantique");
+		}
+
+		if(checkBoxGuerre.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Guerre");
+		}
+		if(checkBoxHistoire.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Histoire");
+		}
+		if(checkBoxAction.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Action");
+		}
+		if(checkBoxDrame.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Drame");
+		}
+		if(checkBoxComedieDramatique.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Comédie Dramatique");
+		}
+
+		if(checkBoxFantastique.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Fantastique");
+		}
+		if(checkBoxWestern.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Western");
+		}
+
+
+
+		if(checkBoxSport.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Sport");
+		}
+		if(checkBoxJeuVideo.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Jeu Vidéo");
+		}
+		if(checkBoxCuisine.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Cuisine");
+		}
+		if(checkBoxSportasensations.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Sport à sensations");
+		}
+		if(checkBoxSoireesentreamis.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Soirées entre amis");
+		}
+		if(checkBoxSortiesculturelles.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Sorties culturelles");
+		}
+		if(checkBoxFairedelamusique.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Faire de la musique");
+		}
+		if(checkBoxPeinture.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Peinture");
+		}
+		if(checkBoxChant.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Chant");
+		}
+		if(checkBoxJardinage.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Jardinage");
+		}
+		if(checkBoxMarche.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Marche");
+		}
+		if(checkBoxShopping.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Shopping");
+		}
+		if(checkBoxDanse.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Danse");
+		}
+		if(checkBoxPeche.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Pêche");
+		}
+		if(checkBoxVelo.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Vélo");
+		}
+		if(checkBoxChasse.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Chasse");
+		}
+		if(checkBoxCueillettedechampignons.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Cueillettedechampignons");
+		}
+
+		
+		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=c.modl.memoiremixte.selectionDesProfilsOptimiserPourLePuser();
+		
 
 		c.modl.memoiremixte.pUser.prenom=prenomProfil2.getText();
 		c.modl.memoiremixte.pUser.nom=nomProfil2.getText();
@@ -912,8 +1142,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.modl.memoiremixte.pUser.taille=Integer.valueOf(TailleProfil2.getText());
 		c.modl.memoiremixte.pUser.mdp=mdpProfil2.getText();
 		c.modl.memoiremixte.pUser.date_naissance=DaTeNaissanceProfil2.toString();
-		c.indexProfilEnCoursDeLecture=indexProfilEnCoursDeLecture;
-		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=modl.memoiremixte.pUser.listeDesProfilsOptimale;
+		c.indexProfilEnCoursDeLecture=0;
 
 
 		c.nomPageProfil.setText(c.modl.memoiremixte.pUser.nom);

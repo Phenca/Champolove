@@ -30,7 +30,7 @@ public class Modele implements Observable{
 		//Pâtes à la bolognaise=0, Pâtes à la carbonara=1, Lasagnes=2, Croque-monsieur=3, Gratin dauphinois=4, Burger-frites=5, Magret de canard=6, Moules-frites=7, Couscous=8, Blanquette de veau=9
 		//Steak-frites=10, Raclette=11, Tomates farcies=12, Pizza=13, Omelette=14
 		
-		String[] tableauDesStylesFilmsEtSerie = {"Science-Fiction", "Comédie", "Horreur", "Suspence", "Policier", "Aventure", "Romantique", "Guerre", "Histoire", "Action"
+		String[] tableauDesStylesFilmsEtSerie = {"Science-Fiction", "Comédie", "Horreur", "Suspense", "Policier", "Aventure", "Romantique", "Guerre", "Histoire", "Action"
 				,"Drame", "Comédie Dramatique", "Fantastique", "Western"};
 		//Science-Fiction=0, Comédie=1, Horreur=2, Suspence=3, Policier=4, Aventure=5, Romantique=6, Guerre=7, Histoire=8, Action=9, Drame=10, Comédie Dramatique=11
 		//Fantastique=12, Western=13
@@ -40,7 +40,7 @@ public class Modele implements Observable{
 		dictionnaireDesGouts.put("Mon plat préféré", tableauMonPlatPref);
 		dictionnaireDesGouts.put("Tes styles de films/séries ?", tableauDesStylesFilmsEtSerie);
 		
-		listeHobbies.add("Jeu vidéo");//0
+		listeHobbies.add("Jeu Vidéo");//0
 		listeHobbies.add("Sport");//1
 		listeHobbies.add("Cuisine");//2
 		listeHobbies.add("Sport à sensations");//3
@@ -52,7 +52,6 @@ public class Modele implements Observable{
 		listeHobbies.add("Jardinage");//9
 		listeHobbies.add("Marche");//10
 		listeHobbies.add("Shopping");//11
-		listeHobbies.add("Lecture");//12
 		listeHobbies.add("Danse");//13
 		listeHobbies.add("Pêche");//14
 		listeHobbies.add("Vélo");//15
@@ -145,7 +144,6 @@ public class Modele implements Observable{
 		memoiremixte.p8.Hobbies.add(listeHobbies.get(7));
 		memoiremixte.p8.Hobbies.add(listeHobbies.get(9));
 		memoiremixte.p8.Hobbies.add(listeHobbies.get(10));
-		memoiremixte.p8.Hobbies.add(listeHobbies.get(12));
 
 		//pour p9
 		memoiremixte.p9.Gouts.add(tableauMonAnimalCompagnie[9]);
@@ -155,10 +153,9 @@ public class Modele implements Observable{
 		memoiremixte.p9.Gouts.add(tableauMonPlatPref[9]);
 		memoiremixte.p9.Gouts.add(tableauDesStylesFilmsEtSerie[8]);
 		memoiremixte.p9.Gouts.add(tableauDesStylesFilmsEtSerie[11]);
-		memoiremixte.p9.Hobbies.add(listeHobbies.get(12));
-		memoiremixte.p9.Hobbies.add(listeHobbies.get(14));
+		memoiremixte.p9.Hobbies.add(listeHobbies.get(13));
+		memoiremixte.p9.Hobbies.add(listeHobbies.get(15));
 		memoiremixte.p9.Hobbies.add(listeHobbies.get(16));
-		memoiremixte.p9.Hobbies.add(listeHobbies.get(17));
 
 		//pour p10
 		memoiremixte.p10.Gouts.add(tableauDesStylesDeMusiques[16]);
