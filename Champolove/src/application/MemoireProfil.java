@@ -28,6 +28,13 @@ public class MemoireProfil {
 	Profil p13;
 	Profil p14;
 	Profil p15;
+	Profil p16;
+	Profil p17;
+	Profil p18;
+	Profil p19;
+	Profil p20;
+	Profil p21;
+	Profil p22;
 	
 	TreeMap<Double,ArrayList<Profil>> dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale;
 
@@ -99,7 +106,20 @@ public class MemoireProfil {
 		memoirePMixtes.add(p14);
 		p15 = new Profil("Gicquel", "Suzanne", "21/11/1992", 168, age, "Suzanne.Gicquel@yopmail.com", "féminin", "file:src/ressources/img_profil/Gicquel_Suzanne.png", "", 0, "courgette15");
 		memoirePMixtes.add(p15);
-		
+		p16 = new Profil("Bouche", "Ignace", "27/06/2001", 190, age, "Ignace.Bouche@yopmail.com", "masculin", "file:src/ressources/img_profil/Bouche_Ignace.png", "", 0, "courgette16");
+		memoirePMixtes.add(p16);
+		p17 = new Profil("Perrot", "Stéphanie", "22/07/1990", 169, age, "Stéphanie.Perrot@yopmail.com", "féminin", "file:src/ressources/img_profil/Perrot_Stéphanie.png", "", 0, "courgette17");
+		memoirePMixtes.add(p17);
+		p18 = new Profil("Flament", "Marc", "30/03/2004", 185, age, "Marc.Flament@yopmail.com", "masculin", "file:src/ressources/img_profil/Flament_Marc.png", "", 0, "courgette18");
+		memoirePMixtes.add(p18);
+		p19 = new Profil("Henry", "Rose", "06/07/1988", 175, age, "Rose.Henry@yopmail.com", "féminin", "file:src/ressources/img_profil/Henry_Rose.png", "", 0, "courgette19");
+		memoirePMixtes.add(p19);
+		p20 = new Profil("Serre", "Mathieu", "21/06/1986", 172, age, "Mathieu.Serre@yopmail.com", "masculin", "file:src/ressources/img_profil/Serre_Mathieu.png", "", 0, "courgette20");
+		memoirePMixtes.add(p20);
+		p21 = new Profil("Coulon", "Hyacinthe", "10/06/1979", 162, age, "Hyacinthe.coulon@yopmail.com", "féminin", "file:src/ressources/img_profil/Coulon_Hyacinthe.png", "", 0, "courgette21");
+		memoirePMixtes.add(p21);
+		p22 = new Profil("Pons", "Adam", "29/12/1993", 178, age, "Adam.Pons@yopmail.com", "masculin", "file:src/ressources/img_profil/Pons_Adam.png", "", 0, "courgette22");
+		memoirePMixtes.add(p22);
 		
 		
 		calcul_age(memoirePMixtes, age);

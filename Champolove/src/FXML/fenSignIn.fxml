@@ -294,7 +294,7 @@
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxOmelette" mnemonicParsing="false" text="Omelette" GridPane.columnIndex="1" GridPane.rowIndex="25">
+                        <CheckBox fx:id="checkBoxOmelette" mnemonicParsing="false" text="Omelette" GridPane.rowIndex="25">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
@@ -450,6 +450,11 @@
                            </GridPane.margin>
                         </CheckBox>
                         <CheckBox fx:id="checkBoxCueillettedechampignons" mnemonicParsing="false" text="Cueillette de champignons" GridPane.rowIndex="40">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </CheckBox>
+                        <CheckBox fx:id="checkBoxLecture" mnemonicParsing="false" text="Lecture" GridPane.columnIndex="1" GridPane.rowIndex="40">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
