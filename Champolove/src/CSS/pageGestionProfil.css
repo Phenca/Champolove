@@ -18,6 +18,25 @@
     -fx-effect: dropshadow(three-pass-box, darkmagenta, 2, 0, 0, 0);
 }
 
+.button .text {
+    -fx-font-family: "Georgia";
+    -fx-font-size: 14px;
+}
+
+.boutonPhoto {
+    -fx-background-color: rgb(230, 230, 230);
+}
+
+.boutonPhoto:hover {
+    -fx-underline: true;
+    -fx-text-fill: blue;
+}
+
+.boutonPhoto:pressed {
+    -fx-translate-x: 0px;
+    -fx-effect: dropshadow(three-pass-box, rgb(230, 230, 230), 2, 0, 0, 0);
+}
+ 
 .text-field {
     -fx-background-color: lightblue;
     -fx-background-radius: 20px;
@@ -29,6 +48,63 @@
     -fx-font-family: "Georgia";
 }
 
-.check-box {}
+.check-box .box {
+    -fx-background-color: #fff;
+    -fx-background-radius: 50%;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 50%;
+    -fx-border-width: 2px;
+    -fx-min-width: 18px;
+    -fx-min-height: 18px;
+    -fx-max-width: 18px;
+    -fx-max-height: 18px;
+}
 
-.text-area {}
+.check-box:selected .box {
+    -fx-background-color: #0076ff;
+    -fx-border-color: #0076ff;
+}
+
+.check-box .text {
+    -fx-font-size: 12px;
+    -fx-font-family: "Georgia";
+}
+
+.text-area {
+    -fx-background-color: #f2f2f2; 
+    -fx-font-family: "Georgia"; 
+    -fx-font-size: 14px; 
+    -fx-text-fill: #333; 
+    -fx-border-color: #ddd; 
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px; 
+}
+
+.choice-box {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d4d4d4;
+    -fx-background-insets: 0px, 1px;
+    -fx-background-radius: 5px, 4px;
+    -fx-padding: 5px;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 14px;
+}
+
+.choice-box:hover {
+    -fx-background-color: #f5f5f5;
+}
+
+.choice-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.choice-box .arrow {
+    -fx-background-color: #333333;
+    -fx-shape: "M 0 0 L 5 5 L 10 0 L 5 10 z";
+}
+
+.choice-box .arrow:hover {
+    -fx-background-color: #666666;
+}
+
