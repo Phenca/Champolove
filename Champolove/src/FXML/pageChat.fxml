@@ -9,7 +9,7 @@
 
 <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
    <content>
-      <AnchorPane prefHeight="200.0" prefWidth="595.0">
+      <AnchorPane prefHeight="200.0" prefWidth="595.0" styleClass="background" stylesheets="@../CSS/pageDescription.css">
          <children>
             <Button fx:id="retourPagePrincipale" layoutX="581.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#retourPageConv" prefHeight="30.0" prefWidth="30.0" AnchorPane.rightAnchor="-0.0">
                <graphic>
@@ -25,14 +25,13 @@
                      <children>
                         <Label text="Nom" />
                         <Label text="Prénom" GridPane.rowIndex="1" />
-                        <Label text="Date de naissance (DD/MM/YYYY)" GridPane.rowIndex="2" />
+                        <Label text="Date de naissance" GridPane.rowIndex="2" />
                         <Label text="Age " GridPane.rowIndex="3" />
                         <Label text="Taille (en cm)" GridPane.rowIndex="4" />
                         <Label text="Genre" GridPane.rowIndex="5" />
                         <Label text="Description " GridPane.rowIndex="6" />
                         <Label text="Préférences musicales" GridPane.rowIndex="7" />
                         <Label text="Hoobies " GridPane.rowIndex="11" />
-                        <Label text="A Eviter (pas pour le moment) :" GridPane.rowIndex="12" />
                         <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <Label text="Animal préféré" GridPane.rowIndex="8" />
                         <Label text="Plat préféré" GridPane.rowIndex="9" />
@@ -42,12 +41,12 @@
                         <ListView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                         <ListView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
                         <ListView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-                        <Text fx:id="nomPageProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" />
-                        <Text fx:id="prenomPageProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Text fx:id="dateNaissancePageProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Text fx:id="agePageProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Text fx:id="taillePageProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Text fx:id="genrePageProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Text fx:id="nomPageProfil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Text" GridPane.columnIndex="1" />
+                        <Text fx:id="prenomPageProfil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Text fx:id="dateNaissancePageProfil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Text fx:id="agePageProfil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Text fx:id="taillePageProfil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Text fx:id="genrePageProfil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <Text fx:id="HobbiesPageProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="11" />                     
                      </children>
                      <columnConstraints>

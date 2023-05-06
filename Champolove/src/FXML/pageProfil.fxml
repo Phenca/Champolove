@@ -7,11 +7,11 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../CSS/pageProfil.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
    <content>
-      <AnchorPane prefHeight="200.0" prefWidth="595.0">
+      <AnchorPane prefHeight="200.0" prefWidth="595.0" styleClass="background" stylesheets="@../CSS/pageProfil.css">
          <children>
-            <Button fx:id="retourPagePrincipale" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#retourPagePrincipale" prefHeight="30.0" prefWidth="30.0" AnchorPane.leftAnchor="0.0">
+            <Button fx:id="retourPagePrincipale" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#retourPagePrincipale" prefHeight="30.0" prefWidth="30.0" styleClass="retourButton" AnchorPane.leftAnchor="0.0">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -26,7 +26,7 @@
                         <Label text="Genre" GridPane.rowIndex="8" />
                         <Label text="Nom" GridPane.rowIndex="1" />
                         <Label text="Prénom" GridPane.rowIndex="2" />
-                        <Label text="Date de naissance (DD/MM/YYYY)" GridPane.rowIndex="3" />
+                        <Label text="Date de naissance" GridPane.rowIndex="3" />
                         <Label text="Age " GridPane.rowIndex="4" />
                         <Label text="Taille (en cm)" GridPane.rowIndex="5" />
                         <Label text="Adresse email" GridPane.rowIndex="6" />
@@ -79,6 +79,9 @@
                         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
                   </GridPane>
                </children>
             </VBox>

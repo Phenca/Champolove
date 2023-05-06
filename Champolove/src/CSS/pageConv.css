@@ -1,5 +1,5 @@
 .background {
-    -fx-background-color: rgb(230, 230, 230);
+    -fx-background-color: radial-gradient(center 50% 50%, radius 55%, lightpink, lavender);
 }
 
 .label {
@@ -8,23 +8,85 @@
 }
 
 .button {
+    -fx-background-color: pink, rgb(230, 230, 230);
     -fx-background-insets: 0px, 1px;
     -fx-background-radius: 5px, 4px;
     -fx-cursor: hand;
+    -fx-font-family: "Georgia";
+
 }
 
 .button:pressed {
+    -fx-background-color: rgb(255, 223, 228);
     -fx-translate-x: 2px;
-    -fx-effect: dropshadow(three-pass-box, darkmagenta, 2, 0, 0, 0);
+    -fx-effect: dropshadow(three-pass-box, #303030, 10, 0, 0, 0);
+}
+
+.retourButton {
+    -fx-background-color: transparent;
+    -fx-border: transparent;
 }
 
 .text-field {
-    -fx-background-color: lightblue;
+    -fx-background-color: rgb(230, 230, 230);
     -fx-background-radius: 20px;
     -fx-padding: 5px;
-    -fx-border-color: #CCC;
+    -fx-border-color: pink;
     -fx-border-radius: 10px;
     -fx-border-width: 2px;
     -fx-font-size: 14px;
     -fx-font-family: "Georgia";
+}
+
+.date-picker .text-field:focused {
+    -fx-border-color: rgb(255, 145, 163);
+}
+
+.date-picker .arrow-button {
+	-fx-background-color: -fx-primary-color;
+	-fx-background-radius: 0;
+}
+.date-picker .arrow-button:hover {
+	-fx-background-color: -fx-secondary-color;
+}
+
+.date-picker:focused {
+	-fx-background-color: rgb(255, 145, 163);
+}
+
+.date-picker .arrow-button .arrow {
+	-fx-background-color: lavender;
+}
+.date-picker .cell {
+	-fx-background-color: lavender;
+}
+.date-picker .cell:hover {
+	-fx-background-color: pink;
+}
+.date-picker .cell:focused {
+	-fx-background-color: pink;
+}
+.date-picker .selected {
+	-fx-background-color: -fx-primary-color;
+	-fx-text-fill: #303030;
+}
+.date-picker .selected:focused {
+	-fx-background-color: -fx-primary-color;
+	-fx-text-fill: #303030;
+}
+.date-picker-popup  {
+	-fx-border-color: pink;
+}
+.date-picker-popup .month-year-pane {
+	-fx-background-color: pink;
+}
+.date-picker-popup .month-year-pane .label {
+	-fx-text-fill: #303030;
+}
+.date-picker-popup .week-number-cell {
+	-fx-text-fill: -fx-secondary-color;
+}
+.date-picker-popup .spinner .button .left-arrow,
+.date-picker-popup .spinner .button .right-arrow {
+	-fx-background-color: black;
 }

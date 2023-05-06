@@ -1,5 +1,14 @@
 .background {
+    -fx-background-color: lavender;
+}
+
+VBox GridPane{
     -fx-background-color: rgb(230, 230, 230);
+    -fx-border-color: pink;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1px;
+    -fx-padding: 10px;
 }
 
 .label {
@@ -8,6 +17,7 @@
 }
 
 .button {
+    -fx-background-color: transparent;
     -fx-background-insets: 0px, 1px;
     -fx-background-radius: 5px, 4px;
     -fx-cursor: hand;
@@ -15,18 +25,13 @@
 
 .button:pressed {
     -fx-translate-x: 2px;
-    -fx-effect: dropshadow(three-pass-box, darkmagenta, 2, 0, 0, 0);
+    -fx-effect: dropshadow(three-pass-box, rgb(255, 145, 163), 2, 0, 0, 0);
 }
 
 .button .text {
     -fx-font-family: "Georgia";
     -fx-font-size: 14px;
 }
-
-.boutonPhoto {
-    -fx-background-color: rgb(230, 230, 230);
-}
-
 .boutonPhoto:hover {
     -fx-underline: true;
     -fx-text-fill: blue;
@@ -34,18 +39,24 @@
 
 .boutonPhoto:pressed {
     -fx-translate-x: 0px;
+    -fx-translate-z: 2px;
     -fx-effect: dropshadow(three-pass-box, rgb(230, 230, 230), 2, 0, 0, 0);
 }
  
 .text-field {
-    -fx-background-color: lightblue;
+    -fx-background-color: rgb(230, 230, 230);
     -fx-background-radius: 20px;
     -fx-padding: 5px;
-    -fx-border-color: #CCC;
+    -fx-border-color: pink;
     -fx-border-radius: 10px;
     -fx-border-width: 2px;
     -fx-font-size: 14px;
     -fx-font-family: "Georgia";
+}
+
+.text-field:focused {
+    -fx-border-color: rgb(255, 145, 163);
+    
 }
 
 .check-box .box {
@@ -61,8 +72,8 @@
 }
 
 .check-box:selected .box {
-    -fx-background-color: #0076ff;
-    -fx-border-color: #0076ff;
+    -fx-background-color: lavender;
+    -fx-border-color: pink;
 }
 
 .check-box .text {
@@ -108,3 +119,55 @@
     -fx-background-color: #666666;
 }
 
+.date-picker .text-field:focused {
+    -fx-border-color: rgb(255, 145, 163);
+}
+
+.date-picker .arrow-button {
+	-fx-background-color: -fx-primary-color;
+	-fx-background-radius: 0;
+}
+.date-picker .arrow-button:hover {
+	-fx-background-color: -fx-secondary-color;
+}
+
+.date-picker:focused {
+	-fx-background-color: rgb(255, 145, 163);
+}
+
+.date-picker .arrow-button .arrow {
+	-fx-background-color: lavender;
+}
+.date-picker .cell {
+	-fx-background-color: lavender;
+}
+.date-picker .cell:hover {
+	-fx-background-color: pink;
+}
+.date-picker .cell:focused {
+	-fx-background-color: pink;
+}
+.date-picker .selected {
+	-fx-background-color: -fx-primary-color;
+	-fx-text-fill: #303030;
+}
+.date-picker .selected:focused {
+	-fx-background-color: -fx-primary-color;
+	-fx-text-fill: #303030;
+}
+.date-picker-popup  {
+	-fx-border-color: pink;
+}
+.date-picker-popup .month-year-pane {
+	-fx-background-color: pink;
+}
+.date-picker-popup .month-year-pane .label {
+	-fx-text-fill: #303030;
+}
+.date-picker-popup .week-number-cell {
+	-fx-text-fill: -fx-secondary-color;
+}
+.date-picker-popup .spinner .button .left-arrow,
+.date-picker-popup .spinner .button .right-arrow {
+	-fx-background-color: black;
+}

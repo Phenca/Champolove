@@ -22,7 +22,7 @@
          <children>
             <VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefWidth="500.0" spacing="75.0">
                <children>
-                  <Label text="Bienvenue sur Champolove" VBox.vgrow="ALWAYS">
+                  <Label style="-fx-font-size: 20px;" text="Bienvenue sur Champolove" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -61,7 +61,7 @@
                               <Insets left="25.0" />
                            </GridPane.margin>
                         </ImageView>
-                        <Button fx:id="choisirImage" mnemonicParsing="false" onAction="#choisirImage" text="Importer une photo de profil :" GridPane.rowIndex="8" />
+                        <Button fx:id="choisirImage" mnemonicParsing="false" onAction="#choisirImage" styleClass="boutonPhoto" text="Importer une photo de profil :" GridPane.rowIndex="8" />
                         <TextArea fx:id="descriptionProfil" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                         <Label minWidth="120.0" text="Animaux préférés :" GridPane.rowIndex="14">
                            <GridPane.margin>

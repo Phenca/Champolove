@@ -153,7 +153,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	/*
 	 * 
 	 * 
-	 * Instantiation contrôles fenêtre profilPrincipale
+	 * Instantiation contrôles fenêtre profilPrincipal
 	 * 
 	 * 
 	 */
@@ -394,8 +394,6 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.modl.memoiremixte.pUser.mdp=mdpProfil.getText();
 		c.modl.memoiremixte.pUser.date_naissance=DaTeNaissanceProfil.toString();
 		c.modl.memoiremixte.pUser.description=descriptionProfil.getText();
-
-
 
 		if(checkBoxRock.isSelected()) {
 			c.modl.memoiremixte.pUser.Gouts.add("Rock");
@@ -1385,6 +1383,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		this.modl=new Modele();
 	}
+	
 	public void setVue(Vue Vue) { 
 		this.Vue = Vue;
 	}

@@ -11,9 +11,9 @@
       <Insets />
    </opaqueInsets>
    <content>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="background">
          <children>
-            <Button fx:id="retourPagePrincipale1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#retourPagePrincipale" prefHeight="30.0" prefWidth="30.0">
+            <Button fx:id="retourPagePrincipale1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#retourPagePrincipale" prefHeight="30.0" prefWidth="30.0" styleClass="retourButton">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>

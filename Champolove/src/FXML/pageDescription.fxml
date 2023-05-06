@@ -9,7 +9,7 @@
 
 <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../CSS/pageDescription.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
    <content>
-      <AnchorPane prefHeight="200.0" prefWidth="595.0">
+      <AnchorPane prefHeight="200.0" prefWidth="595.0" styleClass="background">
          <children>
             <Button fx:id="retourPagePrincipale" layoutX="581.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#retourPagePrincipale" prefHeight="30.0" prefWidth="30.0" AnchorPane.rightAnchor="-0.0">
                <graphic>
@@ -21,18 +21,18 @@
                </graphic></Button>
             <VBox alignment="TOP_CENTER" fillWidth="false" layoutX="50.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="400.0" spacing="50.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <GridPane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefWidth="400.0" VBox.vgrow="ALWAYS">
+                  <GridPane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefWidth="450.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Label text="Nom" />
                         <Label text="Prénom" GridPane.rowIndex="1" />
-                        <Label text="Date de naissance (DD/MM/YYYY)" GridPane.rowIndex="2" />
+                        <Label text="Date de naissance " GridPane.rowIndex="2" />
                         <Label text="Age " GridPane.rowIndex="3" />
                         <Label text="Taille (en cm)" GridPane.rowIndex="4" />
                         <Label text="Genre" GridPane.rowIndex="5" />
                         <Label text="Description " GridPane.rowIndex="6" />
                         <Label text="Préférences musicales" GridPane.rowIndex="7" />
                         <Label text="Hoobies " GridPane.rowIndex="11" />
-                        <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextArea editable="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <Label text="Animal préféré" GridPane.rowIndex="8" />
                         <Label text="Plat préféré" GridPane.rowIndex="9" />
                         <Label text="Préférences séries &amp; films" GridPane.rowIndex="10" />
@@ -70,7 +70,7 @@
                   </GridPane>
                </children>
             </VBox>
-            <Label fx:id="RendezVous" layoutX="91.0" layoutY="7.0" text="Aucun rendez-vous pris" textFill="#ff9500" />
+            <Label fx:id="RendezVous" layoutX="219.0" layoutY="7.0" text="Aucun rendez-vous pris" textFill="#ff9500" />
          </children>
          <padding>
             <Insets top="30.0" />
