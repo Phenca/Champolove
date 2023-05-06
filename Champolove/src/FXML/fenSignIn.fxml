@@ -453,6 +453,11 @@
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
+                        <CheckBox fx:id="checkBoxLecture" mnemonicParsing="false" text="Lecture" GridPane.columnIndex="1" GridPane.rowIndex="40">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </CheckBox>
                      </children>
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

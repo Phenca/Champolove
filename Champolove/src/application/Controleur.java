@@ -116,6 +116,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML private CheckBox checkBoxRaclette;
 	@FXML private CheckBox checkBoxTomatesfarcies;
 	@FXML private CheckBox checkBoxPizza;
+	@FXML private CheckBox checkBoxOmelette;
 	@FXML private CheckBox checkBoxScienceFiction;
 	@FXML private CheckBox checkBoxComedie;
 	@FXML private CheckBox checkBoxHorreur;
@@ -147,6 +148,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	@FXML private CheckBox checkBoxSortiesculturelles;
 	@FXML private CheckBox checkBoxFairedelamusique;
 	@FXML private CheckBox checkBoxCueillettedechampignons;
+	@FXML private CheckBox checkBoxLecture;
 
 	/*
 	 * 
@@ -227,7 +229,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 	private Text adresseEmailPageProfil;
 
 	@FXML
-	private Text HobbiesPageProfil;
+	private ListView<String> HobbiesPageProfil = new ListView<String>();
 
 	/*
 	 * 
@@ -348,7 +350,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
 			System.out.println(c.actuelle.lien_photoProfil);
 
-			c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
+			c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age)+" ans");
 
 			c.prenomProfilEnCoursDeLecture.setText(c.actuelle.prenom);
 
@@ -521,6 +523,9 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		if(checkBoxPizza.isSelected()) {
 			c.modl.memoiremixte.pUser.Gouts.add("Pizza");
 		}
+		if(checkBoxOmelette.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Omelette");
+		}
 		if(checkBoxScienceFiction.isSelected()) {
 			c.modl.memoiremixte.pUser.Gouts.add("Science-Fiction");
 		}
@@ -620,6 +625,9 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		if(checkBoxCueillettedechampignons.isSelected()) {
 			c.modl.memoiremixte.pUser.Hobbies.add("Cueillettedechampignons");
 		}
+		if(checkBoxLecture.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Lecture");
+		}
 
 
 		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=c.modl.memoiremixte.selectionDesProfilsOptimiserPourLePuser();
@@ -630,7 +638,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
 		System.out.println(c.actuelle.lien_photoProfil);
 
-		c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
+		c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age)+" ans");
 
 		c.prenomProfilEnCoursDeLecture.setText(c.actuelle.prenom);
 
@@ -675,7 +683,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			Image imageProfilSelectionEnCours=new Image(actuelle.lien_photoProfil);
 			imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
 
-			ageDuProfilEnCoursDeLecture.setText(String.valueOf(actuelle.age));
+			ageDuProfilEnCoursDeLecture.setText(String.valueOf(actuelle.age)+" ans");
 			prenomProfilEnCoursDeLecture.setText(actuelle.prenom);
 		}
 		else {
@@ -698,7 +706,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			Image imageProfilSelectionEnCours=new Image(actuelle.lien_photoProfil);
 			imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
 
-			ageDuProfilEnCoursDeLecture.setText(String.valueOf(actuelle.age));
+			ageDuProfilEnCoursDeLecture.setText(String.valueOf(actuelle.age)+" ans");
 			prenomProfilEnCoursDeLecture.setText(actuelle.prenom);
 		}
 		else {
@@ -738,7 +746,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.prenomPageProfil.setText(modl.memoiremixte.pUser.prenom);
 		c.adresseEmailPageProfil.setText(modl.memoiremixte.pUser.adresse_mail);
 		c.mdpPageProfil.setText(modl.memoiremixte.pUser.mdp);
-		c.agePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.age));
+		c.agePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.age)+" ans");
 		c.taillePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.taille));
 		c.descriptionPageProfil.setText(modl.memoiremixte.pUser.description);
 
@@ -786,11 +794,13 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		for (int i=0; i<modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).Gouts.size(); i++) {
 
 		}
-
-		for (int toto=0; toto<modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).Hobbies.size(); toto++) {
-
-		}
-
+	    ObservableList<String> observableList = FXCollections.observableArrayList(c.modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).Hobbies);
+	    c.HobbiesPageProfil.setItems(observableList);
+	    c.HobbiesPageProfil.getItems();
+	    for (int j=0; j<c.modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).Hobbies.size(); j++) {
+	    }
+		
+		
 		Scene scene = new Scene(rootLayout);
 		c.Stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 		c.Stage.setTitle("Champolove");
@@ -839,7 +849,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.imageDuProfilEnCoursDeLecture.setImage(imageProfilSelectionEnCours);
 		System.out.println(c.actuelle.lien_photoProfil);
 
-		c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
+		c.ageDuProfilEnCoursDeLecture.setText(String.valueOf(c.actuelle.age)+" ans");
 
 		c.prenomProfilEnCoursDeLecture.setText(c.actuelle.prenom);
 
@@ -1039,6 +1049,9 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		if(checkBoxPizza.isSelected()) {
 			c.modl.memoiremixte.pUser.Gouts.add("Pizza");
 		}
+		if(checkBoxOmelette.isSelected()) {
+			c.modl.memoiremixte.pUser.Gouts.add("Omelette");
+		}
 		if(checkBoxScienceFiction.isSelected()) {
 			c.modl.memoiremixte.pUser.Gouts.add("Science-Fiction");
 		}
@@ -1138,6 +1151,9 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		if(checkBoxCueillettedechampignons.isSelected()) {
 			c.modl.memoiremixte.pUser.Hobbies.add("Cueillettedechampignons");
 		}
+		if(checkBoxLecture.isSelected()) {
+			c.modl.memoiremixte.pUser.Hobbies.add("Lecture");
+		}
 
 
 		c.modl.memoiremixte.pUser.listeDesProfilsOptimale=c.modl.memoiremixte.selectionDesProfilsOptimiserPourLePuser();
@@ -1159,7 +1175,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.prenomPageProfil.setText(c.modl.memoiremixte.pUser.prenom);
 		c.adresseEmailPageProfil.setText(c.modl.memoiremixte.pUser.adresse_mail);
 		c.mdpPageProfil.setText(c.modl.memoiremixte.pUser.mdp);
-		c.agePageProfil.setText(String.valueOf(c.modl.memoiremixte.pUser.age));
+		c.agePageProfil.setText(String.valueOf(c.modl.memoiremixte.pUser.age)+" ans");
 		c.taillePageProfil.setText(String.valueOf(c.modl.memoiremixte.pUser.taille));
 		c.descriptionPageProfil.setText(c.modl.memoiremixte.pUser.description);
 
@@ -1211,7 +1227,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
 		c.imageDuProfilMatcherEnCours.setImage(imageProfilSelectionEnCours);
 
-		c.ageDuProfilMatchEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
+		c.ageDuProfilMatchEnCoursDeLecture.setText(String.valueOf(c.actuelle.age)+" ans");
 		c.prenomProfilMatchEnCoursDeLecture.setText(c.actuelle.prenom);
 
 
@@ -1292,7 +1308,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			Image imageProfilSelectionEnCours=new Image(actuelle.lien_photoProfil);
 			imageDuProfilMatcherEnCours.setImage(imageProfilSelectionEnCours);
 
-			ageDuProfilMatchEnCoursDeLecture.setText(String.valueOf(actuelle.age));
+			ageDuProfilMatchEnCoursDeLecture.setText(String.valueOf(actuelle.age)+" ans");
 			prenomProfilMatchEnCoursDeLecture.setText(actuelle.prenom);
 		}
 		else {
@@ -1309,7 +1325,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 			Image imageProfilSelectionEnCours=new Image(actuelle.lien_photoProfil);
 			imageDuProfilMatcherEnCours.setImage(imageProfilSelectionEnCours);
 
-			ageDuProfilMatchEnCoursDeLecture.setText(String.valueOf(actuelle.age));
+			ageDuProfilMatchEnCoursDeLecture.setText(String.valueOf(actuelle.age)+" ans");
 			prenomProfilMatchEnCoursDeLecture.setText(actuelle.prenom);
 		}
 		else {
@@ -1349,7 +1365,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		Image imageProfilSelectionEnCours=new Image(c.actuelle.lien_photoProfil);
 		c.imageDuProfilMatcherEnCours.setImage(imageProfilSelectionEnCours);
 
-		c.ageDuProfilMatchEnCoursDeLecture.setText(String.valueOf(c.actuelle.age));
+		c.ageDuProfilMatchEnCoursDeLecture.setText(String.valueOf(c.actuelle.age)+" ans");
 		c.prenomProfilMatchEnCoursDeLecture.setText(c.actuelle.prenom);
 
 
