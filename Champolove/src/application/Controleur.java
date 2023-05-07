@@ -741,7 +741,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.modl.memoiremixte.pUser.dictionnaireDesRendezVous=modl.memoiremixte.pUser.dictionnaireDesRendezVous;
 		//////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+		
 		c.nomPageProfil.setText(modl.memoiremixte.pUser.nom);
 		c.prenomPageProfil.setText(modl.memoiremixte.pUser.prenom);
 		c.adresseEmailPageProfil.setText(modl.memoiremixte.pUser.adresse_mail);
@@ -1277,15 +1277,6 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		
 		if(modl.memoiremixte.pUser.dictionnaireDesRendezVous.containsKey(indexProfilMatchEnCoursDeLecture)) {
 			c.RendezVous.setText(modl.memoiremixte.pUser.dictionnaireDesRendezVous.get(indexProfilMatchEnCoursDeLecture));
-		}
-		
-
-		for (int i=0; i<modl.memoiremixte.pUser.memoireMatcher.get(indexProfilMatchEnCoursDeLecture).Gouts.size(); i++) {
-
-		}
-
-		for (int toto=0; toto<modl.memoiremixte.pUser.memoireMatcher.get(indexProfilMatchEnCoursDeLecture).Hobbies.size(); toto++) {
-
 		}
 
 		Scene scene = new Scene(rootLayout);

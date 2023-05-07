@@ -13,6 +13,7 @@ public class MemoireProfil {
 	ArrayList<Profil> memoirePFemme;
 	Profil pUser;
 	ArrayList<Profil> memoirePMixtes;
+	ArrayList<Profil> memoireUtilisateur;
 	Profil p1;
 	Profil p2;
 	Profil p3;
