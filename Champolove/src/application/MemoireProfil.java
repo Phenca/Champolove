@@ -36,7 +36,15 @@ public class MemoireProfil {
 	Profil p20;
 	Profil p21;
 	Profil p22;
-	
+	Profil p23;
+	Profil p24;
+	Profil p25;
+	Profil p26;
+	Profil p27;
+	Profil p28;
+	Profil p29;
+	Profil p30;
+
 	TreeMap<Double,ArrayList<Profil>> dictionnaireTrierDeProfilAvecLeurPourcentageDeAffiniterAvecLeProfilPrincipale;
 
 
@@ -121,6 +129,22 @@ public class MemoireProfil {
 		memoirePMixtes.add(p21);
 		p22 = new Profil("Pons", "Adam", "29/12/1993", 178, age, "Adam.Pons@yopmail.com", "masculin", "file:src/ressources/img_profil/Pons_Adam.png", "", 0, "courgette22");
 		memoirePMixtes.add(p22);
+		p23 = new Profil("Vienne", "Gilles", "25/09/1995", 164, age, "Gilles.Vienne@yopmail.com", "masculin", "file:src/ressources/img_profil/Vienne_Gilles.png", "", 0, "courgette23");
+		memoirePMixtes.add(p23);
+		p24 = new Profil("Marais", "Catherine", "15/02/1964", 160, age, "Catherine.Marais@yopmail.com", "féminin", "file:src/ressources/img_profil/Marais_Catherine.png", "", 0, "courgette24");
+		memoirePMixtes.add(p24);
+		p25 = new Profil("Grosjean", "Hercule", "02/01/2003", 185, age, "Hercule.Grosjean@yopmail.com", "masculin", "file:src/ressources/img_profil/Grosjean_Hercule.png", "", 0, "courgette25");
+		memoirePMixtes.add(p25);
+		p26 = new Profil("Maud", "Jolie", "19/08/1992", 175, age, "Jolie.Maud@yopmail.com", "féminin", "file:src/ressources/img_profil/Maud_Jolie.png", "", 0, "courgette26");
+		memoirePMixtes.add(p26);
+		p27 = new Profil("Salmon", "Maxime", "27/11/1996", 180, age, "Maxime.Salmon@yopmail.com", "masculin", "file:src/ressources/img_profil/Salmon_Maxime.png", "", 0, "courgette27");
+		memoirePMixtes.add(p27);
+		p28 = new Profil("Nelly", "Héloïse", "24/07/1976", 166, age, "Héloïse.Nelly@yopmail.com", "féminin", "file:src/ressources/img_profil/Nelly_Héloïse.png", "", 0, "courgette28");
+		memoirePMixtes.add(p28);
+		p29 = new Profil("Aubry", "Léopold", "16/04/1977", 174, age, "Leopold.Aubry@yopmail.com", "masculin", "file:src/ressources/img_profil/Aubry_Léopold.png", "", 0, "courgette29");
+		memoirePMixtes.add(p29);
+		p30 = new Profil("Maury", "Ré mi", "09/06/1998", 171, age, "Ré_mi.Maury@yopmail.com", "masculin", "file:src/ressources/img_profil/Maury_Ré_mi.png", "", 0, "courgette30");
+		memoirePMixtes.add(p30);
 		
 		
 		calcul_age(memoirePMixtes, age);
