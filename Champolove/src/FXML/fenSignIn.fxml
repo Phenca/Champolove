@@ -22,7 +22,7 @@
          <children>
             <VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefWidth="500.0" spacing="75.0">
                <children>
-                  <Label text="Bienvenue sur Champolove" VBox.vgrow="ALWAYS">
+                  <Label style="-fx-font-size: 20px;" text="Bienvenue sur Champolove" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -48,7 +48,6 @@
                               <Insets left="208.0" top="10.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label text="A Eviter (pas pour le moment) :" GridPane.rowIndex="41" />
                         <TextField fx:id="nomProfil" GridPane.columnIndex="1" />
                         <TextField fx:id="prenomProfil" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="TailleProfil" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -56,14 +55,14 @@
                         <TextField fx:id="adresseEmailProfil" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <DatePicker fx:id="DaTeNaissanceProfil" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <PasswordField fx:id="mdpProfil" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                        <ChoiceBox fx:id="SexeProfil" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                        <ChoiceBox fx:id="SexeProfil" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                         <ImageView fx:id="imageView" fitHeight="200.0" fitWidth="150.0" nodeOrientation="INHERIT" pickOnBounds="true" GridPane.columnIndex="1" GridPane.rowIndex="8">
                            <GridPane.margin>
                               <Insets left="25.0" />
                            </GridPane.margin>
                         </ImageView>
-                        <Button fx:id="choisirImage" mnemonicParsing="false" onAction="#choisirImage" text="Importer une photo de profil :" GridPane.rowIndex="8" />
-                        <TextArea fx:id="descriptionProfil" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Button fx:id="choisirImage" mnemonicParsing="false" onAction="#choisirImage" styleClass="boutonPhoto" text="Importer une photo de profil :" GridPane.rowIndex="8" />
+                        <TextArea fx:id="descriptionProfil" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                         <Label minWidth="120.0" text="Animaux préférés :" GridPane.rowIndex="14">
                            <GridPane.margin>
                               <Insets left="178.0" top="10.0" />
@@ -96,7 +95,7 @@
                         </CheckBox>
                         <CheckBox fx:id="checkBoxPop" mnemonicParsing="false" text="Pop" GridPane.rowIndex="11">
                            <GridPane.margin>
-                              <Insets left="160.0" />
+                              <Insets left="165.0" />
                            </GridPane.margin>
                         </CheckBox>
                         <CheckBox fx:id="checkBoxJazz" mnemonicParsing="false" text="Jazz" GridPane.columnIndex="1" GridPane.rowIndex="11">
@@ -121,7 +120,7 @@
                         </CheckBox>
                         <CheckBox fx:id="checkBoxCountry" mnemonicParsing="false" text="Country" GridPane.rowIndex="12">
                            <GridPane.margin>
-                              <Insets left="160.0" />
+                              <Insets left="165.0" />
                            </GridPane.margin>
                         </CheckBox>
                         <CheckBox fx:id="checkBoxDisco" mnemonicParsing="false" text="Disco" GridPane.columnIndex="1" GridPane.rowIndex="12">
@@ -151,7 +150,7 @@
                         </CheckBox>
                         <CheckBox fx:id="checkBoxMetal" mnemonicParsing="false" text="Metal" GridPane.rowIndex="13">
                            <GridPane.margin>
-                              <Insets left="160.0" />
+                              <Insets left="165.0" />
                            </GridPane.margin>
                         </CheckBox>
                         <CheckBox fx:id="checkBoxFunk" mnemonicParsing="false" text="Funk" GridPane.columnIndex="1" GridPane.rowIndex="13">
@@ -181,7 +180,7 @@
                         </CheckBox>
                         <CheckBox fx:id="checkBoxSerpent" mnemonicParsing="false" text="Serpent" GridPane.rowIndex="15">
                            <GridPane.margin>
-                              <Insets left="160.0" />
+                              <Insets left="165.0" />
                            </GridPane.margin>
                         </CheckBox>
                         <CheckBox fx:id="checkBoxCheval" mnemonicParsing="false" text="Cheval" GridPane.columnIndex="1" GridPane.rowIndex="15">
@@ -216,7 +215,7 @@
                         </CheckBox>
                         <CheckBox fx:id="checkBoxPoule" mnemonicParsing="false" text="Poule" GridPane.rowIndex="16">
                            <GridPane.margin>
-                              <Insets left="160.0" />
+                              <Insets left="165.0" />
                            </GridPane.margin>
                         </CheckBox>
                         <CheckBox fx:id="checkBoxPoisson" mnemonicParsing="false" text="Poisson" GridPane.columnIndex="1" GridPane.rowIndex="16">
@@ -490,7 +489,6 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -498,14 +496,15 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <VBox.margin>
                         <Insets bottom="10.0" />

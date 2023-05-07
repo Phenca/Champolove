@@ -1,33 +1,35 @@
 .background {
-    -fx-background-color: rgb(230, 230, 230);
+    -fx-background-color: radial-gradient(center 50% 50%, radius 75%, lightpink, lavender);
 }
 
+
 .button {
-    -fx-background-color: darkmagenta, rgb(230, 230, 230);
+    -fx-background-color:  darkmagenta, lavender;
     -fx-background-insets: 0px, 1px;
     -fx-background-radius: 5px, 4px;
     -fx-cursor: hand;
     -fx-font-family: "Georgia";
-    -fx-text-fill: black;
+    -fx-text-fill: rgb(39, 39, 39);
 }
 
 .button:hover {
-    -fx-effect: dropshadow(three-pass-box, darkmagenta, 10, 0, 5, 5);
-    -fx-text-fill: darkmagenta;
+    -fx-effect: dropshadow(three-pass-box,  #303030, 10, 0, 5, 5);
+    -fx-text-fill: rgb(39, 39, 39);
     -fx-font-weight: bold;
 }
 
 .button:pressed {
-    -fx-background-color: darkmagenta;
+    -fx-background-color: pink;
     -fx-font-weight: bold;
-    -fx-text-fill: rgb(230, 230, 230);
+    -fx-text-fill: rgb(39, 39, 39);
     -fx-translate-x: 5px;
-    -fx-effect: dropshadow(three-pass-box, darkmagenta, 10, 0, 0, 0);
+    -fx-effect: dropshadow(three-pass-box, #303030, 10, 0, 0, 0);
 }
 
 .label {
     -fx-font-family: "Georgia";
     -fx-font-size: 14px;
+    -fx-text-fill: rgb(39, 39, 39);
 }
 
 @font-face {
@@ -38,5 +40,5 @@
 .title {
     -fx-font-family: Rochester;
     -fx-font-size: 24px;
-    -fx-text-fill: goldenrod;
+    -fx-text-fill: rgb(39, 39, 39);
 }

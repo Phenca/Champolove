@@ -1,5 +1,5 @@
 .background {
-    -fx-background-color: rgb(230, 230, 230);
+    -fx-background-color: lavender;
 }
 
 .label {
@@ -8,12 +8,54 @@
 }
 
 .button {
-    -fx-background-insets: 0px, 1px;
-    -fx-background-radius: 5px, 4px;
-    -fx-cursor: hand;
+    -fx-background-color: white;
+    -fx-background-radius: 30;
+    -fx-padding: 10px 20px;
+    -fx-font-size: 16px;
+    -fx-text-fill: #444444;
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 10, 10);
+}
+
+.button:hover {
+    -fx-effect: innershadow(three-pass-box, rgb(255, 145, 163), 10, 0, 0, 0);
 }
 
 .button:pressed {
     -fx-translate-x: 2px;
-    -fx-effect: dropshadow(three-pass-box, darkmagenta, 2, 0, 0, 0);
+    -fx-effect: innershadow(three-pass-box, rgb(255, 145, 163), 10, 0, 0, 0);
+}
+
+.buttonBarre {
+    -fx-background-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, black, 0, 0, 0, 0);
+}
+
+.buttonBarre:hover {
+    -fx-effect: innershadow(three-pass-box, gray, 10, 0, 0, 0);
+    -fx-text-fill: #303030;
+}
+
+.barreInf {
+    -fx-effect: innershadow(three-pass-box, pink, 20, 0, 0, 0);
+    -fx-background-color: rgb(209, 209, 252);
+    -fx-padding: 5px 0px;
+}
+
+.contour {
+    -fx-background-color: radial-gradient(center 50% 75%, radius 55%, pink, lavender);
+
+}
+
+.separator {
+    -fx-background-color: black;
+    -fx-pref-height: 1;
+    -fx-pref-width: 1;
+    
+    
+}
+
+.separator .line {
+    -fx-border-width: 0px;
+    -fx-border-insets: 0px;
 }

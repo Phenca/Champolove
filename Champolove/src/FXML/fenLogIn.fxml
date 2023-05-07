@@ -10,7 +10,7 @@
    <children>
       <VBox alignment="TOP_CENTER" spacing="100.0">
          <children>
-            <Label style="-fx-font-size: 18px;" text="Connexion à Champolove" VBox.vgrow="ALWAYS">
+            <Label style="-fx-font-size: 22px;" text="Connexion à Champolove" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets />
                </VBox.margin>

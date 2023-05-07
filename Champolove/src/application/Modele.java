@@ -6,6 +6,8 @@ import java.util.Map;
 
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Modele implements Observable{
 	

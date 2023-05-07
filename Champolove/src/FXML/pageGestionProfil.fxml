@@ -9,9 +9,9 @@
 
 <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../CSS/pageGestionProfil.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controleur">
    <content>
-      <AnchorPane prefHeight="200.0" prefWidth="595.0">
+      <AnchorPane prefHeight="200.0" prefWidth="595.0" styleClass="background">
          <children>
-            <VBox alignment="TOP_CENTER" fillWidth="false" layoutX="43.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="500.0" spacing="50.0" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="42.0">
+            <VBox alignment="TOP_CENTER" fillWidth="false" layoutX="43.0" layoutY="6.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="500.0" spacing="50.0" stylesheets="@../CSS/pageGestionProfil.css" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="6.0">
                <children>
                   <Label text="Modifier profil" VBox.vgrow="ALWAYS" />
                   <GridPane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefWidth="500.0" vgap="3.0">
@@ -27,15 +27,14 @@
                         <Label text="Description  " GridPane.rowIndex="9" />
                         <Label minWidth="165.0" text="Styles musicaux préférés " GridPane.rowIndex="10">
                            <GridPane.margin>
-                              <Insets left="155.0" top="10.0" />
+                              <Insets left="167.0" top="10.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label minWidth="60.0" text="Hoobies " GridPane.rowIndex="33">
+                        <Label minWidth="60.0" text="Hoobies " GridPane.rowIndex="34">
                            <GridPane.margin>
-                              <Insets left="208.0" top="10.0" />
+                              <Insets left="220.0" top="10.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label text="A Eviter (pas pour le moment) " GridPane.rowIndex="40" />
                         <TextField fx:id="nomProfil2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="prenomProfil2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <TextField fx:id="TailleProfil2" GridPane.columnIndex="1" GridPane.rowIndex="4" />
@@ -49,24 +48,24 @@
                               <Insets left="25.0" />
                            </GridPane.margin>
                         </ImageView>
-                        <Button fx:id="choisirImage" mnemonicParsing="false" onAction="#choisirImage" text="Changer photo profil" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                        <TextArea fx:id="descriptionProfil2" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Button fx:id="choisirImage" mnemonicParsing="false" onAction="#choisirImage" styleClass="boutonPhoto" text="Changer photo profil" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <TextArea fx:id="descriptionProfil2" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                         <Label minWidth="120.0" text="Animaux préférés " GridPane.rowIndex="14">
                            <GridPane.margin>
-                              <Insets left="178.0" top="10.0" />
+                              <Insets left="190.0" top="10.0" />
                            </GridPane.margin>
                         </Label>
                         <Label minWidth="100.0" text="Plats préférés " GridPane.rowIndex="17">
                            <GridPane.margin>
-                              <Insets left="188.0" top="10.0" />
+                              <Insets left="200.0" top="10.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label minWidth="150.0" text="Films/Séries préférés " GridPane.rowIndex="25">
+                        <Label minWidth="150.0" text="Films/Séries préférés " GridPane.rowIndex="26">
                            <GridPane.margin>
-                              <Insets left="163.0" top="10.0" />
+                              <Insets left="175.0" top="10.0" />
                            </GridPane.margin>
                         </Label>
-                         <CheckBox fx:id="checkBoxRock" mnemonicParsing="false" text="Rock" GridPane.rowIndex="11">
+                        <CheckBox fx:id="checkBoxRock" mnemonicParsing="false" text="Rock" GridPane.rowIndex="11">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
@@ -83,7 +82,7 @@
                         </CheckBox>
                         <CheckBox fx:id="checkBoxPop" mnemonicParsing="false" text="Pop" GridPane.rowIndex="11">
                            <GridPane.margin>
-                              <Insets left="160.0" />
+                              <Insets left="165.0" />
                            </GridPane.margin>
                         </CheckBox>
                         <CheckBox fx:id="checkBoxJazz" mnemonicParsing="false" text="Jazz" GridPane.columnIndex="1" GridPane.rowIndex="11">
@@ -108,7 +107,7 @@
                         </CheckBox>
                         <CheckBox fx:id="checkBoxCountry" mnemonicParsing="false" text="Country" GridPane.rowIndex="12">
                            <GridPane.margin>
-                              <Insets left="160.0" />
+                              <Insets left="165.0" />
                            </GridPane.margin>
                         </CheckBox>
                         <CheckBox fx:id="checkBoxDisco" mnemonicParsing="false" text="Disco" GridPane.columnIndex="1" GridPane.rowIndex="12">
@@ -138,7 +137,7 @@
                         </CheckBox>
                         <CheckBox fx:id="checkBoxMetal" mnemonicParsing="false" text="Metal" GridPane.rowIndex="13">
                            <GridPane.margin>
-                              <Insets left="160.0" />
+                              <Insets left="165.0" />
                            </GridPane.margin>
                         </CheckBox>
                         <CheckBox fx:id="checkBoxFunk" mnemonicParsing="false" text="Funk" GridPane.columnIndex="1" GridPane.rowIndex="13">
@@ -153,7 +152,7 @@
                         </CheckBox>
                         <CheckBox fx:id="checkBoxClassique" mnemonicParsing="false" text="Classique" GridPane.columnIndex="1" GridPane.rowIndex="13">
                            <GridPane.margin>
-                              <Insets left="85.0" />
+                              <Insets left="160.0" />
                            </GridPane.margin>
                         </CheckBox>
                         <CheckBox fx:id="checkBoxChien" mnemonicParsing="false" text="Chien" GridPane.rowIndex="15">
@@ -168,7 +167,7 @@
                         </CheckBox>
                         <CheckBox fx:id="checkBoxSerpent" mnemonicParsing="false" text="Serpent" GridPane.rowIndex="15">
                            <GridPane.margin>
-                              <Insets left="160.0" />
+                              <Insets left="165.0" />
                            </GridPane.margin>
                         </CheckBox>
                         <CheckBox fx:id="checkBoxCheval" mnemonicParsing="false" text="Cheval" GridPane.columnIndex="1" GridPane.rowIndex="15">
@@ -203,7 +202,7 @@
                         </CheckBox>
                         <CheckBox fx:id="checkBoxPoule" mnemonicParsing="false" text="Poule" GridPane.rowIndex="16">
                            <GridPane.margin>
-                              <Insets left="160.0" />
+                              <Insets left="165.0" />
                            </GridPane.margin>
                         </CheckBox>
                         <CheckBox fx:id="checkBoxPoisson" mnemonicParsing="false" text="Poisson" GridPane.columnIndex="1" GridPane.rowIndex="16">
@@ -281,162 +280,162 @@
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxOmelette" mnemonicParsing="false" text="Omelette" GridPane.columnIndex="1" GridPane.rowIndex="24">
+                        <CheckBox fx:id="checkBoxOmelette" mnemonicParsing="false" text="Omelette" GridPane.rowIndex="25">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxScienceFiction" mnemonicParsing="false" text="Science-Fiction" GridPane.rowIndex="26">
+                        <CheckBox fx:id="checkBoxScienceFiction" mnemonicParsing="false" text="Science-Fiction" GridPane.rowIndex="27">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxComedie" mnemonicParsing="false" text="Comédie" GridPane.columnIndex="1" GridPane.rowIndex="26">
+                        <CheckBox fx:id="checkBoxComedie" mnemonicParsing="false" text="Comédie" GridPane.columnIndex="1" GridPane.rowIndex="27">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxHorreur" mnemonicParsing="false" text="Horreur" GridPane.rowIndex="27">
+                        <CheckBox fx:id="checkBoxHorreur" mnemonicParsing="false" text="Horreur" GridPane.rowIndex="28">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxPolicier" mnemonicParsing="false" text="Policier" GridPane.rowIndex="28">
+                        <CheckBox fx:id="checkBoxPolicier" mnemonicParsing="false" text="Policier" GridPane.rowIndex="29">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxAventure" mnemonicParsing="false" text="Aventure" GridPane.rowIndex="29">
+                        <CheckBox fx:id="checkBoxAventure" mnemonicParsing="false" text="Aventure" GridPane.rowIndex="30">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxHistoire" mnemonicParsing="false" text="Histoire" GridPane.rowIndex="30">
+                        <CheckBox fx:id="checkBoxHistoire" mnemonicParsing="false" text="Histoire" GridPane.rowIndex="31">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxDrame" mnemonicParsing="false" text="Drame" GridPane.rowIndex="31">
+                        <CheckBox fx:id="checkBoxDrame" mnemonicParsing="false" text="Drame" GridPane.rowIndex="32">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxSuspense" mnemonicParsing="false" text="Suspense" GridPane.columnIndex="1" GridPane.rowIndex="27">
+                        <CheckBox fx:id="checkBoxSuspense" mnemonicParsing="false" text="Suspense" GridPane.columnIndex="1" GridPane.rowIndex="28">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxRomantique" mnemonicParsing="false" text="Romantique" GridPane.columnIndex="1" GridPane.rowIndex="28">
+                        <CheckBox fx:id="checkBoxRomantique" mnemonicParsing="false" text="Romantique" GridPane.columnIndex="1" GridPane.rowIndex="29">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxGuerre" mnemonicParsing="false" text="Guerre" GridPane.columnIndex="1" GridPane.rowIndex="29">
+                        <CheckBox fx:id="checkBoxGuerre" mnemonicParsing="false" text="Guerre" GridPane.columnIndex="1" GridPane.rowIndex="30">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxAction" mnemonicParsing="false" text="Action" GridPane.columnIndex="1" GridPane.rowIndex="30">
+                        <CheckBox fx:id="checkBoxAction" mnemonicParsing="false" text="Action" GridPane.columnIndex="1" GridPane.rowIndex="31">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxComedieDramatique" mnemonicParsing="false" text="Comédie Dramatique" GridPane.columnIndex="1" GridPane.rowIndex="31">
+                        <CheckBox fx:id="checkBoxComedieDramatique" mnemonicParsing="false" text="Comédie Dramatique" GridPane.columnIndex="1" GridPane.rowIndex="32">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxFantastique" mnemonicParsing="false" text="Fantastique" GridPane.rowIndex="32">
+                        <CheckBox fx:id="checkBoxFantastique" mnemonicParsing="false" text="Fantastique" GridPane.rowIndex="33">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxWestern" mnemonicParsing="false" text="Western" GridPane.columnIndex="1" GridPane.rowIndex="32">
+                        <CheckBox fx:id="checkBoxWestern" mnemonicParsing="false" text="Western" GridPane.columnIndex="1" GridPane.rowIndex="33">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxJeuVideo" mnemonicParsing="false" text="Jeu Vidéo" GridPane.rowIndex="34">
+                        <CheckBox fx:id="checkBoxJeuVideo" mnemonicParsing="false" text="Jeu Vidéo" GridPane.rowIndex="35">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxSport" mnemonicParsing="false" text="Sport" GridPane.rowIndex="34">
+                        <CheckBox fx:id="checkBoxSport" mnemonicParsing="false" text="Sport" GridPane.rowIndex="35">
                            <GridPane.margin>
                               <Insets left="130.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxCuisine" mnemonicParsing="false" text="Cuisine" GridPane.columnIndex="1" GridPane.rowIndex="34">
+                        <CheckBox fx:id="checkBoxCuisine" mnemonicParsing="false" text="Cuisine" GridPane.columnIndex="1" GridPane.rowIndex="35">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxPeinture" mnemonicParsing="false" text="Peinture" GridPane.columnIndex="1" GridPane.rowIndex="34">
+                        <CheckBox fx:id="checkBoxPeinture" mnemonicParsing="false" text="Peinture" GridPane.columnIndex="1" GridPane.rowIndex="35">
                            <GridPane.margin>
                               <Insets left="130.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxChant" mnemonicParsing="false" text="Chant" GridPane.rowIndex="35">
+                        <CheckBox fx:id="checkBoxChant" mnemonicParsing="false" text="Chant" GridPane.rowIndex="36">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxJardinage" mnemonicParsing="false" text="Jardinage" GridPane.rowIndex="35">
+                        <CheckBox fx:id="checkBoxJardinage" mnemonicParsing="false" text="Jardinage" GridPane.rowIndex="36">
                            <GridPane.margin>
                               <Insets left="130.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxShopping" mnemonicParsing="false" text="Shopping" GridPane.columnIndex="1" GridPane.rowIndex="35">
+                        <CheckBox fx:id="checkBoxShopping" mnemonicParsing="false" text="Shopping" GridPane.columnIndex="1" GridPane.rowIndex="36">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxDanse" mnemonicParsing="false" text="Danse" GridPane.columnIndex="1" GridPane.rowIndex="35">
+                        <CheckBox fx:id="checkBoxDanse" mnemonicParsing="false" text="Danse" GridPane.columnIndex="1" GridPane.rowIndex="36">
                            <GridPane.margin>
                               <Insets left="130.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxChasse" mnemonicParsing="false" text="Chasse" GridPane.rowIndex="36">
+                        <CheckBox fx:id="checkBoxChasse" mnemonicParsing="false" text="Chasse" GridPane.rowIndex="37">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxPeche" mnemonicParsing="false" text="Pêche" GridPane.rowIndex="36">
+                        <CheckBox fx:id="checkBoxPeche" mnemonicParsing="false" text="Pêche" GridPane.rowIndex="37">
                            <GridPane.margin>
                               <Insets left="130.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxVelo" mnemonicParsing="false" text="Vélo" GridPane.columnIndex="1" GridPane.rowIndex="36">
+                        <CheckBox fx:id="checkBoxVelo" mnemonicParsing="false" text="Vélo" GridPane.columnIndex="1" GridPane.rowIndex="37">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxMarche" mnemonicParsing="false" text="Marche" GridPane.columnIndex="1" GridPane.rowIndex="36">
+                        <CheckBox fx:id="checkBoxMarche" mnemonicParsing="false" text="Marche" GridPane.columnIndex="1" GridPane.rowIndex="37">
                            <GridPane.margin>
                               <Insets left="130.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxSportasensations" mnemonicParsing="false" text="Sport à sensations" GridPane.rowIndex="37">
+                        <CheckBox fx:id="checkBoxSportasensations" mnemonicParsing="false" text="Sport à sensations" GridPane.rowIndex="38">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxSoireesentreamis" mnemonicParsing="false" text="Soirées entre amis" GridPane.columnIndex="1" GridPane.rowIndex="37">
+                        <CheckBox fx:id="checkBoxSoireesentreamis" mnemonicParsing="false" text="Soirées entre amis" GridPane.columnIndex="1" GridPane.rowIndex="38">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxSortiesculturelles" mnemonicParsing="false" text="Sorties culturelles" GridPane.rowIndex="38">
+                        <CheckBox fx:id="checkBoxSortiesculturelles" mnemonicParsing="false" text="Sorties culturelles" GridPane.rowIndex="39">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxFairedelamusique" mnemonicParsing="false" text="Faire de la musique" GridPane.columnIndex="1" GridPane.rowIndex="38">
+                        <CheckBox fx:id="checkBoxFairedelamusique" mnemonicParsing="false" text="Faire de la musique" GridPane.columnIndex="1" GridPane.rowIndex="39">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </CheckBox>
-                        <CheckBox fx:id="checkBoxCueillettedechampignons" mnemonicParsing="false" text="Cueillette de champignons" GridPane.rowIndex="39">
+                        <CheckBox fx:id="checkBoxCueillettedechampignons" mnemonicParsing="false" text="Cueillette de champignons" GridPane.rowIndex="40">
                            <GridPane.margin>
                               <Insets left="10.0" />
                            </GridPane.margin>
@@ -465,6 +464,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
