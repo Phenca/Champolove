@@ -49,7 +49,7 @@ public class Vue extends Application implements Observer, Initializable {
 
 
 
-	private void loadSplashScreen(Stage primaryStage){		
+	private void loadSplashScreen(){		
 		try {
 			StackPane pane = new StackPane();
 			Media media = new Media("file:src/ressources/intro_ChampoLove.mp4");
@@ -58,9 +58,6 @@ public class Vue extends Application implements Observer, Initializable {
 			MediaView mediaView = new MediaView(mediaPlayer);
 			Group root = new Group();
 			root.getChildren().add(mediaView);
-			Scene scene = new Scene(root, 800, 600);
-			primaryStage.setScene(scene);
-			pane.getChildren().add(mediaView);
 			Scene scene1 = new Scene(pane);
 			Stage stage = new Stage();
 			stage.initOwner(Stage);
@@ -92,7 +89,8 @@ public class Vue extends Application implements Observer, Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		loadSplashScreen(Stage);
+		loadSplashScreen();
+
 		rootP = root;
 	}
 
