@@ -13,6 +13,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -48,26 +49,23 @@ public class Vue extends Application implements Observer, Initializable {
 
 
 
-	private void loadSplashScreen(){		
+	private void loadSplashScreen(Stage primaryStage){		
 		try {
 			StackPane pane = new StackPane();
-			Media media = new Media("file:src/ressources/intro_ChampoLove.h264");
+			Media media = new Media("file:src/ressources/intro_ChampoLove.mp4");
 			System.out.println(media);
 			MediaPlayer mediaPlayer = new MediaPlayer(media);
-			mediaPlayer.setOnError(() -> {
-			    System.out.println("Erreur lors de la lecture de la vidéo");
-			});
-			mediaPlayer.setOnReady(() -> {
-			    System.out.println("Vidéo prête à être lue");
-			    mediaPlayer.play();
-			});
 			MediaView mediaView = new MediaView(mediaPlayer);
+			Group root = new Group();
+			root.getChildren().add(mediaView);
+			Scene scene = new Scene(root, 800, 600);
+			primaryStage.setScene(scene);
 			pane.getChildren().add(mediaView);
-			Scene scene = new Scene(pane);
+			Scene scene1 = new Scene(pane);
 			Stage stage = new Stage();
 			stage.initOwner(Stage);
 			stage.initStyle(StageStyle.UNDECORATED);
-			stage.setScene(scene);
+			stage.setScene(scene1);
 			stage.show();
 
 			mediaPlayer.setOnReady(() -> {
@@ -94,7 +92,7 @@ public class Vue extends Application implements Observer, Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		loadSplashScreen();
+		loadSplashScreen(Stage);
 		rootP = root;
 	}
 
