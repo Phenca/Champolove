@@ -94,7 +94,7 @@ public class Vue extends Application implements Observer, Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		loadSplashScreen();
+		//loadSplashScreen();
 		rootP = root;
 	}
 

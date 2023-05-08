@@ -32,7 +32,7 @@
                         <Label text="Description " GridPane.rowIndex="6" />
                         <Label text="Préférences musicales" GridPane.rowIndex="7" />
                         <Label text="Hoobies " GridPane.rowIndex="11" />
-                        <TextArea editable="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextArea fx:id="DescriptionDuProfil" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <Label text="Animal préféré" GridPane.rowIndex="8" />
                         <Label text="Plat préféré" GridPane.rowIndex="9" />
                         <Label text="Préférences séries &amp; films" GridPane.rowIndex="10" />

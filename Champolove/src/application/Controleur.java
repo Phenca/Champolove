@@ -227,9 +227,9 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 
 	@FXML
 	private Text adresseEmailPageProfil;
-
+	
 	@FXML
-	private ListView<String> HobbiesPageProfil = new ListView<String>();
+	private TextArea DescriptionDuProfil;
 
 	/*
 	 * 
@@ -788,13 +788,16 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.agePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).age));
 		c.taillePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).taille));
 		c.genrePageProfil.setText(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).sexe);
+		c.DescriptionDuProfil.setText(modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).description);
 
 		for (int i=0; i<modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).Gouts.size(); i++) {
 
 		}
+		/*
 	    ObservableList<String> observableList = FXCollections.observableArrayList(c.modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).Hobbies);
 	    c.HobbiesPageProfil.setItems(observableList);
 	    c.HobbiesPageProfil.getItems();
+	    */
 	    for (int j=0; j<c.modl.memoiremixte.pUser.listeDesProfilsOptimale.get(indexProfilEnCoursDeLecture).Hobbies.size(); j++) {
 	    }
 		
@@ -1272,6 +1275,7 @@ public class Controleur implements EventHandler<ActionEvent>, Initializable{
 		c.agePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.memoireMatcher.get(indexProfilMatchEnCoursDeLecture).age));
 		c.taillePageProfil.setText(String.valueOf(modl.memoiremixte.pUser.memoireMatcher.get(indexProfilMatchEnCoursDeLecture).taille));
 		c.genrePageProfil.setText(modl.memoiremixte.pUser.memoireMatcher.get(indexProfilMatchEnCoursDeLecture).sexe);
+		c.DescriptionDuProfil.setText(modl.memoiremixte.pUser.memoireMatcher.get(indexProfilMatchEnCoursDeLecture).description);
 		
 		if(modl.memoiremixte.pUser.dictionnaireDesRendezVous.containsKey(indexProfilMatchEnCoursDeLecture)) {
 			c.RendezVous.setText(modl.memoiremixte.pUser.dictionnaireDesRendezVous.get(indexProfilMatchEnCoursDeLecture));
