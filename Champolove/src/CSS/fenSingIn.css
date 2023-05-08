@@ -138,11 +138,11 @@ VBox GridPane{
 }
 
 .date-picker .arrow-button {
-	-fx-background-color: -fx-primary-color;
+	-fx-background-color: pink;
 	-fx-background-radius: 0;
 }
 .date-picker .arrow-button:hover {
-	-fx-background-color: -fx-secondary-color;
+	-fx-background-color: rgb(255, 145, 163);
 }
 
 .date-picker:focused {
@@ -162,11 +162,11 @@ VBox GridPane{
 	-fx-background-color: pink;
 }
 .date-picker .selected {
-	-fx-background-color: -fx-primary-color;
+	-fx-background-color: pink;
 	-fx-text-fill: #303030;
 }
 .date-picker .selected:focused {
-	-fx-background-color: -fx-primary-color;
+	-fx-background-color: pink;
 	-fx-text-fill: #303030;
 }
 .date-picker-popup  {
@@ -179,9 +179,9 @@ VBox GridPane{
 	-fx-text-fill: #303030;
 }
 .date-picker-popup .week-number-cell {
-	-fx-text-fill: -fx-secondary-color;
+	-fx-text-fill: #303030;
 }
 .date-picker-popup .spinner .button .left-arrow,
 .date-picker-popup .spinner .button .right-arrow {
-	-fx-background-color: black;
+	-fx-background-color: #303030;
 }
