@@ -2,6 +2,7 @@ package application;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.Observable;
 import java.util.Observer;
@@ -29,32 +30,37 @@ public class Vue extends Application implements Observer, Initializable {
 	private Stage Stage;
 	private AnchorPane root;
 	public static AnchorPane rootP;
+	private Media media;
 
 	public static void main(String[] args) {
 		launch(args);
 	}
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		loadSplashScreen();
-
-		rootP = root;
-	}
+	
 
 	@Override
 	public void start(Stage Stage) throws Exception {
 		this.Stage = Stage;
+		initialize(null, null);
 		fenetreLancement();
 
 	}
 
 
 
-	private void loadSplashScreen(){
+	private void loadSplashScreen(){		
 		try {
 			StackPane pane = new StackPane();
-			Media media = Media(getClass().getResource("file:src/ressources/intro_ChampoLove.mp4").toString());
+			Media media = new Media("file:src/ressources/intro_ChampoLove.h264");
+			System.out.println(media);
 			MediaPlayer mediaPlayer = new MediaPlayer(media);
+			mediaPlayer.setOnError(() -> {
+			    System.out.println("Erreur lors de la lecture de la vidéo");
+			});
+			mediaPlayer.setOnReady(() -> {
+			    System.out.println("Vidéo prête à être lue");
+			    mediaPlayer.play();
+			});
 			MediaView mediaView = new MediaView(mediaPlayer);
 			pane.getChildren().add(mediaView);
 			Scene scene = new Scene(pane);
@@ -85,9 +91,14 @@ public class Vue extends Application implements Observer, Initializable {
 		}
 
 	}
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		loadSplashScreen();
+		rootP = root;
+	}
 
-
-	private Media Media(String externalForm) {
+	private Media Media(InputStream is) {
 		// TODO Auto-generated method stub
 		return null;
 	}
